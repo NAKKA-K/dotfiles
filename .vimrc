@@ -16,7 +16,10 @@ set showmatch
 set laststatus=2
 set wildmode=list:longest
 
-set expandtab
+let _curfile=expand("%:r")
+if _curfile != 'Makefile'
+  set expandtab
+endif
 set tabstop=2
 set shiftwidth=2
 
