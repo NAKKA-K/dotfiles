@@ -1,7 +1,6 @@
 # vim_setting
 ## install
-以下の様に`.vimrc`をそのままコピーするだけで設定を適応できます。
+以下の様に`install.sh`を実行するだけで、設定を適応できます。
 
-    cp ./.vimrc ~/
-
+    ./install.sh
 

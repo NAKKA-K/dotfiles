@@ -44,8 +44,6 @@ inoremap (<Enter> (<CR>)<ESC><S-o>
 " indent
 noremap > >>
 noremap < <<
-inoremap > <ESC>>>
-inoremap < <ESC><<
 vnoremap > >gv
 vnoremap < <gv
 
