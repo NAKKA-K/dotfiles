@@ -1,37 +1,42 @@
 " My settings
 
 " options
-set noswapfile
-set autoread
-set hidden
-set showcmd
+set noswapfile " swapファイルを作成しない
+set autoread " 
+set hidden " 保存されていないファイルがあっても別のファイルを開ける
+set showcmd " 入力中のコマンドを表示する
 
-syntax on
-set background=dark
-set number
-set title
-set cursorline
+syntax on " 構文ごとに文字色を変化させる
+set background=dark " 暗い色に合うように文字色を変更
+set number " 行番号を表示
+set title " ウィンドウのタイトルにファイルパスを表示
+set ruler " カーソルの行列数を表示
+set cursorline " カーソルの行を見やすく表示
 set virtualedit=onemore
-set smartindent
+set smartindent " 改行時のインデントに合わせて自動でインデントを挿入
 set visualbell
-set showmatch
-set laststatus=2
+set showmatch " 対応する括弧等を表示する
+set laststatus=2 " 末尾から2行目にステータスを常時表示
 set wildmode=list:longest
-set wildmenu wildmode=list:full
-set whichwrap=h,l
+set wildmenu wildmode=list:full " コマンドモードでTabによるファイル名補完
+set whichwrap=h,l " 行頭、行末が前後の行とつながる
 
+
+" Makefileのみtabの空白変換をしない----------------------------------
 let _curfile=expand("%:r")
 if _curfile != 'Makefile'
-  set expandtab
+  set expandtab " tabを空白に変換
 endif
-set tabstop=2
-set shiftwidth=2
+" -------------------------------------------------------------------
+set tabstop=2 " tabの表示幅
+set shiftwidth=2 " tabの実幅
+set list " 不可視文字を表示する
 
-set incsearch
-set wrapscan
-set hlsearch
-set smartcase
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set incsearch " 検索ワードの最初の文字を入力した時点で検索を開始する
+set wrapscan " 検索内容をループさせる
+set hlsearch " 検索結果をハイライト
+set smartcase " 小文字のみで検索したときに大小文字を無視する
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P " ステータスの書式を指定
 
 
 
@@ -41,17 +46,17 @@ nnoremap j gj
 nnoremap k gk
 
 
-" input
+" move and input
 inoremap <C-e> <ESC>$a
 inoremap <C-a> <ESC>^i
 noremap <C-e> <ESC>$a
 noremap <C-a> <ESC>^i
 
-" atuo brackets
+" auto brackets
 inoremap {<Enter> {<CR>}<ESC><S-o>
 inoremap [ []<Left>
 inoremap ( ()<Left>
-" HTML tag
+" auto close HTML tag
 inoremap </ <ESC><Left>byw$a></<C-o>p>
 
 " indent
