@@ -54,8 +54,6 @@ noremap <C-a> <ESC>^i
 inoremap {<Enter> {<CR>}<ESC><S-o>
 inoremap [ []<Left>
 inoremap ( ()<Left>
-" auto close HTML tag
-inoremap </ <ESC><Left>byw$a></<C-o>p>
 
 " indent
 noremap > >>
