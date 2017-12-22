@@ -54,7 +54,6 @@ noremap <C-a> <ESC>^i
 inoremap {<Enter> {<CR>}<ESC><S-o>
 inoremap [ []<Left>
 inoremap ( ()<Left>
-inoremap ></ <ESC>bywwa></<C-o>p>
 
 " indent
 noremap > >>
