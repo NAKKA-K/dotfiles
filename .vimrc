@@ -27,8 +27,8 @@ if _curfile != 'Makefile'
   set expandtab   " tabを空白に変換
 endif
 " -------------------------------------------------------------------
-set tabstop=2     " tabの表示幅
-set shiftwidth=2  " tabの実幅
+set tabstop=4     " tabの表示幅
+set shiftwidth=4  " tabの実幅
 
 set incsearch     " 検索ワードの最初の文字を入力した時点で検索を開始する
 set wrapscan      " 検索内容をループさせる
@@ -54,7 +54,8 @@ noremap <C-a> <ESC>^i
 inoremap {<Enter> {<CR>}<ESC><S-o>
 inoremap [ []<Left>
 inoremap ( ()<Left>
-inoremap ></ <ESC>bywwa></<C-o>p>
+inoremap " ""<Left>
+
 
 " indent
 noremap > >>
