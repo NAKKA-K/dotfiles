@@ -24,3 +24,8 @@ noremap < <<
 vnoremap > >gv
 vnoremap < <gv
 
+
+
+" plugin key map custom --------------------
+map <C-n> :NERDTreeToggle<CR>
+
