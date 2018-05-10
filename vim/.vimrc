@@ -1,3 +1,9 @@
+if $compatible
+    set nocompatible
+endif
+
+" --------------------------------------------------
+
 let g:vim_home = expand('~/dotfiles/vim')
 let g:rc_dir = expand('~/dotfiles/vim/rc')
 
@@ -8,13 +14,17 @@ function! s:source_rc(rc_file_name)
     endif
 endfunction
 
+call s:source_rc('dein.rc.vim') " Dein is plugin manager
+
 call s:source_rc('option.rc.vim') " set options
 call s:source_rc('custom.rc.vim') " my settings
 
 
+
+" --------------------------------------------------
 " syntax
 syntax enable
 syntax on       " 構文ごとに文字色を変化させる
 
 " auto file type
-filetype on
+filetype plugin indent on
