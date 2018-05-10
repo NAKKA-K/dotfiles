@@ -7,7 +7,7 @@ let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 
 " is exist dein.vim ?
-if &runtimepath !~ '/dein.vim'
+if has('vim_starting') && &runtimepath !~ '/dein.vim'
     if !isdirectory(s:dein_repo_dir)
         execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
     endif
