@@ -33,7 +33,7 @@ call dein#end()
 call dein#save_state()
 
 " install the non install plugin
-if dein#check_install()
+if !has('vim_starting') && dein#check_install()
     call dein#install()
 endif
 
