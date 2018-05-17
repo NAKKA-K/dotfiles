@@ -29,3 +29,17 @@ vnoremap < <gv
 " plugin key map custom --------------------
 map <C-n> :NERDTreeToggle<CR>
 
+" non indent, when paste from clipborad
+if &term =~ "xterm"
+    let &t_SI .= "\e[?2004h"
+    let &t_EI .= "\e[?2004l"
+    let &pastetoggle = "\e[201~"
+
+    function! s:XTermPasteBegin(ret)
+        set paste
+        return a:ret
+    endfunction
+
+    inoremap <special> <expr> <Esc>[200~ s:XTermPasteBegin("")
+endif
+
