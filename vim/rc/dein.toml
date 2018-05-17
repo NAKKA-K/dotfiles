@@ -16,3 +16,6 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
