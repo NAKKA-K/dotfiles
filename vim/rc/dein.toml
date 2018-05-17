@@ -10,3 +10,9 @@ repo = 'SirVer/ultisnips'
 [[plugins]]
 repo = 'fatih/vim-go'
 
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
