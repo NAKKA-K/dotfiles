@@ -19,10 +19,7 @@ call s:source_rc('dein.rc.vim') " Dein is plugin manager
 call s:source_rc('option.rc.vim') " set options
 call s:source_rc('custom.rc.vim') " my settings
 
-if has('vim_starting')
-    call s:source_rc('plugin_varible.rc.vim')
-endif
-
+call s:source_rc('plugin_variable.rc.vim')
 
 
 " --------------------------------------------------
