@@ -1,6 +1,6 @@
 " options
 set noswapfile    " swapファイルを作成しない
-set autoread 
+set autoread      " ファイルが外部で変更された時に自動で読み込む
 set hidden        " 保存されていないファイルがあっても別のファイルを開ける
 set showcmd       " 入力中のコマンドを表示する
 
