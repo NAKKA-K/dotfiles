@@ -27,11 +27,23 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 
 
 
+" -------------------------------------------------------------------
 " Makefileのみtabの空白変換をしない----------------------------------
 let _curfile=expand("%:r")
 if _curfile != 'Makefile'
   set expandtab   " tabを空白に変換
 endif
-" -------------------------------------------------------------------
+
+" default space
 set tabstop=4     " tabの表示幅
 set shiftwidth=4  " tabの実幅
+set softtabstop=4 " 1度に消すスペースの数
+
+" spaceの幅をファイルタイプごとに設定する
+augroup setFileTypeIndent
+    autocmd!
+    autocmd BufRead,BufNewFile *.coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd BufRead,BufNewFile *.js setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd BufRead,BufNewFile *.rb setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd BufRead,BufNewFile *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+augroup END
