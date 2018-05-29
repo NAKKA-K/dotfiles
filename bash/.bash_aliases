@@ -9,3 +9,5 @@ alias gs="git status"
 alias gb="git branch"
 alias gpush="git push origin HEAD"
 alias gpull="git pull origin $(brname)"
+
+git config --global alias.lol 'log --graph --oneline --decorate=full --date=short --format="%C(yellow)%h%C(reset) %C(magenta)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)"'
