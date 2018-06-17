@@ -46,6 +46,7 @@ augroup setFileTypeIndent
     autocmd BufRead,BufNewFile *.js setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd BufRead,BufNewFile *.rb setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd BufRead,BufNewFile *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd BufRead,BufNewFile *.erb setlocal tabstop=2 shiftwidth=2 softtabstop=2
 augroup END
 
 augroup Binary
