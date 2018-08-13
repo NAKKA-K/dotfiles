@@ -1,5 +1,5 @@
 alias grep='grep --color=auto'
-
+alias be='bundle exec'
 
 alias brname='git symbolic-ref --short HEAD'
 alias ga="git add"
