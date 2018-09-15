@@ -14,12 +14,12 @@ function! s:source_rc(rc_file_name)
     endif
 endfunction
 
+call s:source_rc('plugin_variable.rc.vim')
 call s:source_rc('dein.rc.vim') " Dein is plugin manager
 
 call s:source_rc('option.rc.vim') " set options
 call s:source_rc('custom.rc.vim') " my settings
 
-call s:source_rc('plugin_variable.rc.vim')
 
 
 " --------------------------------------------------
