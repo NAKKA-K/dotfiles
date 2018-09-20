@@ -25,3 +25,5 @@ repo = 'Townk/vim-autoclose'
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
+[[plugins]]
+repo = 'jwalton512/vim-blade'
