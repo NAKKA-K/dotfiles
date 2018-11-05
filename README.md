@@ -13,7 +13,7 @@
 :source ~/.vimrc
 ```
 
-*※vimが7.2の場合、deinプラグインのバージョンを1.5に落とす必要があります。(`.cache/dein/repos/github.com/Shougo/dein.vim`に移動し、`git checkout`でバージョンを1.5に落としましょう)*
+*※vimが7.2の場合、deinプラグインのバージョンを1.5に落とす必要があります。(`~/.cache/dein/repos/github.com/Shougo/dein.vim`に移動し、`git checkout`でバージョンを1.5に落としましょう)*
 
 
 # bash
