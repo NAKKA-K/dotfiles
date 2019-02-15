@@ -24,6 +24,9 @@ set hlsearch      " 検索結果をハイライト
 set smartcase     " 小文字のみで検索したときに大小文字を無視する
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P " ステータスの書式を指定
 
+set encoding=utf-8
+set fileencodings=utf-8,euc-jp,sjis,cp932,iso-2022-jp
+
 
 
 
@@ -43,7 +46,6 @@ set softtabstop=4 " 1度に消すスペースの数
 augroup setFileTypeIndent
     autocmd!
     autocmd BufRead,BufNewFile *.coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd BufRead,BufNewFile *.js setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd BufRead,BufNewFile *.rb setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd BufRead,BufNewFile *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd BufRead,BufNewFile *.css setlocal tabstop=2 shiftwidth=2 softtabstop=2
