@@ -7,6 +7,7 @@ alias gcm="git commit -m"
 alias gd="git diff"
 alias gs="git status"
 alias gb="git branch"
+alias gcb="git checkout -b"
 alias gpush="git push origin HEAD"
 alias gpull="git pull origin $(brname)"
 
