@@ -3,6 +3,9 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+hook_add = '''
+    let g:NERDTreeShowHidden = 1 " 不可視ファイルを表示する
+'''
 
 [[plugins]]
 repo = 'SirVer/ultisnips'
@@ -17,12 +20,18 @@ hook_add = '''
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+hook_add = '''
+    let g:gitgutter_max_signs = 200
+'''
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
+hook_add = '''
+    autocmd BufWritePre * :FixWhitespace
+'''
 
 [[plugins]]
 repo = 'tpope/vim-endwise'
