@@ -12,7 +12,7 @@ if has('vim_starting') && &runtimepath !~ '/dein.vim'
         execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
     endif
 
-    " Add dein plugin to vim runtimepath 
+    " Add dein plugin to vim runtimepath
     execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
