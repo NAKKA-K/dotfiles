@@ -57,6 +57,10 @@ let mapleader=','
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
 
+" ruby
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
 
 " -------------------------------------------------------------------
 " Makefileのみtabの空白変換をしない----------------------------------
@@ -74,11 +78,12 @@ set softtabstop=4 " 1度に消すスペースの数
 augroup setFileTypeIndent
     autocmd!
     autocmd BufRead,BufNewFile *.coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd BufRead,BufNewFile *.rb setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd BufRead,BufNewFile *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd BufRead,BufNewFile *.css setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd BufRead,BufNewFile *.scss setlocal tabstop=2 shiftwidth=2 softtabstop=2
-    autocmd BufRead,BufNewFile *.erb setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd Filetype scss setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd Filetype eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd Filetype go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 augroup END
 
 augroup Binary
