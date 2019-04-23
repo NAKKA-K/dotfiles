@@ -5,26 +5,27 @@ repo = 'Shougo/dein.vim'
 # Snips
 [[plugins]]
 repo = 'SirVer/ultisnips'
+hook_add = '''
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<tab>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+    let g:UltiSnipsEditSplit="vertical"
+'''
 [[plugins]]
 repo = 'honza/vim-snippets'
 
 
-# vim
+# Vim-Session
 [[plugins]]
-repo = 'fatih/vim-go'
-do = 'GoInstallBinaries'
+repo = 'xolox/vim-misc'
+[[plugins]]
+repo = 'xolox/vim-session'
+depends = ['xolox/vim-misc']
 hook_add = '''
-    let g:go_fmt_command = 'goimports'
-    let g:go_metalinter_autosave = 1
-    let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
-
-    let g:go_snippet_engine = 'ultisnips'
-    let g:go_auto_type_info = 1 " Exec GoInfo when keyword cursor
-
-    let g:go_highlight_function_calls = 1
-    let g:go_highlight_types = 1
-
-    autocmd BufWritePre *.go :GoFmt
+    let g:session_directory = '~/.vim/session'
+    let g:session_autoload = 'no'
+    let g:session_autosave = 'no'
+    let g:session_command_aliases = 1
 '''
 
 
@@ -42,13 +43,14 @@ repo = 'tpope/vim-fugitive'
 repo = 'tpope/vim-rhubarb'
 
 
-
 # Utils
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
     let g:NERDTreeShowHidden = 1 " 不可視ファイルを表示する
 '''
+[[plugins]]
+repo = 'jistr/vim-nerdtree-tabs'
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 hook_add = '''
@@ -62,13 +64,31 @@ repo = 'Townk/vim-autoclose'
 repo = 'Yggdroot/indentLine'
 [[plugins]]
 repo = 'tpope/vim-commentary'
+[[plugins]]
+repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'majutsushi/tagbar'
+hook_add = '''
+    let g:tagbar_autofocus = 1
+    let g:tagbar_type_ruby = {
+        \ 'kinds' : [
+            \ 'm:modules',
+            \ 'c:classes',
+            \ 'd:describes',
+            \ 'C:contexts',
+            \ 'f:methods',
+            \ 'F:singleton methods'
+        \ ]
+    \ }
+'''
 
-# async plugin
+# Async plugins
 [[plugins]]
 repo = 'w0rp/ale'
+hook_add = '''
+    let g:ale_linters = {} " Exec linters
+'''
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
@@ -81,6 +101,9 @@ build = 'make'
 # many language syntax
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
+hook_add = '''
+    let g:polyglot_disabled = ['go', 'python']
+'''
 
 
 # blade
@@ -94,6 +117,36 @@ repo = 'vim-scripts/c.vim'
 on_ft = ['c', 'cpp']
 [[plugins]]
 repo = 'ludwig/split-manpage.vim'
+
+
+# go
+[[plugins]]
+repo = 'fatih/vim-go'
+do = 'GoInstallBinaries'
+hook_add = '''
+    let g:go_fmt_command = 'goimports'
+    let g:go_metalinter_autosave = 1
+    let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+
+    let g:go_snippet_engine = 'ultisnips'
+    let g:go_auto_type_info = 1 " Exec GoInfo when keyword cursor
+
+    let g:go_highlight_function_calls = 1
+    let g:go_highlight_types = 1
+    let g:go_highlight_fields = 1
+    let g:go_highlight_functions = 1
+    let g:go_highlight_methods = 1
+    let g:go_highlight_operators = 1
+    let g:go_highlight_build_constraints = 1
+    let g:go_highlight_structs = 1
+    let g:go_highlight_generate_tags = 1
+    let g:go_highlight_space_tab_error = 0
+    let g:go_highlight_array_whitespace_error = 0
+    let g:go_highlight_trailing_whitespace_error = 0
+    let g:go_highlight_extra_types = 1
+
+    autocmd BufWritePre *.go :GoFmt
+'''
 
 
 # html
@@ -112,6 +165,9 @@ repo = 'mattn/emmet-vim'
 ## Javascript Bundle
 [[plugins]]
 repo = 'jelera/vim-javascript-syntax'
+hook_add = '''
+    let g:javascript_enable_domhtmlcss = 1
+'''
 
 
 # php
