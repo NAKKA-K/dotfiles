@@ -7,11 +7,16 @@ hook_add = '''
     let g:NERDTreeShowHidden = 1 " 不可視ファイルを表示する
 '''
 
+
+# Snips
 [[plugins]]
 repo = 'SirVer/ultisnips'
 
+
+# vim
 [[plugins]]
 repo = 'fatih/vim-go'
+do = 'GoInstallBinaries'
 hook_add = '''
     let g:go_fmt_command = 'goimports'
     let g:go_metalinter_autosave = 1
@@ -26,29 +31,31 @@ hook_add = '''
     autocmd BufWritePre *.go :GoFmt
 '''
 
+
+# Git
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
     let g:gitgutter_max_signs = 200
 '''
-
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+
+# Utils
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 hook_add = '''
     autocmd BufWritePre * :FixWhitespace
 '''
-
 [[plugins]]
 repo = 'tpope/vim-endwise'
-
 [[plugins]]
 repo = 'Townk/vim-autoclose'
-
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
+
+# blade
 [[plugins]]
 repo = 'jwalton512/vim-blade'
