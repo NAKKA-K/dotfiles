@@ -11,6 +11,8 @@ hook_add = '''
 # Snips
 [[plugins]]
 repo = 'SirVer/ultisnips'
+[[plugins]]
+repo = 'honza/vim-snippets'
 
 
 # vim
@@ -59,3 +61,100 @@ repo = 'Yggdroot/indentLine'
 # blade
 [[plugins]]
 repo = 'jwalton512/vim-blade'
+
+[[plugins]]
+repo = 'tpope/vim-commentary'
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+
+[[plugins]]
+repo = 'w0rp/ale'
+
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+
+[[plugin]]
+repo = 'tpope/vim-rhubarb'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+
+# ****************************************************************************
+# Custom bundles
+# ****************************************************************************
+
+# c
+[[plugins]]
+repo = 'vim-scripts/c.vim'
+on_ft = ['c', 'cpp']
+[[plugins]]
+repo = 'ludwig/split-manpage.vim'
+
+
+# html
+## HTML Bundle
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+[[plugins]]
+repo = 'gorodinskiy/vim-coloresque'
+[[plugins]]
+repo = 'tpope/vim-haml'
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+
+# javascript
+## Javascript Bundle
+[[plugins]]
+repo = 'jelera/vim-javascript-syntax'
+
+
+# php
+## PHP Bundle
+[[plugins]]
+repo = 'arnaud-lb/vim-php-namespace'
+
+
+# python
+## Python Bundle
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+[[plugins]]
+repo = 'raimon49/requirements.txt.vim'
+for = 'requirements'
+
+
+# ruby
+[[plugins]]
+repo = 'tpope/vim-rails'
+[[plugins]]
+repo = 'tpope/vim-rake'
+[[plugins]]
+repo = 'tpope/vim-projectionist'
+[[plugins]]
+repo = 'thoughtbot/vim-rspec'
+[[plugins]]
+repo = 'ecomba/vim-ruby-refactoring'
+
+
+# rust
+# Vim racer
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+
+
+# Rust.vim
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+
+
+# scala
+[[plugins]]
+repo = 'ktvoelker/sbt-vim'
+if = ''' has('python') '''
+[[plugins]]
+repo = 'derekwyatt/vim-scala'
+
