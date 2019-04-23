@@ -17,6 +17,7 @@ set laststatus=2  " 末尾から2行目にステータスを常時表示
 set wildmode=list:longest
 set wildmenu wildmode=list:full " コマンドモードでTabによるファイル名補完
 set whichwrap=h,l " 行頭、行末が前後の行とつながる
+set backspace=indent,eol,start " 挿入モードでバックスペースを有効化
 
 set incsearch     " 検索ワードの最初の文字を入力した時点で検索を開始する
 set wrapscan      " 検索内容をループさせる
@@ -26,6 +27,8 @@ set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V
 
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,sjis,cp932,iso-2022-jp
+set ttyfast       " ウィンドウをスクロールするのでなく再描画する
+set fileformats=unix,dos,mac " 改行コード、文字コードの自動判定
 
 
 
