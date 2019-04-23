@@ -28,6 +28,7 @@ vnoremap < <gv
 
 " plugin key map custom --------------------
 map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " non indent, when paste from clipborad
 if &term =~ "xterm"
