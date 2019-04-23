@@ -1,12 +1,6 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-[[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add = '''
-    let g:NERDTreeShowHidden = 1 " 不可視ファイルを表示する
-'''
-
 
 # Snips
 [[plugins]]
@@ -43,8 +37,18 @@ hook_add = '''
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+# fugitive bridge to github
+[[plugin]]
+repo = 'tpope/vim-rhubarb'
+
+
 
 # Utils
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+    let g:NERDTreeShowHidden = 1 " 不可視ファイルを表示する
+'''
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 hook_add = '''
@@ -56,27 +60,15 @@ repo = 'tpope/vim-endwise'
 repo = 'Townk/vim-autoclose'
 [[plugins]]
 repo = 'Yggdroot/indentLine'
-
-
-# blade
-[[plugins]]
-repo = 'jwalton512/vim-blade'
-
 [[plugins]]
 repo = 'tpope/vim-commentary'
 
 [[plugins]]
 repo = 'majutsushi/tagbar'
 
+# async plugin
 [[plugins]]
 repo = 'w0rp/ale'
-
-[[plugins]]
-repo = 'sheerun/vim-polyglot'
-
-[[plugin]]
-repo = 'tpope/vim-rhubarb'
-
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
@@ -85,6 +77,16 @@ build = 'make'
 # ****************************************************************************
 # Custom bundles
 # ****************************************************************************
+
+# many language syntax
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+
+
+# blade
+[[plugins]]
+repo = 'jwalton512/vim-blade'
+
 
 # c
 [[plugins]]
