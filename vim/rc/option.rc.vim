@@ -4,6 +4,10 @@ set autoread      " ファイルが外部で変更された時に自動で読み
 set hidden        " 保存されていないファイルがあっても別のファイルを開ける
 set showcmd       " 入力中のコマンドを表示する
 
+"*****************************************************************************
+"" Visual Settings
+"*****************************************************************************
+let no_buffers_menu=1
 set background=dark " 暗い色に合うように文字色を変更
 set number        " 行番号を表示
 set title         " ウィンドウのタイトルにファイルパスを表示
@@ -18,6 +22,9 @@ set wildmode=list:longest
 set wildmenu wildmode=list:full " コマンドモードでTabによるファイル名補完
 set whichwrap=h,l " 行頭、行末が前後の行とつながる
 set backspace=indent,eol,start " 挿入モードでバックスペースを有効化
+"" Use modeline overrides
+set modeline
+set modelines=10
 
 set incsearch     " 検索ワードの最初の文字を入力した時点で検索を開始する
 set wrapscan      " 検索内容をループさせる
