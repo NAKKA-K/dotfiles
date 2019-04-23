@@ -37,25 +37,6 @@ set fileencodings=utf-8,euc-jp,sjis,cp932,iso-2022-jp
 set ttyfast       " ウィンドウをスクロールするのでなく再描画する
 set fileformats=unix,dos,mac " 改行コード、文字コードの自動判定
 
-"*****************************************************************************
-"" Abbreviations
-"*****************************************************************************
-"" no one is really happy until you have this shortcuts
-cnoreabbrev W! w!
-cnoreabbrev Q! q!
-cnoreabbrev Qall! qall!
-cnoreabbrev Wq wq
-cnoreabbrev Wa wa
-cnoreabbrev wQ wq
-cnoreabbrev WQ wq
-cnoreabbrev W w
-cnoreabbrev Q q
-cnoreabbrev Qall qall
-
-"" Map leader to ,
-let mapleader=','
-" terminal emulation
-nnoremap <silent> <leader>sh :terminal<CR>
 
 " ruby
 let g:rubycomplete_buffer_loading = 1

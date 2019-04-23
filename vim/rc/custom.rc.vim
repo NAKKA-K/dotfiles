@@ -1,5 +1,27 @@
 " My settings
 
+"*****************************************************************************
+"" Abbreviations
+"*****************************************************************************
+"" no one is really happy until you have this shortcuts
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
+
+
+"" Map leader to ,
+let mapleader=','
+" terminal emulation
+nnoremap <silent> <leader>sh :terminal<CR>
+
+
 " move line --------------------
 nnoremap j gj
 nnoremap k gk
@@ -10,6 +32,7 @@ inoremap <C-e> <ESC>$a
 inoremap <C-a> <ESC>^i
 noremap <C-e> <ESC>$a
 noremap <C-a> <ESC>^i
+
 
 " auto brackets --------------------
 inoremap {<Enter> {<CR>}<ESC><S-o>
@@ -25,7 +48,6 @@ vnoremap > >gv
 vnoremap < <gv
 
 
-
 " Plugin key map: NERDTree --------------------
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " close NERDTree when file is closed
@@ -33,6 +55,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Plugin key map: Tagbar --------------------
 nmap <F4> :TagbarToggle<CR>
+
 
 "" Plugin key map: (Git)fugitive --------------------
 noremap <Leader>ga :Gwrite<CR>
@@ -44,6 +67,7 @@ noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
 
+
 "" Copy/Paste/Cut --------------------
 if has('unnamedplus')
   set clipboard=unnamed,unnamedplus
@@ -53,6 +77,7 @@ endif
 "" Split --------------------
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
+
 
 "" Switching windows --------------------
 noremap <C-j> <C-w>j
@@ -66,8 +91,10 @@ nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
 
+
 "" Buffer nav --------------------
 noremap <leader>buf :buffers<CR>
+
 
 "" Set working directory --------------------
 nnoremap <leader>cd :lcd %:p:h<CR>
@@ -82,6 +109,7 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
 
 " For ruby refactory --------------------
 " def/endなどを%で行き来できる
