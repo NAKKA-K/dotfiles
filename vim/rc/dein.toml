@@ -98,13 +98,6 @@ build = 'make'
 # Custom bundles
 # ****************************************************************************
 
-# many language syntax
-[[plugins]]
-repo = 'sheerun/vim-polyglot'
-hook_add = '''
-    let g:polyglot_disabled = ['go', 'python']
-'''
-
 
 # blade
 [[plugins]]
@@ -215,4 +208,13 @@ repo = 'ktvoelker/sbt-vim'
 if = ''' has('python') '''
 [[plugins]]
 repo = 'derekwyatt/vim-scala'
+
+
+# many language syntax
+# !! Put after language libraries
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+hook_add = '''
+    let g:polyglot_disabled = ['go', 'python']
+'''
 
