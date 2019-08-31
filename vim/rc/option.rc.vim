@@ -61,6 +61,7 @@ augroup setFileTypeIndent
     autocmd BufRead,BufNewFile *.coffee setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd Filetype ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd Filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+    autocmd Filetype vue setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd Filetype css setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd Filetype scss setlocal tabstop=2 shiftwidth=2 softtabstop=2
     autocmd Filetype eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
