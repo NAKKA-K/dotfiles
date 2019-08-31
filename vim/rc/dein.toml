@@ -117,9 +117,11 @@ repo = 'ludwig/split-manpage.vim'
 repo = 'fatih/vim-go'
 do = 'GoInstallBinaries'
 hook_add = '''
+    let g:go_bin_path = $GOPATH.'/bin'
     let g:go_fmt_command = 'goimports'
     let g:go_metalinter_autosave = 1
     let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'errcheck']
+    let g:go_jump_to_error = 0
 
     let g:go_snippet_engine = 'ultisnips'
     let g:go_auto_type_info = 1 " Exec GoInfo when keyword cursor
