@@ -76,3 +76,12 @@ augroup Binary
   autocmd BufWritePost * if &bin | silent %!xxd -g 1
   autocmd BufWritePost * set nomod | endif
 augroup END
+
+autocmd FileType vue syntax sync fromstart
+
+augroup MyXML
+  autocmd!
+  autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
+  autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+  autocmd Filetype vue inoremap <buffer> </ </<C-x><C-o>
+augroup END
