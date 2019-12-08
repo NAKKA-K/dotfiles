@@ -28,10 +28,10 @@ nnoremap k gk
 
 
 " move and input --------------------
-inoremap <C-e> <ESC>$a
-inoremap <C-a> <ESC>^i
-noremap <C-e> <ESC>$a
-noremap <C-a> <ESC>^i
+inoremap <C-e> <C-o>$
+inoremap <C-a> <C-o>^
+noremap <C-e> A
+noremap <C-a> I
 
 
 " auto brackets --------------------
@@ -80,10 +80,10 @@ noremap <Leader>v :<C-u>vsplit<CR>
 
 
 "" Switching windows --------------------
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
+noremap <C-p> <Up>
+noremap <C-n> <Down>
+noremap <C-b> <Left>
+noremap <C-f> <Right>
 
 
 "" Tabs --------------------
