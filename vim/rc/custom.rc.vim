@@ -80,10 +80,10 @@ noremap <Leader>v :<C-u>vsplit<CR>
 
 
 "" Switching windows --------------------
-noremap <C-p> <Up>
-noremap <C-n> <Down>
-noremap <C-b> <Left>
-noremap <C-f> <Right>
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
 
 
 "" Tabs --------------------
