@@ -34,6 +34,10 @@ hook_add = '''
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
     let g:gitgutter_max_signs = 200
+    highlight GitGutterAdd ctermfg=green
+    highlight GitGutterChange ctermfg=yellow
+    highlight GitGutterDelete ctermfg=red
+    highlight GitGutterChangeDelete ctermfg=yellow
 '''
 [[plugins]]
 repo = 'tpope/vim-fugitive'
