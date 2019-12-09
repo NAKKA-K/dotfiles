@@ -62,6 +62,9 @@ repo = 'tpope/vim-endwise'
 repo = 'Townk/vim-autoclose'
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+hook_add = '''
+    let g:indentLine_color_term = 244
+'''
 [[plugins]]
 repo = 'tpope/vim-commentary'
 [[plugins]]
@@ -217,6 +220,5 @@ repo = 'derekwyatt/vim-scala'
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
 hook_add = '''
-    let g:polyglot_disabled = ['go', 'python']
+    let g:polyglot_disabled = ['python']
 '''
-
