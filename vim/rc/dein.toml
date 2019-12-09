@@ -89,6 +89,8 @@ hook_add = '''
         \ ]
     \ }
 '''
+[[plugins]]
+repo = 'simeji/winresizer'
 
 # Async plugins
 [[plugins]]
