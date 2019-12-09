@@ -21,6 +21,12 @@ let mapleader=','
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
 
+" emacs cursor movement
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+
 
 " move line --------------------
 nnoremap j gj
@@ -80,10 +86,10 @@ noremap <Leader>v :<C-u>vsplit<CR>
 
 
 "" Switching windows --------------------
-inoremap <C-p> <Up>
-inoremap <C-n> <Down>
-inoremap <C-b> <Left>
-inoremap <C-f> <Right>
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
 
 
 "" Tabs --------------------
