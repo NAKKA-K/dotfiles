@@ -20,7 +20,7 @@ repo = 'honza/vim-snippets'
 repo = 'xolox/vim-misc'
 [[plugins]]
 repo = 'xolox/vim-session'
-depends = ['xolox/vim-misc']
+depends = ['vim-misc']
 hook_add = '''
     let g:session_directory = '~/.vim/session'
     let g:session_autoload = 'no'
