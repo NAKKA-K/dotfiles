@@ -102,6 +102,9 @@ hook_add = '''
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 
+[[plugins]]
+repo = 'ludwig/split-manpage.vim'
+
 
 # ****************************************************************************
 # Custom bundles
@@ -117,14 +120,13 @@ repo = 'jwalton512/vim-blade'
 [[plugins]]
 repo = 'vim-scripts/c.vim'
 on_ft = ['c', 'cpp']
-[[plugins]]
-repo = 'ludwig/split-manpage.vim'
 
 
 # go
 [[plugins]]
 repo = 'fatih/vim-go'
 do = 'GoInstallBinaries'
+on_ft = ['go']
 hook_add = '''
     let g:go_bin_path = $GOPATH.'/bin'
     let g:go_fmt_command = 'goimports'
@@ -157,18 +159,23 @@ hook_add = '''
 ## HTML Bundle
 [[plugins]]
 repo = 'hail2u/vim-css3-syntax'
+on_ft = ['css', 'scss', 'sass', 'html', 'vue', 'jsx', 'javascript']
 [[plugins]]
 repo = 'gorodinskiy/vim-coloresque'
+on_ft = ['css', 'scss', 'sass', 'html', 'vue', 'jsx', 'javascript']
 [[plugins]]
 repo = 'tpope/vim-haml'
+on_ft = ['haml']
 [[plugins]]
 repo = 'mattn/emmet-vim'
+on_ft = ['css', 'scss', 'sass', 'html', 'vue', 'jsx', 'javascript']
 
 
 # javascript
 ## Javascript Bundle
 [[plugins]]
 repo = 'jelera/vim-javascript-syntax'
+on_ft = ['javascript']
 hook_add = '''
     let g:javascript_enable_domhtmlcss = 1
 '''
@@ -178,47 +185,55 @@ hook_add = '''
 ## PHP Bundle
 [[plugins]]
 repo = 'arnaud-lb/vim-php-namespace'
+on_ft = ['php']
 
 
 # python
 ## Python Bundle
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
+on_ft = ['python']
 [[plugins]]
 repo = 'raimon49/requirements.txt.vim'
 for = 'requirements'
+on_ft = ['python']
 
 
 # ruby
 [[plugins]]
 repo = 'tpope/vim-rails'
+on_ft = ['ruby']
 [[plugins]]
 repo = 'tpope/vim-rake'
+on_ft = ['ruby']
 [[plugins]]
 repo = 'tpope/vim-projectionist'
+on_ft = ['ruby']
 [[plugins]]
 repo = 'thoughtbot/vim-rspec'
+on_ft = ['ruby']
 [[plugins]]
 repo = 'ecomba/vim-ruby-refactoring'
+on_ft = ['ruby']
 
 
 # rust
-# Vim racer
 [[plugins]]
 repo = 'racer-rust/vim-racer'
-
-
-# Rust.vim
+on_ft = ['rust']
 [[plugins]]
 repo = 'rust-lang/rust.vim'
+on_ft = ['rust']
 
 
 # scala
 [[plugins]]
 repo = 'ktvoelker/sbt-vim'
 if = ''' has('python') '''
+on_ft = ['scala']
 [[plugins]]
 repo = 'derekwyatt/vim-scala'
+on_ft = ['scala']
 
 
 # many language syntax

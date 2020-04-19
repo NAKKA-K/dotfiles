@@ -21,12 +21,6 @@ let mapleader=','
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
 
-" emacs cursor movement
-inoremap <C-p> <Up>
-inoremap <C-n> <Down>
-inoremap <C-b> <Left>
-inoremap <C-f> <Right>
-
 
 " move line --------------------
 nnoremap j gj

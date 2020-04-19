@@ -27,6 +27,8 @@ call dein#begin(s:dein_dir)
 
 let s:dein_toml = g:rc_dir . '/dein.toml'
 call dein#load_toml(s:dein_toml, {'lazy': 0})
+let s:lazy_dein_toml = g:rc_dir . '/lazy_dein.toml'
+call dein#load_toml(s:lazy_dein_toml, {'lazy': 1})
 
 " end settings
 call dein#end()
