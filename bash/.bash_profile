@@ -20,4 +20,4 @@ eval "$(rbenv init -)"
 
 eval "$(direnv hook bash)"
 
-[ -f ~/dotfiles/.fzf.zsh ] && source ~/dotfiles/.fzf.zsh
+[ -f ~/dotfiles/.fzf.bash ] && source ~/dotfiles/.fzf.bash
