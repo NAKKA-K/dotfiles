@@ -1,7 +1,8 @@
 #!/bin/bash
 
 if [ -f ~/.bashrc ]; then
-    cat ~/dotfiles/bash/.bashrc >> ~/.bashrc
+    # cat ~/dotfiles/bash/.bashrc >> ~/.bashrc
+    nop
 else
     ln -si ~/dotfiles/bash/.bashrc ~/.bashrc
 fi
