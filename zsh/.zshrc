@@ -52,5 +52,6 @@ eval "$(direnv hook zsh)"
 # The next line enables shell command completion for gcloud.
 # if [ -f '/Users/sh-nakamura/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sh-nakamura/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 
+autoload -Uz compinit && compinit -u
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/terraform terraform
