@@ -1,0 +1,9 @@
+" move and input --------------------
+inoremap <C-e> <C-o>$
+inoremap <C-a> <C-o>^
+
+" indent --------------------
+noremap > >>
+noremap < <<
+vnoremap > >gv
+vnoremap < <gv
