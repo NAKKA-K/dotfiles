@@ -29,6 +29,7 @@ brew "kayac/tap/ecspresso"
 brew "songmu/tap/ecschedule"
 cask "aws-vault"
 
+brew "asdf"
 brew "anyenv"
 brew "autoconf"
 brew "cairo"
