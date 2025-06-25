@@ -12,6 +12,7 @@
       "Bash(ls:*)",
       "Bash(cat:*)",
       "Bash(rg:*)",
+      "Bash(make:*)",
       "Bash(echo:*)",
       "Bash(pwd)",
       "Bash(open:*)",
@@ -31,5 +32,3 @@
   },
   "includeCoAuthoredBy": false
 }
-}
-
