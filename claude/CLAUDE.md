@@ -11,13 +11,12 @@
 
 ## 全体ガイドライン
 
-- 常に日本語で会話する。技術用語は英単語を使用しても構わない。
-- 憶測で回答しない。
-- 調査した結果、わからなかったことはわからないと回答する。
-- 必要があれば質問をする。
-- 文体は基本的に常体を使用する。
-  - ただし、編集対象の文章が敬体の場合は、その文体に合わせる。
-- GitHub Pull Request を作る時は Draft Pull Request で作成する。
+- 常に日本語で会話する。技術用語は英単語を使用しても構わない
+- 憶測で回答しない
+- 調査した結果、わからなかったことはわからないと回答する
+- 必要があれば質問をする
+- 文体は基本的に常体を使用する
+  - ただし、編集対象の文章が敬体の場合は、その文体に合わせる
 
 ## 文章作成ガイドライン
 
@@ -42,11 +41,10 @@ Claude Code が生成する文章（Markdown 出力、Issue、Pull Request の�
 
 #### 1. Issueの確認
 
-まずはissueを指定された場合は中身を確認する。
-TODOを整理して、上から順番に解決を進める。
-この時、勝手にTODOの次タスクを始めてはいけない。
+Issueが指定された場合は内容を確認し、TODOを整理して上から順番に解決を進める。
+勝手に次のタスクを始めてはいけない。
 
-もしIssueが存在しない場合はGitHub Issueを作成してください。
+Issueが存在しない場合はGitHub Issueを作成する。
 タイトルはユーザーが Claude Code に指示した問題の内容を簡潔にまとめる。
 プロジェクトに GitHub Issue template があればそれに従い、なければ以下の構造で description をまとめる。
 
@@ -77,29 +75,35 @@ TODOを整理して、上から順番に解決を進める。
 
 #### 1. Branch 作成
 
-Git stage 上の変更を確認し、タスクに応じた適切な名前で branch を作成する。
-branch 名は kebab-case にする（例：`add-dbt-resources`）。
+タスクに応じた適切な名前でbranchを作成する。
+branch名はkebab-caseにする（例：`add-dbt-resources`）。
 
 #### 2. 関連ファイルを Git stage に登録する
 
-実行しているToDoの内容から、そのタスクに関連する変更されたファイルを Git stage に登録する。
+実行中のToDoに関連する変更ファイルのみをGit stageに登録する。
 関係のないファイルは追加しない。
 
 #### 3. Git Commit
 
-Git stage 上の変更を確認し、タスクに応じた適切な commit message を作成する。
-commit message は [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) に従う。
+タスクに応じた適切なcommit messageを作成する。
+commit messageは[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)に従う。
 
-#### 4. Claude Code による コードレビュー
+#### 4. 品質チェック
 
-Claude Code により今までの変更をコードレビューする。
-もし修正箇所があればToDoにして、ユーザーにそれぞれ解決すべきかどうか質問する。
-解決が必要であれば自動的に修正する。
-その後、課題解決の 「2. 関連ファイルを Git stage に登録する」に戻ってサイクルを回す。
+コードレビューを行う前に、必ずLintツールとテストが成功することを確認する。
+プロジェクトに応じて以下のようなコマンドを実行する：
+- `npm run lint`、`yarn lint`
+- `npm test`、`yarn test`
+- `make lint`、`make test`
+- その他プロジェクト固有の品質チェックコマンド
+
+品質チェックが完了後、変更内容をClaude Codeがコードレビューする。
+修正箇所があればToDoにし、ユーザーに解決すべきかどうか質問する。
+解決が必要であれば自動的に修正し、「2. 関連ファイルをGit stageに登録する」に戻る。
 
 #### 5. Git Push
 
-作成した branch を remote repository に push する。
+作成したbranchをremote repositoryにpushする。
 
 #### 6. Pull Request 作成
 
@@ -109,7 +113,7 @@ Claude Code により今までの変更をコードレビューする。
 - プロジェクトにPULL_REQUEST_TEMPLATE.mdがある場合は、そのテンプレートを元にdescriptionを作成する
 - テンプレートがない場合は、以下の構造でdescriptionをまとめる
 
-Pull Request の作成をする場合、必ず Draft Pull Request で作成してください。
+Pull Requestは必ずDraft Pull Requestで作成する。
 
 ```markdown
 ## 概要
@@ -119,10 +123,8 @@ Pull Request の作成をする場合、必ず Draft Pull Request で作成し�
 
 ## 背景
 
-関連する GitHub Issue へのリンクをまず記述する。
-その後、GitHub Issue の内容に基づいた背景を簡潔にまとめる。
+GitHub Issue の内容に基づいた背景を簡潔にまとめる。
 
-GitHub Issue に紐づけない場合はリンクは記載しない。
 この Pull Request の背景となっている問題について記述し、具体的な課題に落とし込めている場合はその課題も記述する。
 
 ## 目的
@@ -145,6 +147,34 @@ Pull Request のコード内容と、ユーザーが Claude Code に指示した
 Claude Code が確認できず、ユーザーが確認すべき項目はToDo形式で記述する。
 
 ```
+
+## 開発ベストプラクティス
+
+### 開発プロセス・Git関連
+
+#### Git・コミット規約
+- Conventional Commitsに従ったコミットメッセージ記述
+- 型・スコープ・記述ルールの統一（日本語記述、技術用語は英語併用可）
+
+#### コーディング規約
+- プロジェクト共通のコード品質ツール設定に従う
+- エラーハンドリングの統一原則に従う
+
+#### 開発思想・姿勢
+- 憶測で実装せず、不明点は早期質問する
+- 既存パターンを学習し準拠した実装を行う
+- 最小限実装から段階的拡張を基本とする
+- プロジェクト文脈を重視し、技術的正しさとプロジェクト方針を両立させる
+
+#### ワークフロー
+- Issue → Branch → PR → Merge の基本フロー
+- Draft Pull Requestでの作成
+- ブランチ環境での動作検証
+
+#### テスト戦略
+- PR作成時の自動テスト実行
+- 機能の重要度・影響範囲に応じた選択的テスト実装
+- ビジネスロジックの重要度に基づくテスト優先度決定
 
 ## GitHub 連携ガイドライン
 
@@ -178,3 +208,21 @@ Pull Request を作成する際、プロジェクトにPULL_REQUEST_TEMPLATE.md�
     [fyi] → 参考情報
 -->
 ```
+
+### GitHubへのコメント投稿
+
+- ヘッダーはh2から始めること
+
+### 読み取り
+
+- IssueやPRから情報を読み取ることを指示されたら`gh`コマンドを利用すること
+
+## Claude Codeの通知設定
+
+タスクを進めるにあたって、以下の状況となった時には音声通知でユーザーに知らせること
+
+- **タスク完了時**: `afplay /System/Library/Sounds/Glass.aiff` （必須：タスクが完了したら必ず実行する）
+- **ユーザー確認必要時**: `afplay /System/Library/Sounds/Ping.aiff`
+- **エラー/問題発生時**: `afplay /System/Library/Sounds/Basso.aiff`
+
+
