@@ -201,10 +201,10 @@ Pull Request を作成する際、プロジェクトにPULL_REQUEST_TEMPLATE.md�
 <!-- GitHub Copilot コードレビューへの指示:
     このプルリクエストをレビューしてコメントする際には日本語でお願いします。
     レビューする際には、以下のprefix(接頭辞)を付けましょう。
-    [must] → かならず変更してね
-    [imo] → 自分の意見だとこうだけど修正必須ではないよ(in my opinion)
-    [nits] → ささいな指摘(nitpick)
-    [q] → 質問(question)
+    [must] → プログラムに重大な影響を及ぼすため必ず変更してね
+    [imo] → 修正した方が良いと私は思うけど、必須ではないよ(in my opinion)
+    [nits] → ささいな内容の修正指摘 (nitpick)
+    [q] → 質問 (question)
     [fyi] → 参考情報
 -->
 ```
