@@ -171,10 +171,22 @@ Claude Code が確認できず、ユーザーが確認すべき項目はToDo形�
 - Draft Pull Requestでの作成
 - ブランチ環境での動作検証
 
-#### テスト戦略
+## 開発理念
+
+### テスト戦略
 - PR作成時の自動テスト実行
 - 機能の重要度・影響範囲に応じた選択的テスト実装
 - ビジネスロジックの重要度に基づくテスト優先度決定
+- t-wada流 Test-Driven Development (TDD) に基づく開発
+  - 🔴 Red: 失敗するテストを書く
+  - 🟢 Green: テストを通す最小限の実装
+  - 🔵 Refactor: リファクタリング
+
+#### TDD時のコミットルール
+
+- 🔴 テストを書いたら: `test: [feature]`
+- 🟢 テストを通したら: `feat: implement [feature]`
+- 🔵 リファクタリングしたら: `refactor: [description]`
 
 ## GitHub 連携ガイドライン
 
