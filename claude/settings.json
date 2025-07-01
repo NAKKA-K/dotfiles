@@ -1,10 +1,15 @@
 {
   "permissions": {
     "allow": [
+      "Bash(afplay:*)",
+      "Bash(say:*)",
+
       "Bash(git:*)",
       "Bash(gh:*)",
+
       "Bash(npm:*)",
       "Bash(npx:*)",
+
       "Bash(mkdir:*)",
       "Bash(mv:*)",
       "Bash(cp:*)",
@@ -12,11 +17,11 @@
       "Bash(ls:*)",
       "Bash(cat:*)",
       "Bash(rg:*)",
-      "Bash(make:*)",
       "Bash(echo:*)",
       "Bash(pwd)",
       "Bash(open:*)",
-      "Bash(say:*)",
+
+      "Bash(make:*)",
       "Edit(./**)",
       "LS(*)",
       "Read(**)",
