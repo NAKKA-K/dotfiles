@@ -7,14 +7,13 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$GOPATH/bin:$PATH"
 export GOPATH=$HOME/dev/go
 export PATH="/usr/local/opt/libpq/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
 # export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 # export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export GPG_TTY=$TTY
 
 # eval "$(anyenv init -)"
 eval "$(direnv hook zsh)"
-eval "$(rbenv init - zsh)"
+eval "$(mise activate zsh)"
 source "$HOME/.rye/env"
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -31,6 +30,8 @@ complete -o nospace -C /usr/local/bin/terraform terraform
 
 
 # ===== Alias =====
+alias m='mise run'
+
 alias be='bundle exec'
 
 alias ls="ls -G"
