@@ -65,5 +65,3 @@ sshf() {
 }
 export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
