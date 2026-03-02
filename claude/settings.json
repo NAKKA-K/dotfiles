@@ -1,39 +1,72 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "env": {
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-5-20251101"
+  },
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
-      "Bash(afplay:*)",
-      "Bash(say:*)",
-
-      "Bash(git:*)",
-      "Bash(gh:*)",
-
-      "Bash(npm:*)",
-      "Bash(npx:*)",
-
-      "Bash(mkdir:*)",
-      "Bash(mv:*)",
-      "Bash(cp:*)",
-      "Bash(touch:*)",
-      "Bash(ls:*)",
-      "Bash(cat:*)",
-      "Bash(rg:*)",
-      "Bash(echo:*)",
+      "Bash(afplay *)",
+      "Bash(say *)",
+      "Bash(git *)",
+      "Bash(gh *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(mkdir *)",
+      "Bash(mv *)",
+      "Bash(cp *)",
+      "Bash(touch *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(rg *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(echo *)",
       "Bash(pwd)",
-      "Bash(open:*)",
-
-      "Bash(make:*)",
+      "Bash(open *)",
+      "Bash(make *)",
+      "Bash(yarn tsc *)",
+      "Bash(yarn test *)",
+      "Bash(yarn type-check)",
+      "Bash(yarn build)",
+      "Bash(yarn lint:*)",
+      "Bash(mysql *)",
+      "Bash(php -l:*)",
+      "Bash(go test *)",
       "Edit(./**)",
       "LS(*)",
       "Read(**)",
+      "Read(///**)",
       "Write(./**)",
-      "WebFetch(https://*)"
+      "WebFetch"
     ],
     "deny": [
       "Bash(rm -rf /)",
       "Bash(rm -rf ~)",
       "Bash(rm -rf /*)",
-      "Bash(curl:*)"
+      "Bash(curl *)",
+      "Read(.env)",
+      "Read(.env.*)"
+    ],
+    "ask": [
+      "Bash(git push *)"
     ]
   },
-  "includeCoAuthoredBy": false
+  "statusLine": {
+    "type": "command",
+    "command": "ccusage statusline"
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1754390441056
+  },
+  "enabledPlugins": {
+    "example-skills@anthropic-agent-skills": true,
+    "aws-common@aws-skills": true,
+    "aws-cdk@aws-skills": true,
+    "gopls-lsp@claude-plugins-official": true,
+    "php-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "ralph-loop@claude-plugins-official": true,
+    "go-skills@golang-skills": true
+  }
 }

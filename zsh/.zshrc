@@ -1,12 +1,20 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/sh-nakamura/.zsh/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PATH="$PATH:/usr/local/bin"
 export PATH="~/bin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 # export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$GOBIN:$PATH"
 export GOPATH=$HOME/dev/go
 export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 # export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
 # export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export GPG_TTY=$TTY
@@ -63,5 +71,7 @@ sshf() {
 
     ssh ${sshLoginHost}
 }
-export PATH="/opt/homebrew/opt/php@8.0/bin:$PATH"
-export PATH="/opt/homebrew/opt/php@8.0/sbin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
+
+. "$HOME/.local/bin/env"
