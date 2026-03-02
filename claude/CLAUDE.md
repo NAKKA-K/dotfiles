@@ -83,6 +83,7 @@ Issue → Branch → PR → Merge の基本フローに従う。
 
 Issueが存在しない場合はGitHub Issueを作成する。
 タイトルはユーザーが Claude Code に指示した問題の内容を簡潔にまとめる。
+Assignees は `NAKKA-K` を設定する（`gh issue create --assignee NAKKA-K`）。
 
 ```markdown
 ## 概要
@@ -111,7 +112,7 @@ Issueが存在しない場合はGitHub Issueを作成する。
 
 タスクの内容と実装した変更を簡潔にまとめる。
 
-Pull Requestは必ず `gh pr create --draft` コマンドでDraft Pull Requestとして作成する。
+Pull Requestは必ず `gh pr create --draft --assignee NAKKA-K` コマンドでDraft Pull Requestとして作成する。
 
 ```markdown
 ## 概要
