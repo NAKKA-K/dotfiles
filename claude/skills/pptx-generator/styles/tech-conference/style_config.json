@@ -1,0 +1,111 @@
+{
+  "style_name": "tech-conference",
+  "slide_dimensions": {
+    "width_emu": 9144000,
+    "height_emu": 5143500
+  },
+  "layouts": {
+    "title": {
+      "name": "TC_TITLE",
+      "description": "タイトルスライド（ダークネイビー背景・中央揃え）"
+    },
+    "content": {
+      "name": "TC_CONTENT",
+      "description": "コンテンツスライド（白背景・ティールトップバー）"
+    },
+    "section": {
+      "name": "TC_SECTION",
+      "description": "セクションヘッダー（ティール背景・中央揃え）"
+    }
+  },
+  "placeholders": {
+    "title_idx": 0,
+    "body_idx": 1,
+    "url_idx": 2
+  },
+  "fonts": {
+    "master_default": "Noto Sans JP",
+    "title_textbox_font": "Zen Kaku Gothic New",
+    "body_size_pt100": 1400,
+    "url_size_pt100": 1000,
+    "table_size_pt100": 1100,
+    "next_meeting_size_pt100": 1600,
+    "title_textbox_size_pt": 14
+  },
+  "bullet": {
+    "char": "•",
+    "font": "Arial",
+    "pitch_family": "34",
+    "charset": "0",
+    "size_pct": "100000",
+    "margin_l0": "457200",
+    "margin_l1": "914400"
+  },
+  "title_slide_textboxes": {
+    "issue": {
+      "left": 457200,
+      "top": 3800000,
+      "width": 4000000,
+      "height": 400000
+    },
+    "date": {
+      "left": 5000000,
+      "top": 3800000,
+      "width": 3686400,
+      "height": 400000
+    },
+    "font": "Zen Kaku Gothic New",
+    "size_pt": 14,
+    "bold": true,
+    "color_rgb": "00B4D8",
+    "line_spacing": 1.2
+  },
+  "table_position": {
+    "left": 457200,
+    "top": 950000,
+    "width": 8229600,
+    "height": 3600000
+  },
+  "image_layout": {
+    "body_narrow_width": 4800000,
+    "img_right_left": 5400000,
+    "img_right_top": 950000,
+    "img_right_max_width": 3300000,
+    "img_right_max_height": 3600000
+  },
+  "url_hyperlink_color": "0094B4",
+  "url_separator_color": "909090",
+  "body_bold": false,
+  "available_layouts": [
+    {
+      "name": "TC_TITLE",
+      "index": 0,
+      "placeholders": [
+        {"idx": 0, "name": "TITLE"},
+        {"idx": 1, "name": "SUBTITLE"}
+      ]
+    },
+    {
+      "name": "TC_CONTENT",
+      "index": 1,
+      "placeholders": [
+        {"idx": 0, "name": "TITLE"},
+        {"idx": 1, "name": "BODY"},
+        {"idx": 2, "name": "URL"}
+      ]
+    },
+    {
+      "name": "TC_SECTION",
+      "index": 2,
+      "placeholders": [
+        {"idx": 0, "name": "TITLE"}
+      ]
+    }
+  ],
+  "content_guidelines": {
+    "lines_per_slide_min": 4,
+    "lines_per_slide_max": 10,
+    "bold_detail": "本文テキスト（見出し・箇条書き・サブ箇条書き）には太字を使用しない。太字を使用するのはタイトルスライドのテキストボックス（号数・日付）のみ",
+    "section_pattern": "見出し（heading）でトピックを分け、その下に箇条書き（bullet）で要点を列挙。必要に応じてサブ箇条書き（sub_bullet）で補足。セクション間に空行（empty）を挿入"
+  }
+}
