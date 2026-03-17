@@ -117,7 +117,7 @@ Pull Requestは必ず `gh pr create --draft --assignee NAKKA-K` コマンドでD
 ```markdown
 ## 概要
 
-どの GitHub Issue に関わる Pull Request か `- refs IssueURL` 記述する。
+どの GitHub Issue に関わる Pull Request か `- fixed IssueURL` 記述する。
 背景・目的・実装内容を踏まえた Pull Request 全体の概要を簡潔に記述する。
 
 ## 背景
