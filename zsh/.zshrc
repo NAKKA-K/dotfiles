@@ -9,20 +9,14 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export PATH="$PATH:/usr/local/bin"
 export PATH="~/bin:$PATH"
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-# export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="$GOBIN:$PATH"
 export GOPATH=$HOME/dev/go
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-# export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-# export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 export GPG_TTY=$TTY
 
-# eval "$(anyenv init -)"
 eval "$(direnv hook zsh)"
 eval "$(mise activate zsh)"
-source "$HOME/.rye/env"
 
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/sh-nakamura/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sh-nakamura/Downloads/google-cloud-sdk/path.zsh.inc'; fi
