@@ -1,0 +1,42 @@
+[tools]
+# Language runtimes
+node = "lts"
+python = "latest"
+ruby = "latest"
+go = "latest"
+java = "latest"
+erlang = "latest"
+lua = "latest"
+
+# Language package managers
+uv = "latest"
+
+# Version control
+git = "latest"
+gh = "latest"
+
+# Infrastructure & cloud
+terraform = "latest"
+awscli = "latest"
+ecspresso = "latest"
+ecschedule = "latest"
+
+# Shell utilities
+direnv = "latest"
+wget = "latest"
+tree = "latest"
+
+# Interactive CLI
+fzf = "latest"
+bat = "latest"
+ripgrep = "latest"
+
+# Data processing
+jq = "latest"
+yq = "latest"
+
+# iOS / Swift
+swiftlint = "latest"
+
+[hooks]
+postinstall = "sh $HOME/dotfiles/link.sh"
