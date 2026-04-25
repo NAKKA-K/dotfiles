@@ -22,3 +22,6 @@ yq = "latest"
 ecspresso = "latest"
 ecschedule = "latest"
 swiftlint = "latest"
+
+[hooks]
+postinstall = "sh $HOME/dotfiles/link.sh"
