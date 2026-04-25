@@ -33,6 +33,10 @@
       "Bash(mysql *)",
       "Bash(php -l:*)",
       "Bash(go test *)",
+      "Bash(gws calendar events list *)",
+      "Bash(gws drive files list *)",
+      "Bash(gws drive files export *)",
+      "Bash(gws docs documents get *)",
       "Edit(./**)",
       "LS(*)",
       "Read(**)",
@@ -50,23 +54,33 @@
     ],
     "ask": [
       "Bash(git push *)"
-    ]
+    ],
+    "defaultMode": "auto"
   },
+  "model": "claude-opus-4-7",
   "statusLine": {
     "type": "command",
-    "command": "ccusage statusline"
-  },
-  "feedbackSurveyState": {
-    "lastShownTime": 1754390441056
+    "command": "bash ~/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
     "example-skills@anthropic-agent-skills": true,
     "aws-common@aws-skills": true,
     "aws-cdk@aws-skills": true,
     "gopls-lsp@claude-plugins-official": true,
+    "go-skills@golang-skills": true,
     "php-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "ralph-loop@claude-plugins-official": true,
-    "go-skills@golang-skills": true
-  }
+    "slack@claude-plugins-official": true
+  },
+  "language": "japanese",
+  "effortLevel": "high",
+  "preferredNotifChannel": "terminal_bell",
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true,
+  "voiceEnabled": true,
+  "feedbackSurveyState": {
+    "lastShownTime": 1754390441056
+  },
+  "skipAutoPermissionPrompt": true
 }
