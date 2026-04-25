@@ -11,6 +11,8 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
+. "$HOME/.local/bin/env"
+
 eval "$(direnv hook bash)"
 eval "$(mise activate bash)"
 

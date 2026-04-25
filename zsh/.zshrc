@@ -15,6 +15,8 @@ export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export GPG_TTY=$TTY
 
+. "$HOME/.local/bin/env"
+
 eval "$(direnv hook zsh)"
 eval "$(mise activate zsh)"
 
@@ -67,5 +69,3 @@ sshf() {
 }
 export PATH="/opt/homebrew/opt/php@8.1/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@8.1/sbin:$PATH"
-
-. "$HOME/.local/bin/env"
