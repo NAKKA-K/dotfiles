@@ -35,6 +35,9 @@ ripgrep = "latest"
 jq = "latest"
 yq = "latest"
 
+# Linters
+golangci-lint = "latest"
+
 # iOS / Swift
 swiftlint = "latest"
 
