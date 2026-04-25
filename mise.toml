@@ -1,26 +1,41 @@
 [tools]
+# Language runtimes
 node = "lts"
 python = "latest"
-go = "latest"
 ruby = "latest"
+go = "latest"
 java = "latest"
 erlang = "latest"
 lua = "latest"
-terraform = "latest"
+
+# Language package managers
 uv = "latest"
+
+# Version control
 git = "latest"
-tree = "latest"
-wget = "latest"
-awscli = "latest"
-bat = "latest"
-direnv = "latest"
-fzf = "latest"
 gh = "latest"
-jq = "latest"
-ripgrep = "latest"
-yq = "latest"
+
+# Infrastructure & cloud
+terraform = "latest"
+awscli = "latest"
 ecspresso = "latest"
 ecschedule = "latest"
+
+# Shell utilities
+direnv = "latest"
+wget = "latest"
+tree = "latest"
+
+# Interactive CLI
+fzf = "latest"
+bat = "latest"
+ripgrep = "latest"
+
+# Data processing
+jq = "latest"
+yq = "latest"
+
+# iOS / Swift
 swiftlint = "latest"
 
 [hooks]
