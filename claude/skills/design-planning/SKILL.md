@@ -1,44 +1,44 @@
 ---
 name: design-planning
-description: Mandatory guardrail before any creative work (features, components, or logic changes). Steers the dialogue to explore true intent and constraints before a single line of code is written. Builds a conceptual blueprint through collaborative inquiry, strictly blocking implementation until a shared design is approved.
+description: あらゆる創造的作業（機能、コンポーネント、ロジック変更）の前に必須となるガードレール。一行のコードを書く前に、真の意図と制約を探るために対話を導く。共同探究を通して概念的な設計図を構築し、共通の設計が承認されるまで実装を厳格にブロックする。
 ---
 
-# Overview
+# 概要
 
-This skill acts as a mandatory "Design Planning" phase to be invoked **before** any creative work—including feature creation, component building, or modifying existing behavior and logic.
-It aims to collaboratively build a solid conceptual blueprint by exploring the user's true intent, requirements, and constraints through dialogue before a single line of code is written.
+このスキルは、機能の作成、コンポーネントの構築、既存の挙動・ロジックの変更を含むあらゆる創造的作業の **前** に呼び出すべき必須の「Design Planning」フェーズとして機能する。
+1 行のコードを書く前に、ユーザーの真の意図、要件、制約を対話で探りながら、しっかりとした概念的な設計図を共同で組み上げることを目的とする。
 
-Regardless of the perceived simplicity of a project, **DO NOT take any implementation action** (writing code, scaffolding projects, or modifying logic) until you have presented a design and received explicit user approval.
-Invoking any implementation-related skills is strictly prohibited until this process is complete.
+プロジェクトがどれほど単純に見えても、設計を提示しユーザーから明示的な承認を得るまで、**実装に関わる行動（コードの記述、プロジェクトのスキャフォールディング、ロジックの変更）を一切行ってはならない**。
+このプロセスが完了するまで、実装関連スキルの呼び出しは厳禁とする。
 
-# Anti-Pattern: "This Is Too Simple To Need A Design"
+# アンチパターン: 「これは設計が要らないほど単純だ」
 
-Every project goes through this process without exception. A todo list, a single-function utility, a config change — all of them. "Simple" projects are where unexamined assumptions cause the most wasted work. While the design can be short (even just a few sentences for truly simple projects), you **MUST present it and get approval** before moving forward.
+例外なく、すべてのプロジェクトはこのプロセスを通る。todo リスト、単一関数のユーティリティ、設定変更も同様である。「単純」なプロジェクトこそ、検証されない仮定が最大の手戻りを生む場所である。設計は短くてよい（本当に単純なプロジェクトでは数文程度でも構わない）が、先に進む前に **必ず提示し承認を得る**必要がある。
 
-# Step-by-Step Checklist
+# ステップバイステップのチェックリスト
 
-You MUST create a task for each of the following items and complete them in order:
+以下の各項目を必ずタスク化し、順番に完了させること。
 
-1. **Context Discovery** — Investigate relevant files, existing documentation, and recent commit history to understand the current project state.
-2. **Requirement Definition** — Define the purpose, technical constraints, and success criteria through collaborative dialogue.
-3. **Approach Proposals** — Present 2-3 approaches including a recommended path, comparing their respective trade-offs.
-4. **Incremental Design** — Break the design into manageable sections (e.g., architecture, data flow, UI) and obtain user approval for each section.
-5. **Documentation** — Summarize the final agreement into `.local/YYYY-MM-DD-<topic>-plan.md`. Follow the format in `references/plan-writing.md`.
+1. **Context Discovery** — 関連ファイル、既存ドキュメント、最近のコミット履歴を調査して、プロジェクトの現状を把握する。
+2. **Requirement Definition** — 対話を通じて目的、技術的制約、成功基準を定義する。
+3. **Approach Proposals** — 推奨案を含む 2 〜 3 のアプローチを、それぞれのトレードオフを比較しながら提示する。
+4. **Incremental Design** — 設計を扱いやすい単位（アーキテクチャ、データフロー、UI など）に分解し、各単位ごとにユーザーの承認を得る。
+5. **Documentation** — 最終合意を `.local/YYYY-MM-DD-<topic>-plan.md` にまとめる。フォーマットは `references/plan-writing.md` に従う。
 
-# Core Principles
+# 基本原則
 
-Guidelines for high-quality dialogue and maintaining strict "Guardrails."
+質の高い対話と厳格な「ガードレール」の維持に向けたガイドライン。
 
-- **One Question per Message** - Focus the dialogue and avoid overwhelming the user by asking only one clarifying question at a time.
-- **Provide Specific Options** - Whenever possible, present multiple choices (e.g., "Option A or B?") to facilitate faster and easier decision-making.
-- **Ruthless YAGNI** - Strictly eliminate features based on "future needs." Seek the leanest, most effective design for the current problem.
-- **Transparency of Trade-offs** - Act as an honest guide by clearly stating the disadvantages and risks of any proposal, including the recommended one.
-- **Embrace Flexibility** - If contradictions or new insights emerge, do not hesitate to circle back to previous steps to redefine assumptions.
+- **One Question per Message** — 一度に確認用の質問を 1 つだけ行うことで、対話を集中させ、ユーザーの負担を抑える。
+- **Provide Specific Options** — 可能な限り複数の選択肢（例: 「A 案・B 案？」）を提示し、判断を迅速かつ容易にする。
+- **Ruthless YAGNI** — 「将来必要かもしれない」を理由とした機能を厳しく排除する。現在の課題に対して最も筋肉質で効果的な設計を追求する。
+- **Transparency of Trade-offs** — 推奨案も含めて、提案の欠点とリスクを明示する誠実なガイドとして振る舞う。
+- **Embrace Flexibility** — 矛盾や新たな知見が出たら、ためらわず前のステップに戻り前提を再定義する。
 
-# Post-Design Action
+# 設計後のアクション
 
-Once the design has received final approval, follow these steps to conclude the design phase and open the door to implementation:
+設計が最終承認されたら、設計フェーズを締めくくり実装への扉を開くために以下の手順に従う。
 
-1. **Documentation** - Save the approved design as `.local/YYYY-MM-DD-<topic>-plan.md`.
-2. **Declaration of Transition** - Inform the user that the documentation is complete and ask, "Are you ready to proceed with the implementation?"
-3. **Lifting the Guardrail** - Only after receiving an explicit "GO" from the user is the Hard-Gate of this skill lifted. At this point, you are permitted to write code, scaffold projects, or modify logic.
+1. **Documentation** — 承認された設計を `.local/YYYY-MM-DD-<topic>-plan.md` として保存する。
+2. **Declaration of Transition** — ドキュメント化が完了した旨をユーザーに伝え、「実装に進んでよいでしょうか？」と確認する。
+3. **Lifting the Guardrail** — ユーザーから明示的な「GO」を得たときに限り、このスキルの Hard-Gate が解除される。この時点でコードの記述、プロジェクトのスキャフォールディング、ロジックの変更が許可される。

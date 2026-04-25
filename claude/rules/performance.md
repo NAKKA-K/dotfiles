@@ -1,39 +1,45 @@
-# Performance Optimization
+# パフォーマンス最適化
 
-## Model Selection Strategy
+## モデル選択戦略
 
-**Haiku 4.5** (90% of Sonnet capability, 3x cost savings):
-- Lightweight agents with frequent invocation
-- Pair programming and code generation
-- Worker agents in multi-agent systems
+**Haiku 4.5**（Sonnet の能力の 90%、コストは 3 分の 1）
 
-**Sonnet 4.5** (Best coding model):
-- Main development work
-- Orchestrating multi-agent workflows
-- Complex coding tasks
+- 頻繁に呼び出される軽量なエージェント
+- ペアプログラミングやコード生成
+- マルチエージェント構成における worker エージェント
 
-**Opus 4.5** (Deepest reasoning):
-- Complex architectural decisions
-- Maximum reasoning requirements
-- Research and analysis tasks
+**Sonnet 4.5**（最高のコーディングモデル）
 
-## Context Window Management
+- メインの開発作業
+- マルチエージェントワークフローのオーケストレーション
+- 複雑なコーディングタスク
 
-Avoid last 20% of context window for:
-- Large-scale refactoring
-- Feature implementation spanning multiple files
-- Debugging complex interactions
+**Opus 4.5**（最も深い推論）
 
-Lower context sensitivity tasks:
-- Single-file edits
-- Independent utility creation
-- Documentation updates
-- Simple bug fixes
+- 複雑なアーキテクチャ判断
+- 最大限の推論力が要求されるタスク
+- 調査・分析タスク
+
+## コンテキストウィンドウの管理
+
+以下のタスクではコンテキストウィンドウの最後の 20% を使わないようにする。
+
+- 大規模なリファクタリング
+- 複数ファイルにまたがる機能実装
+- 複雑な相互作用のデバッグ
+
+コンテキスト感度が低いタスク。
+
+- 単一ファイルの編集
+- 独立したユーティリティの作成
+- ドキュメントの更新
+- 単純なバグ修正
 
 ## Ultrathink + Plan Mode
 
-For complex tasks requiring deep reasoning:
-1. Use `ultrathink` for enhanced thinking
-2. Enable **Plan Mode** for structured approach
-3. "Rev the engine" with multiple critique rounds
-4. Use split role sub-agents for diverse analysis
+深い推論を要する複雑なタスクでは以下を行う。
+
+1. 拡張思考のために `ultrathink` を使う
+2. 構造化されたアプローチのために **Plan Mode** を有効化する
+3. 複数の批評ラウンドで「エンジンを煽る（rev the engine）」
+4. 多様な分析のために役割を分けたサブエージェントを使う

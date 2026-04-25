@@ -1,63 +1,63 @@
 ---
 name: security-review
-description: Security vulnerability detection and review based on OWASP Top 10. Use when implementing authentication/authorization, handling user input or file uploads, creating API endpoints, working with secrets/credentials, implementing payment features, storing/transmitting sensitive data, integrating third-party APIs, or before finalizing any code changes.
+description: OWASP Top 10 に基づくセキュリティ脆弱性の検出とレビュー。次のような場合に使用する。認証・認可の実装、ユーザー入力やファイルアップロードの取り扱い、API エンドポイントの作成、シークレット・認証情報の取り扱い、決済機能の実装、機密データの保存・送信、サードパーティ API との統合、コード変更を確定する前。
 ---
 
 # Security Review Skill
 
-Systematically review code for security vulnerabilities based on OWASP Top 10.
+OWASP Top 10 に基づき、コードのセキュリティ脆弱性を体系的にレビューする。
 
-## Execution Procedure
+## 実行手順
 
-### Step 1: Identify Scope
+### Step 1: スコープを特定する
 
 ```bash
-# List relevant source files
+# 関連するソースファイルをリストアップ
 find . -type f \( -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.py" \) \
   -not -path "*/node_modules/*" -not -path "*/.git/*" | head -50
 
-# Check for env files and gitignore
+# env ファイルと gitignore を確認
 ls -la .env* 2>/dev/null || true
 grep -E "(env|secret|key)" .gitignore 2>/dev/null || true
 ```
 
-### Step 2: Scan for Hardcoded Secrets (A02)
+### Step 2: ハードコードされたシークレットをスキャンする (A02)
 
 ```bash
-# Search for hardcoded secrets
+# ハードコードされたシークレットを検索
 grep -rn --include="*.ts" --include="*.js" --include="*.py" \
   -E "(password|secret|token|api_key|private_key)\s*[=:]\s*['\"][^'\"]+['\"]" . \
   --exclude-dir={node_modules,.git,dist,build}
 ```
 
-### Step 3: Detect Injection Vulnerabilities (A03)
+### Step 3: インジェクション脆弱性を検出する (A03)
 
 ```bash
-# SQL string concatenation
+# SQL の文字列連結
 grep -rn --include="*.ts" --include="*.js" --include="*.py" \
   -E "(SELECT|INSERT|UPDATE|DELETE).*\+" . \
   --exclude-dir={node_modules,.git,dist,build}
 
-# Command injection patterns
+# コマンドインジェクションのパターン
 grep -rn --include="*.ts" --include="*.js" --include="*.py" \
   -E "(exec|spawn|system|eval)\(" . \
   --exclude-dir={node_modules,.git,dist,build}
 ```
 
-### Step 4: Check Authentication (A01, A07)
+### Step 4: 認証を確認する (A01, A07)
 
 ```bash
-# Find auth-related files
+# 認証関連ファイルを探す
 find . -type f \( -name "*auth*" -o -name "*login*" -o -name "*session*" \) \
   -not -path "*/node_modules/*"
 
-# Token storage in localStorage (XSS vulnerable)
+# localStorage に保存されているトークン（XSS 脆弱性）
 grep -rn --include="*.ts" --include="*.tsx" --include="*.js" \
   -E "localStorage\.(set|get)Item.*token" . \
   --exclude-dir={node_modules,.git,dist,build}
 ```
 
-### Step 5: Check Dependencies (A06)
+### Step 5: 依存関係を確認する (A06)
 
 ```bash
 # npm/yarn
@@ -67,52 +67,52 @@ npm audit --json 2>/dev/null || yarn audit --json 2>/dev/null || true
 pip-audit 2>/dev/null || safety check 2>/dev/null || true
 ```
 
-## OWASP Top 10 Checklist
+## OWASP Top 10 チェックリスト
 
-### A01: Broken Access Control
+### A01: アクセス制御の不備（Broken Access Control）
 
-- [ ] Authorization on all endpoints
-- [ ] No direct object reference exposure
-- [ ] Rate limiting implemented
-- [ ] CORS properly configured
+- [ ] すべてのエンドポイントで認可を行う
+- [ ] direct object reference を露出させない
+- [ ] rate limiting を実装する
+- [ ] CORS を適切に設定する
 
-### A02: Cryptographic Failures
+### A02: 暗号化の失敗（Cryptographic Failures）
 
-- [ ] No hardcoded secrets
-- [ ] Secrets in environment variables
-- [ ] Strong algorithms (no MD5/SHA1 for security)
-- [ ] No sensitive data in logs
+- [ ] ハードコードされたシークレットがない
+- [ ] シークレットを環境変数で管理する
+- [ ] 強度の高いアルゴリズムを使う（セキュリティ用途で MD5／SHA1 を使わない）
+- [ ] ログに機密データを含めない
 
-### A03: Injection
+### A03: インジェクション（Injection）
 
-- [ ] Parameterized queries
-- [ ] Input validation
-- [ ] Output encoding
-- [ ] No command injection
+- [ ] パラメータ化クエリを使う
+- [ ] 入力検証を行う
+- [ ] 出力エンコーディングを行う
+- [ ] コマンドインジェクションがない
 
-### A05: Security Misconfiguration
+### A05: セキュリティの誤設定（Security Misconfiguration）
 
-- [ ] Security headers configured
-- [ ] Error messages don't leak info
-- [ ] Debug mode disabled in production
+- [ ] セキュリティヘッダーを設定する
+- [ ] エラーメッセージで情報を漏らさない
+- [ ] 本番では debug モードを無効化する
 
-### A07: Authentication Failures
+### A07: 認証の失敗（Authentication Failures）
 
-- [ ] Tokens in httpOnly cookies
-- [ ] Strong password hashing
-- [ ] Brute force protection
+- [ ] httpOnly cookie にトークンを保存する
+- [ ] 強度の高いパスワードハッシュを使う
+- [ ] ブルートフォース対策を行う
 
-### A09: Logging Failures
+### A09: ロギングの失敗（Logging Failures）
 
-- [ ] No sensitive data in logs
-- [ ] Security events logged
+- [ ] ログに機密データを含めない
+- [ ] セキュリティイベントをログに記録する
 
 ### A10: SSRF
 
-- [ ] URL validation
-- [ ] Allowlist for external hosts
+- [ ] URL を検証する
+- [ ] 外部ホストの allowlist を設ける
 
-## Input Validation Patterns
+## 入力検証パターン
 
 ### TypeScript (Zod)
 
@@ -139,42 +139,42 @@ class CreateUserRequest(BaseModel):
     age: conint(ge=0, le=150)
 ```
 
-## Output Format
+## 出力フォーマット
 
 ```text
-[SEVERITY] Vulnerability title
+[SEVERITY] 脆弱性のタイトル
 File: path/to/file.ext:line
-Category: OWASP category (e.g., A03:Injection)
-Issue: Description of the vulnerability
-Risk: Potential impact if exploited
-Fix: Remediation steps
+Category: OWASP カテゴリ（例: A03:Injection）
+Issue: 脆弱性の説明
+Risk: 悪用された場合の影響
+Fix: 修正手順
 <vulnerable code>  // BAD
 <secure code>      // GOOD
 ```
 
-### Severity Levels
+### 重大度レベル
 
-- **CRITICAL**: Actively exploitable, immediate risk
-- **HIGH**: Exploitable with some effort, significant impact
-- **MEDIUM**: Limited exploitability or impact
-- **LOW**: Minor issue, defense in depth
+- **CRITICAL**: 実際に悪用可能、即時のリスク
+- **HIGH**: ある程度の労力で悪用可能、影響大
+- **MEDIUM**: 悪用可能性または影響が限定的
+- **LOW**: 軽微な問題、多層防御の観点
 
-## Pre-Deployment Checklist
+## デプロイ前チェックリスト
 
-- [ ] No hardcoded secrets
-- [ ] All user inputs validated
-- [ ] SQL queries parameterized
-- [ ] User content sanitized
-- [ ] CSRF protection enabled
-- [ ] Tokens in httpOnly cookies
-- [ ] Authorization checks implemented
-- [ ] Rate limiting enabled
-- [ ] HTTPS enforced
-- [ ] Security headers configured
-- [ ] No sensitive data in error messages
-- [ ] No sensitive data in logs
-- [ ] Dependencies have no known vulnerabilities
+- [ ] ハードコードされたシークレットがない
+- [ ] すべてのユーザー入力を検証している
+- [ ] SQL クエリがパラメータ化されている
+- [ ] ユーザー由来のコンテンツがサニタイズされている
+- [ ] CSRF 対策が有効になっている
+- [ ] httpOnly cookie にトークンを保存している
+- [ ] 認可チェックが実装されている
+- [ ] rate limiting が有効になっている
+- [ ] HTTPS が強制されている
+- [ ] セキュリティヘッダーが設定されている
+- [ ] エラーメッセージに機密データが含まれていない
+- [ ] ログに機密データが含まれていない
+- [ ] 既知の脆弱性を持つ依存関係がない
 
-## Reference
+## 参照
 
-For security standards and detection patterns, see `~/.claude/rules/security.md`.
+セキュリティ基準と検出パターンは `~/.claude/rules/security.md` を参照。

@@ -1,99 +1,101 @@
 ---
 name: code-review
-description: Autonomous code review for evaluating generated or modified code. Use when (1) >50 lines generated/modified, (2) completing a feature, (3) fixing a bug, (4) making critical path changes (auth, payments, data). Skip for trivial changes (<10 lines with obvious correctness), documentation-only, or formatting-only changes.
+description: 生成・変更されたコードを評価する自律的なコードレビュー。次の場合に使用する。(1) 50 行を超える生成・変更、(2) 機能の完成、(3) バグ修正、(4) クリティカルパス（auth、payments、data）の変更。10 行未満で正しさが自明な変更、ドキュメントのみの変更、フォーマットのみの変更ではスキップする。
 ---
 
 # Code Review Skill
 
-Structured review methodology with confidence-based filtering for actionable feedback.
+実行可能なフィードバックを得るための、確信度ベースのフィルタリングを伴う構造化レビュー手法。
 
-## Review Process
+## レビュープロセス
 
-### 1. Scope Assessment
+### 1. スコープの把握
 
-Identify changed files, change type (feature/bugfix/refactor), and locate project guidelines (CLAUDE.md, README.md).
+変更されたファイル、変更タイプ（feature／bugfix／refactor）を特定し、プロジェクトのガイドライン（CLAUDE.md、README.md）を参照する。
 
-### 2. Multi-Perspective Analysis
+### 2. 多角的な分析
 
-**Always apply:**
-- **Bugs**: Logic errors, null handling, edge cases, race conditions, silent failures
-- **Security**: Input validation, auth gaps, injection risks, data exposure
-- **Quality**: Separation of concerns, error handling, DRY, readability
-- **History**: Breaking changes, regression risks, pattern consistency
+**常に適用する観点。**
 
-**Conditional:**
-- **Tests**: When test files changed—coverage of critical paths and edge cases
-- **Contracts**: When APIs/types changed—type safety, backward compatibility, data model consistency
+- **バグ**: ロジックの誤り、null 処理、エッジケース、競合状態、サイレント失敗
+- **セキュリティ**: 入力検証、認証・認可の抜け、インジェクションリスク、データ露出
+- **品質**: 関心の分離、エラーハンドリング、DRY、可読性
+- **履歴**: 破壊的変更、リグレッションリスク、パターンの一貫性
 
-### 3. Confidence Scoring
+**条件付きで適用する観点。**
 
-Score each issue 0-100:
+- **テスト**: テストファイルが変更された場合 — クリティカルパスとエッジケースのカバレッジ
+- **コントラクト**: API・型が変更された場合 — 型安全性、後方互換性、データモデルの整合性
 
-| Score | Meaning |
-|-------|---------|
-| 0 | False positive or pre-existing |
-| 25 | Unverified, possibly false positive |
-| 50 | Real but minor or rare |
-| 75 | Verified, impacts functionality or in guidelines |
-| 100 | Certain, frequent, evidence confirms |
+### 3. 確信度スコアリング
 
-**Report only issues with confidence >= 80.**
+各 issue を 0 〜 100 でスコア付けする。
 
-### False Positives to Exclude
+| スコア | 意味 |
+|--------|------|
+| 0 | 偽陽性または既存問題 |
+| 25 | 未検証、偽陽性の可能性あり |
+| 50 | 実在するが軽微または稀 |
+| 75 | 検証済み、機能に影響、またはガイドライン記載事項 |
+| 100 | 確実、頻発、エビデンスで裏付けされている |
 
-- Pre-existing in unchanged code
-- Caught by linters/CI (imports, types, formatting)
-- Pedantic nitpicks
-- General concerns not in project guidelines
-- Silenced with ignore comments
-- Intentional changes related to the task
+**確信度 80 以上の issue のみを報告する。**
 
-## Output Format
+### 除外する偽陽性
 
-Report issues in flat format:
+- 変更されていないコードに既に存在する問題
+- linter／CI で検出される問題（import、型、フォーマット）
+- 重箱の隅をつつくような指摘
+- プロジェクトのガイドラインにない一般論
+- ignore コメントで抑止されている問題
+- タスクに関連する意図的な変更
+
+## 出力フォーマット
+
+issue はフラットな形式で報告する。
 
 ```text
-[SEVERITY] Short issue title
+[SEVERITY] 簡潔な issue タイトル
 File: path/to/file.ext:line
 Confidence: 85
-Issue: Brief description of the problem
-Fix: How to resolve it
+Issue: 問題の簡潔な説明
+Fix: 解決方法
 <bad code>   // BAD
 <good code>  // GOOD
 ```
 
-### Severity Levels
+### 重大度レベル
 
-| Level | Criteria | Action |
-|-------|----------|--------|
-| Critical | Runtime errors, security vulnerabilities, data loss | Must fix |
-| Important | Edge case failures, missing validation, test gaps | Should fix |
-| Minor | Style, docs, optimization opportunities | Consider |
+| Level | 基準 | 対応 |
+|-------|------|------|
+| Critical | 実行時エラー、セキュリティ脆弱性、データ損失 | 必修正 |
+| Important | エッジケースでの失敗、検証漏れ、テスト不足 | 修正推奨 |
+| Minor | スタイル、ドキュメント、最適化の余地 | 検討 |
 
-### Summary Format
+### サマリーフォーマット
 
 ```text
 ---
 Summary: 12 issues (2 critical, 3 important, 5 minor, 2 suggestions)
-Priority: Fix critical issues in auth module first
-Quality Gate: PASS / FAIL (any Critical = FAIL)
+Priority: auth モジュールの critical issue を最優先で修正する
+Quality Gate: PASS / FAIL（Critical が 1 件でもあれば FAIL）
 ```
 
-## Approval Criteria
+## 承認基準
 
-- **Approve**: No critical or important issues
-- **Conditional**: Important issues with clear mitigation plan
-- **Block**: Any critical issue present
+- **Approve**: critical・important issue がない
+- **Conditional**: important issue があるが明確な緩和策がある
+- **Block**: critical issue が 1 件でもある
 
-## Principles
+## 原則
 
-1. **Security first**: Block on critical security issues
-2. **Quantify**: Numbers, not "some" or "many"
-3. **Pragmatic**: Real issues over theoretical ones
-4. **Scale**: >500 lines → prioritize architecture/security over style
-5. **Actionable**: Every issue needs clear fix guidance
-6. **Velocity**: Catch real bugs, don't block on minor style
+1. **Security first**: critical なセキュリティ issue ではブロックする
+2. **Quantify**: 「いくつか」「多い」ではなく数値で示す
+3. **Pragmatic**: 理論上の問題ではなく実在する問題を扱う
+4. **Scale**: 500 行超 → スタイルよりアーキテクチャ・セキュリティを優先
+5. **Actionable**: すべての issue に明確な修正指針を添える
+6. **Velocity**: 実バグは捕まえる、軽微なスタイルではブロックしない
 
-## Reference
+## 参照
 
-For coding standards and thresholds, see `~/.claude/rules/coding-style.md`.
+コーディング基準としきい値は `~/.claude/rules/coding-style.md` を参照。

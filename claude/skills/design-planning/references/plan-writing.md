@@ -1,31 +1,31 @@
-# Plan Writing Guidelines
+# Plan Writing ガイドライン
 
-Reference material for the Documentation phase of the design-planning skill.
+design-planning スキルの Documentation フェーズ用のリファレンス資料。
 
-## Overview
+## 概要
 
-Write implementation plans so that a developer with **zero codebase context and no domain knowledge** can execute them without confusion.
+実装プランは、**コードベースの予備知識もドメイン知識もないエンジニア**が、混乱せずに実行できるように書く。
 
-- Include all information needed for each task
-- Provide exact file paths, code, and verification commands
-- Break into tasks completable in 2-5 minutes
+- 各タスクに必要な情報をすべて含める
+- 正確なファイルパス、コード、検証コマンドを提供する
+- 2 〜 5 分で完了できる粒度に分割する
 
-> For TDD cycles, commit practices, and code quality standards, see `~/.claude/rules/`.
+> TDD のサイクル、コミット運用、コード品質基準は `~/.claude/rules/` を参照。
 
-## Plan Document Format
+## プラン文書のフォーマット
 
-**Save to:** `.local/YYYY-MM-DD-<topic>-plan.md`
+**保存先:** `.local/YYYY-MM-DD-<topic>-plan.md`
 
-### Header
+### ヘッダ
 
 ```markdown
-# [Feature Name] Implementation Plan
+# [機能名] Implementation Plan
 
-**Goal:** [What this builds, one sentence]
+**Goal:** [何を作るのか、1 文で]
 
-**Architecture:** [Approach overview, 2-3 sentences]
+**Architecture:** [アプローチの概要、2 〜 3 文]
 
-**Tech Stack:** [Technologies and libraries used]
+**Tech Stack:** [使用する技術・ライブラリ]
 
 **References:**
 - TDD: `~/.claude/rules/testing.md`
@@ -34,27 +34,27 @@ Write implementation plans so that a developer with **zero codebase context and 
 ---
 ```
 
-### Task Structure
+### タスク構造
 
-Choose the structure based on task type.
+タスクの種類に応じて構造を選ぶ。
 
-#### Type A: Feature Implementation (TDD)
+#### Type A: 機能実装（TDD）
 
 ```markdown
-### Task N: [Component Name]
+### Task N: [コンポーネント名]
 
 **Files:**
 - Create: `exact/path/to/file.py`
 - Modify: `exact/path/to/existing.py:123-145`
 - Test: `tests/exact/path/to/test.py`
 
-**Process:** Follow TDD cycle per `~/.claude/rules/testing.md`
+**Process:** `~/.claude/rules/testing.md` の TDD サイクルに従う
 
-1. Write failing test
-2. Run test, confirm failure
-3. Write minimal implementation
-4. Run test, confirm pass
-5. Commit (`jj describe -m "feat: ..." && jj new`)
+1. 失敗するテストを書く
+2. テストを実行し、失敗することを確認する
+3. 最小限の実装を書く
+4. テストを実行し、合格することを確認する
+5. コミット (`jj describe -m "feat: ..." && jj new`)
 
 **Test Code:**
 \`\`\`python
@@ -74,18 +74,18 @@ Run: `pytest tests/path/test.py::test_name -v`
 Expected: PASS
 ```
 
-#### Type B: Configuration / Infrastructure
+#### Type B: 設定／インフラ
 
 ```markdown
-### Task N: [Configuration Name]
+### Task N: [設定名]
 
 **Files:**
 - Modify: `pyproject.toml`
 
 **Steps:**
-1. Apply changes
-2. Verify behavior
-3. Commit
+1. 変更を適用する
+2. 挙動を検証する
+3. コミットする
 
 **Changes:**
 \`\`\`toml
@@ -95,21 +95,21 @@ testpaths = ["tests"]
 
 **Verification:**
 Run: `pytest --collect-only`
-Expected: Tests under tests/ are collected
+Expected: tests/ 配下のテストが収集される
 ```
 
-#### Type C: Documentation
+#### Type C: ドキュメント
 
 ```markdown
-### Task N: [Document Name]
+### Task N: [ドキュメント名]
 
 **Files:**
 - Create: `docs/api.md`
 
 **Steps:**
-1. Create/update document
-2. Verify links and consistency
-3. Commit
+1. ドキュメントを作成または更新する
+2. リンクと整合性を確認する
+3. コミットする
 
 **Content:**
 \`\`\`markdown
@@ -118,60 +118,61 @@ Expected: Tests under tests/ are collected
 \`\`\`
 ```
 
-## Task Granularity Guide
+## タスク粒度のガイド
 
-**Target: Completable in 2-5 minutes**
+**目安: 2 〜 5 分で完了できる粒度**
 
-| Granularity | Judgment |
-|-------------|----------|
-| One test + one function | OK |
-| One config file change | OK |
-| Changes spanning multiple files | Consider splitting |
-| "Implement auth feature" | Too large - must split |
+| 粒度 | 判断 |
+|------|------|
+| 1 つのテスト + 1 つの関数 | OK |
+| 1 つの設定ファイル変更 | OK |
+| 複数ファイルにまたがる変更 | 分割を検討 |
+| 「auth 機能を実装」 | 大きすぎる - 必ず分割 |
 
-**When to split:**
-- Task description contains "and"
-- Multiple verification steps needed
-- Rollback on failure would be complex
+**分割が必要な兆候:**
 
-## Anti-Patterns
+- タスク説明に「and」や「〜と〜」が含まれる
+- 検証ステップが複数必要
+- 失敗時のロールバックが複雑になる
 
-| Pattern | Problem | Fix |
-|---------|---------|-----|
-| Too coarse | Executor gets lost, hard to rollback | Split into 2-5 min units |
-| Vague instructions | "handle appropriately", "as needed" | Write concrete code |
-| Missing paths | "add tests" | `tests/auth/test_login.py` |
-| No verification | Can't determine success/failure | Always include command + expected result |
-| Implicit assumptions | Executor lacks context | Document prerequisites and dependencies |
-| Code fragments only | "add this line" | Complete before/after code blocks |
+## アンチパターン
 
-## Quality Checklist
+| パターン | 問題 | 修正方針 |
+|----------|------|----------|
+| 粒度が粗すぎる | 実行者が迷子になり、ロールバックも難しい | 2 〜 5 分単位に分割する |
+| 曖昧な指示 | 「適切に処理する」「必要に応じて」 | 具体的なコードを書く |
+| パスがない | 「テストを追加」 | `tests/auth/test_login.py` |
+| 検証手順がない | 成功・失敗を判別できない | 必ずコマンドと期待結果を含める |
+| 暗黙の前提 | 実行者にコンテキストがない | 前提と依存関係を文書化する |
+| コード断片のみ | 「この行を追加」 | 変更前後の完全なコードブロック |
 
-Verify before finalizing the plan:
+## 品質チェックリスト
 
-- [ ] Each task completable in 2-5 minutes
-- [ ] File paths are complete (`src/auth/login.py` format)
-- [ ] Code is complete (actual code, not "add validation")
-- [ ] Verification commands and expected results specified
-- [ ] Task dependencies are clear (reason for ordering)
-- [ ] Prerequisites documented (required packages, env vars, etc.)
-- [ ] TDD tasks reference `~/.claude/rules/testing.md`
+プランを確定する前に確認する。
 
-## Good/Bad Examples
+- [ ] 各タスクが 2 〜 5 分で完了できる
+- [ ] ファイルパスが完全である（`src/auth/login.py` 形式）
+- [ ] コードが完全である（「validation を追加」ではなく実コード）
+- [ ] 検証コマンドと期待結果が明示されている
+- [ ] タスクの依存関係が明確（順序の理由）
+- [ ] 前提条件が文書化されている（必要なパッケージ、環境変数など）
+- [ ] TDD タスクは `~/.claude/rules/testing.md` を参照している
 
-### Bad: Vague and Too Coarse
+## 良い例 / 悪い例
+
+### 悪い例: 曖昧で粒度が粗い
 
 ```markdown
 ### Task 1: User Authentication
 
-Implement authentication feature. Handle errors appropriately
-and store passwords securely.
-Add tests.
+認証機能を実装する。エラーは適切に処理し、
+パスワードはセキュアに保存する。
+テストも追加する。
 ```
 
-**Problems:** Too coarse, "appropriately" is vague, no paths, no verification
+**問題点:** 粒度が粗すぎる、「適切に」が曖昧、パスがない、検証がない
 
-### Good: Specific and Executable
+### 良い例: 具体的で実行可能
 
 ```markdown
 ### Task 1: Password Hash Functions
@@ -180,7 +181,7 @@ Add tests.
 - Create: `src/auth/password.py`
 - Test: `tests/auth/test_password.py`
 
-**Process:** Follow TDD cycle per `~/.claude/rules/testing.md`
+**Process:** `~/.claude/rules/testing.md` の TDD サイクルに従う
 
 **Test Code:**
 \`\`\`python
@@ -219,5 +220,5 @@ Run: `pytest tests/auth/test_password.py -v`
 Expected: 3 passed
 
 **Dependencies:**
-- Requires `bcrypt` package (assumed already in `pyproject.toml`)
+- `bcrypt` パッケージが必要（`pyproject.toml` に既に含まれている前提）
 ```

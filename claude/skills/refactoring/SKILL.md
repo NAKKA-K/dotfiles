@@ -1,26 +1,26 @@
 ---
 name: refactoring
-description: Code refactoring guidance, dead code detection, and technical debt resolution. Use when method/function exceeds 30 lines, class has >10 methods, code duplication detected (3+ instances), cyclomatic complexity >10, technical debt cleanup requested, or legacy code modernization needed.
+description: コードのリファクタリング指針、デッドコード検出、技術的負債の解消。次のような場合に使用する。method/function が 30 行を超える、class のメソッドが 10 を超える、コードの重複が検出された（3 箇所以上）、循環的複雑度が 10 を超える、技術的負債のクリーンアップが要求された、レガシーコードのモダナイズが必要。
 ---
 
 # Refactoring Skill
 
-Systematic approach to improving code structure while preserving behavior.
+挙動を保ちながらコード構造を改善するための体系的なアプローチ。
 
-## Safety Prerequisites
+## 安全のための前提条件
 
-Before any refactoring:
+リファクタリング前に必ず確認する。
 
-- [ ] Tests exist and pass (coverage > 80%)
-- [ ] Understand scope of change impact
-- [ ] Can rollback (committed current state)
-- [ ] Have time margin (avoid near deadlines)
+- [ ] テストが存在し、合格している（カバレッジ 80% 超）
+- [ ] 変更による影響範囲を理解している
+- [ ] ロールバック可能（現状をコミット済み）
+- [ ] 時間的な余裕がある（締切直前は避ける）
 
-## Common Refactoring Patterns
+## よくあるリファクタリングパターン
 
 ### Extract Method/Function
 
-**When**: Method exceeds 20-30 lines, logical blocks can be named meaningfully
+**適用条件**: メソッドが 20 〜 30 行を超え、論理ブロックに意味のある名前を付けられる場合。
 
 ```text
 Before:
@@ -38,7 +38,7 @@ def process_order(order):
 
 ### Extract Class/Module
 
-**When**: Class has > 10-15 methods, clear subset works with same data
+**適用条件**: クラスのメソッド数が 10 〜 15 を超え、同じデータを扱う明確なサブセットがある場合。
 
 ```text
 Before:
@@ -62,7 +62,7 @@ class UserFormatter:
 
 ### Replace Nested Conditionals with Guard Clauses
 
-**When**: Multiple levels of nested if statements
+**適用条件**: if 文が複数階層にネストしている場合。
 
 ```text
 Before:
@@ -80,7 +80,7 @@ process()
 
 ### Inline Method
 
-**When**: Method body is as clear as method name, only called once
+**適用条件**: メソッド本体がメソッド名と同程度に明快で、呼び出しが 1 箇所のみの場合。
 
 ```text
 Before:
@@ -97,7 +97,7 @@ def get_rating():
 
 ### Replace Conditional with Polymorphism
 
-**When**: Switch/if-else on object type, same pattern repeated
+**適用条件**: オブジェクトの型に対する switch / if-else があり、同じパターンが繰り返されている場合。
 
 ```text
 Before:
@@ -116,93 +116,94 @@ class Cat:
 animal.make_sound()
 ```
 
-## Code Smell Detection
+## コードスメルの検出
 
-### Bloaters
+### Bloaters（肥大化）
 
-| Smell | Threshold |
-|-------|-----------|
-| Long Method | > 30 lines |
-| Large Class | > 15 methods |
-| Long Parameter List | > 4 params |
-| Primitive Obsession | Ungrouped related data |
+| Smell | しきい値 |
+|-------|----------|
+| Long Method | 30 行超 |
+| Large Class | 15 メソッド超 |
+| Long Parameter List | 引数 4 超 |
+| Primitive Obsession | 関連データが構造化されていない |
 
-### Couplers
+### Couplers（結合）
 
-| Smell | Indicator |
-|-------|-----------|
-| Feature Envy | More external than internal refs |
-| Inappropriate Intimacy | Access to private/internal |
+| Smell | 兆候 |
+|-------|------|
+| Feature Envy | 内部より外部参照が多い |
+| Inappropriate Intimacy | private／internal にアクセスしている |
 | Message Chains | a.b().c().d() |
 
-### Dispensables
+### Dispensables（不要物）
 
-| Smell | Indicator |
-|-------|-----------|
-| Dead Code | No callers |
-| Duplicate Code | Same logic 3+ times |
-| Speculative Generality | Unused abstractions |
+| Smell | 兆候 |
+|-------|------|
+| Dead Code | 呼び出し元がない |
+| Duplicate Code | 同じロジックが 3 箇所以上 |
+| Speculative Generality | 使われていない抽象化 |
 
-## Dead Code Detection
+## デッドコード検出
 
-### Search Patterns
+### 検索パターン
 
 ```bash
-# Detect unused functions/methods
+# 未使用の関数・メソッドを検出
 grep -r "def function_name" --include="*.py"
 grep -r "function_name(" --include="*.py"
 
-# Use static analysis tools
+# 静的解析ツールを利用する
 # TypeScript: ts-prune
 # JavaScript: knip, depcheck
 # Python: vulture
 ```
 
-### Safe Removal Process
+### 安全な削除手順
 
-1. Search for usage (Grep/Glob)
-2. Check test references
-3. Check dynamic calls (reflection, etc.)
-4. Mark as removal candidate (TODO/DEPRECATED)
-5. Remove after confirmation
-6. Verify with test execution
+1. 利用箇所を検索する（Grep／Glob）
+2. テストでの参照を確認する
+3. 動的呼び出し（リフレクション等）を確認する
+4. 削除候補としてマークする（TODO／DEPRECATED）
+5. 確認後に削除する
+6. テスト実行で検証する
 
-## Refactoring Workflow
+## リファクタリングのワークフロー
 
-### Phase 1: Assessment
+### Phase 1: 現状把握
 
 ```bash
-# Run static analysis
-npx ts-prune  # TypeScript dead code
-npx knip      # Unused dependencies/exports
+# 静的解析の実行
+npx ts-prune  # TypeScript のデッドコード
+npx knip      # 未使用の依存／エクスポート
 
-# Check complexity
+# 複雑度の確認
 npx eslint --rule 'complexity: ["error", 10]' src/
 ```
 
-### Phase 2: Plan
+### Phase 2: 計画
 
-Create refactoring plan with:
-- Target files and specific changes
-- Risk level (Low/Medium/High)
-- Required tests before/after
-- Rollback procedure
+以下を含むリファクタリング計画を作成する。
 
-### Phase 3: Execute
+- 対象ファイルと具体的な変更内容
+- リスクレベル（Low／Medium／High）
+- 変更前後で必要なテスト
+- ロールバック手順
 
-1. One refactoring at a time
-2. Run tests after each change
-3. Commit after each successful change
-4. Never mix feature changes with refactoring
+### Phase 3: 実行
 
-### Phase 4: Verify
+1. 1 度に 1 件ずつリファクタリングする
+2. 各変更の後にテストを実行する
+3. 各変更が成功するごとにコミットする
+4. 機能変更とリファクタリングを混ぜない
 
-- [ ] All tests pass
-- [ ] No performance degradation
-- [ ] No new warnings/errors
-- [ ] Documentation updated if needed
+### Phase 4: 検証
 
-## Output Format
+- [ ] 全テスト合格
+- [ ] パフォーマンス低下なし
+- [ ] 新しい warning／error なし
+- [ ] 必要に応じてドキュメントを更新
+
+## 出力フォーマット
 
 ### Refactoring Report
 
@@ -223,7 +224,7 @@ Create refactoring plan with:
 ## Refactoring Plan
 
 ### Phase 1: Quick Wins (Low Risk)
-1. Extract `validateOrder` from `processOrder` (file:line)
+1. `processOrder` から `validateOrder` を抽出 (file:line)
    - Pattern: Extract Method
    - Tests Required: order.test.ts
 
@@ -240,24 +241,24 @@ Create refactoring plan with:
 - Complexity Reduction: X%
 ```
 
-## Anti-Patterns to Avoid
+## 避けるべきアンチパターン
 
-### Over-Refactoring
+### 過剰なリファクタリング
 
-- Refactor for perfection
-- Create abstractions for single use
-- Sacrifice readability for "elegance"
+- 完璧を求めたリファクタリング
+- 一度しか使わない抽象化を作る
+- 「エレガンス」のために可読性を犠牲にする
 
-### Premature Optimization
+### 早すぎる最適化
 
-- Optimize without measurements
-- Sacrifice readability for performance
+- 計測なしの最適化
+- パフォーマンスのために可読性を犠牲にする
 
-### Breaking Changes
+### 破壊的変更
 
-- Change public APIs without versioning
-- Remove public methods without deprecation
+- バージョニングなしの公開 API 変更
+- deprecation なしの公開メソッド削除
 
-## Reference
+## 参照
 
-For code quality thresholds and approval criteria, see `~/.claude/rules/coding-style.md`.
+コード品質のしきい値と承認基準は `~/.claude/rules/coding-style.md` を参照。

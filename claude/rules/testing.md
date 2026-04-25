@@ -1,38 +1,39 @@
-# Testing Standards
+# テスト基準
 
-This document establishes TDD testing requirements and quality benchmarks.
+このドキュメントは TDD のテスト要件と品質基準を定める。
 
-## Core Principles
+## 基本原則
 
-The framework mandates **Test-First Always** methodology: "Write test first, see it fail, then implement" rather than writing implementation code beforehand.
+このフレームワークは **Test-First Always**（常にテストを先に書く）方針を必須とする。実装コードを先に書くのではなく、「先にテストを書き、失敗を確認し、それから実装する」という流れを徹底する。
 
-The **RED-GREEN-REFACTOR Cycle** structures development:
-1. RED: Create a failing test (must fail for correct reasons)
-2. GREEN: Implement minimum code to pass
-3. REFACTOR: Improve while maintaining green tests
+**RED-GREEN-REFACTOR サイクル**で開発を構造化する。
 
-Key requirements include writing one test at a time, ensuring complete test independence (no shared state or execution order dependencies), and committing only at green phases.
+1. RED: 失敗するテストを作成する（正しい理由で失敗していなければならない）
+2. GREEN: テストを通すための最小限の実装を行う
+3. REFACTOR: テストを green に保ったまま改善する
 
-## Prohibited Practices
+主要な要件は、テストを 1 件ずつ書くこと、テストの完全な独立性（共有状態や実行順序への依存がないこと）を確保すること、そして green フェーズでのみコミットすることである。
 
-- Skipping the RED phase by implementing without failing tests
-- Testing private methods or implementation details
-- Creating test interdependencies where later tests rely on earlier ones
+## 禁止事項
 
-## Test Structure Standards
+- 失敗するテストなしに実装を進めて RED フェーズをスキップすること
+- private メソッドや実装の詳細をテストすること
+- 後続のテストが先行するテストに依存するようなテスト間の依存関係を作ること
 
-Tests must follow the **AAA Pattern** (Arrange-Act-Assert) and use naming conventions like "should_[expected]_when_[condition]".
+## テスト構造の基準
 
-## Coverage & Quality Thresholds
+テストは **AAA パターン**（Arrange-Act-Assert）に従い、`should_[expected]_when_[condition]` のような命名規則を使用すること。
 
-| Category | Minimum | Target |
-|----------|---------|--------|
-| Overall coverage | 80% | 90% |
-| Business logic | 90% | 100% |
-| Critical paths | 100% | 100% |
+## カバレッジ・品質基準
 
-The **FIRST Principles** require tests be Fast (<10ms unit tests), Independent, Repeatable, Self-Validating, and Timely.
+| カテゴリ | 最低 | 目標 |
+|----------|------|------|
+| 全体カバレッジ | 80% | 90% |
+| ビジネスロジック | 90% | 100% |
+| クリティカルパス | 100% | 100% |
 
-## Acceptance Criteria
+**FIRST 原則**により、テストは Fast（unit テストは 10ms 未満）、Independent（独立）、Repeatable（再現可能）、Self-Validating（自己検証可能）、Timely（タイムリー）であることが求められる。
 
-Merges are blocked for coverage below 80%, test failures, or test interdependencies.
+## 受け入れ基準
+
+カバレッジが 80% 未満、テスト失敗、テスト間依存のいずれかに該当する場合はマージをブロックする。

@@ -1,119 +1,129 @@
-# Security Standards - Full Raw Content
+# セキュリティ基準 - フル原文
 
 セキュリティ基準（OWASP Top 10ベース）。スキャン手順と検証プロセスは `skills/security-review` を参照。
 
 ## OWASP Top 10 チェックリスト
 
-### A01: Broken Access Control
-- Authorization checks on all endpoints
-- No direct object reference exposure
-- Rate limiting implemented
-- CORS properly configured
-- Directory traversal prevention
+### A01: アクセス制御の不備（Broken Access Control）
 
-### A02: Cryptographic Failures
-- Data encrypted in transit (TLS)
-- Data encrypted at rest
-- Strong algorithms (no MD5, SHA1 for security)
-- Proper key management
-- No sensitive data in logs/errors
+- すべてのエンドポイントで認可チェックを行う
+- direct object reference を露出させない
+- rate limiting を実装する
+- CORS を適切に設定する
+- ディレクトリトラバーサルを防止する
 
-### A03: Injection
-- Parameterized queries (SQL)
-- Input validation and sanitization
-- Output encoding
-- Command injection prevention
-- Template injection prevention
+### A02: 暗号化の失敗（Cryptographic Failures）
 
-### A04: Insecure Design
-- Threat modeling performed
-- Security requirements defined
-- Secure architecture patterns
-- Business logic abuse prevention
+- 通信中のデータを暗号化する（TLS）
+- 保存データを暗号化する
+- 強度の高いアルゴリズムを使う（セキュリティ用途で MD5、SHA1 を使わない）
+- 適切な鍵管理を行う
+- ログ・エラーに機密データを含めない
 
-### A05: Security Misconfiguration
-- Default credentials changed
-- Unnecessary features disabled
-- Error messages don't leak info
-- Security headers configured
-- Dependencies up to date
+### A03: インジェクション（Injection）
 
-### A06: Vulnerable Components
-- Dependencies scanned for CVEs
-- No outdated libraries
-- Minimal dependency footprint
-- License compliance
+- パラメータ化クエリ（SQL）を使う
+- 入力検証とサニタイズを行う
+- 出力エンコーディングを行う
+- コマンドインジェクションを防止する
+- テンプレートインジェクションを防止する
 
-### A07: Authentication Failures
-- Strong password policy
-- Brute force protection
-- Secure session management
-- MFA support (if applicable)
-- Secure password storage (bcrypt, argon2)
+### A04: 安全でない設計（Insecure Design）
 
-### A08: Data Integrity Failures
-- Signed updates/downloads
-- CI/CD pipeline security
-- Deserialization safety
-- Integrity verification
+- 脅威モデリングを実施する
+- セキュリティ要件を定義する
+- セキュアなアーキテクチャパターンを使う
+- ビジネスロジックの悪用を防止する
 
-### A09: Logging & Monitoring Failures
-- Security events logged
-- No sensitive data in logs
-- Log integrity protected
-- Alerting configured
+### A05: セキュリティの誤設定（Security Misconfiguration）
 
-### A10: Server-Side Request Forgery (SSRF)
-- URL validation
-- Allowlist for external requests
-- Internal network access blocked
-- Response handling secured
+- デフォルト認証情報を変更する
+- 不要な機能を無効化する
+- エラーメッセージで情報を漏らさない
+- セキュリティヘッダーを設定する
+- 依存関係を最新に保つ
+
+### A06: 脆弱なコンポーネント（Vulnerable Components）
+
+- 依存関係を CVE スキャンする
+- 古いライブラリを使わない
+- 依存関係を最小限にする
+- ライセンスを遵守する
+
+### A07: 認証の失敗（Authentication Failures）
+
+- 強固なパスワードポリシーを設ける
+- ブルートフォース対策を行う
+- セキュアなセッション管理を行う
+- 必要に応じて MFA をサポートする
+- セキュアにパスワードを保存する（bcrypt、argon2）
+
+### A08: データ整合性の失敗（Data Integrity Failures）
+
+- 署名付きアップデート・ダウンロードを使う
+- CI/CD パイプラインのセキュリティを確保する
+- デシリアライズの安全性を確保する
+- 整合性検証を行う
+
+### A09: ロギング・監視の失敗（Logging & Monitoring Failures）
+
+- セキュリティイベントをログに記録する
+- ログに機密データを含めない
+- ログの完全性を保護する
+- アラートを設定する
+
+### A10: SSRF（Server-Side Request Forgery）
+
+- URL を検証する
+- 外部リクエストの allowlist を設ける
+- 内部ネットワークへのアクセスをブロックする
+- レスポンス処理をセキュアにする
 
 ## 禁止事項
 
-### Secrets in Code
+### コード内のシークレット
 
 ```javascript
-// ❌ Never allow
+// ❌ 禁止
 const apiKey = "sk-abc123"
 const password = "password123"
 
-// ✅ Require
+// ✅ 必須
 const apiKey = process.env.API_KEY
 const password = process.env.DB_PASSWORD
 ```
 
-### Weak Cryptography
+### 弱い暗号化
 
 ```python
-# ❌ Never allow
+# ❌ 禁止
 password_hash = hashlib.md5(password.encode()).hexdigest()
 
-# ✅ Require
+# ✅ 必須
 password_hash = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
 ```
 
-### SQL Injection
+### SQL インジェクション
 
 ```javascript
-// ❌ Never allow
+// ❌ 禁止
 const query = "SELECT * FROM users WHERE id = " + userId
 
-// ✅ Require
+// ✅ 必須
 const query = "SELECT * FROM users WHERE id = ?"
 db.execute(query, [userId])
 ```
 
-### Unvalidated Input
+### 未検証の入力
 
 ```javascript
-// ❌ Never allow
+// ❌ 禁止
 app.get('/user/:id', (req, res) => {
   const user = db.getUser(req.params.id)
   res.send(user)
 })
 
-// ✅ Require
+// ✅ 必須
 app.get('/user/:id', (req, res) => {
   const id = parseInt(req.params.id)
   if (!id || id < 1) return res.status(400).send('Invalid ID')
@@ -124,7 +134,7 @@ app.get('/user/:id', (req, res) => {
 
 ## 必須セキュリティヘッダー
 
-すべての Web アプリケーションで設定必須：
+すべての Web アプリケーションで設定必須。
 
 ```text
 Content-Security-Policy: default-src 'self'
@@ -142,23 +152,23 @@ Permissions-Policy: geolocation=(), microphone=()
 
 | Severity | Action |
 |----------|--------|
-| CRITICAL | ❌ Block deployment |
-| HIGH | ❌ Block deployment |
-| MEDIUM (> 5) | ⚠️ Require plan |
-| LOW | ✅ Can deploy |
+| CRITICAL | ❌ デプロイをブロック |
+| HIGH | ❌ デプロイをブロック |
+| MEDIUM (> 5) | ⚠️ 計画を要求 |
+| LOW | ✅ デプロイ可 |
 
 ### Zero Tolerance（1つでもあればブロック）
 
-- Hardcoded credentials
-- SQL injection vulnerabilities
-- Command injection vulnerabilities
-- Authentication bypass
-- Data exposure without encryption
-- Missing critical security headers
+- ハードコードされた認証情報
+- SQL インジェクション脆弱性
+- コマンドインジェクション脆弱性
+- 認証バイパス
+- 暗号化されていないデータの露出
+- クリティカルなセキュリティヘッダーの欠落
 
 ## セキュリティ対応プロトコル
 
-セキュリティ問題発見時：
+セキュリティ問題発見時。
 
 1. **STOP** - 即座に作業停止
 2. **Review** - `skills/security-review` でスキャン

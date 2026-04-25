@@ -1,15 +1,15 @@
 ---
 name: eval-driven-development
-description: EDD workflow for rubric-driven, measurable improvements. Use when modifying skills, prompts, configurations, or any artifact where quality can be evaluated before and after changes. Define evaluation criteria first, score the current state as a baseline, implement changes, then compare before/after to confirm improvement.
+description: ルーブリック駆動で計測可能な改善を行うための EDD ワークフロー。スキル、プロンプト、設定など、変更前後で品質を評価できるあらゆる成果物を変更するときに使用する。先に評価基準を定義し、現状をベースラインとして採点し、変更を実施してから、変更前後を比較して改善を確認する。
 ---
 
 # Eval-Driven Development (EDD)
 
-Changes driven by explicit evaluation criteria, not intuition.
+直感ではなく、明示的な評価基準に駆動された変更。
 
-**Core principle:** Define what "good" looks like before touching anything.
+**核となる原則:** 何かに手を入れる前に「良い」とは何かを定義する。
 
-## Workflow
+## ワークフロー
 
 ```
 ┌──────────────┐     ┌────────────────┐     ┌─────────────┐     ┌──────────────┐
@@ -18,28 +18,30 @@ Changes driven by explicit evaluation criteria, not intuition.
 └──────────────┘     └────────────────┘     └─────────────┘     └──────────────┘
 ```
 
-## Step 1: Define Rubric
+## Step 1: ルーブリックの定義
 
-Derive criteria from the relevant spec, guidelines, or goals. Each criterion must be binary (✅ / ❌) or scored (0–2).
+関連する仕様、ガイドライン、目標から基準を導出する。各基準は二値（✅ ／ ❌）またはスコア（0 〜 2）でなければならない。
 
 ```markdown
 | # | Criterion | Source |
 |---|-----------|--------|
-| E1 | [Measurable condition] | [Spec reference] |
-| E2 | [Measurable condition] | [Spec reference] |
+| E1 | [計測可能な条件] | [仕様の参照先] |
+| E2 | [計測可能な条件] | [仕様の参照先] |
 ```
 
-**Good criteria:**
-- Objective and verifiable ("frontmatter contains only `name` and `description`")
-- Derived from an authoritative source (guidelines, spec, contract)
+**良い基準。**
 
-**Bad criteria:**
-- Subjective ("looks good", "feels clean")
-- Not derivable from the artifact itself
+- 客観的かつ検証可能（例:「フロントマターに `name` と `description` のみが含まれる」）
+- 権威ある情報源（ガイドライン、仕様、契約）から導出されている
 
-## Step 2: Baseline Evaluation
+**悪い基準。**
 
-Score every target artifact against the rubric before making any changes.
+- 主観的（「良さそう」「すっきりしている」）
+- 成果物そのものから導出できない
+
+## Step 2: ベースライン評価
+
+変更を加える前に、対象の成果物すべてをルーブリックに照らして採点する。
 
 ```markdown
 | Target | E1 | E2 | E3 | Score |
@@ -48,18 +50,18 @@ Score every target artifact against the rubric before making any changes.
 | bar    | ❌ | ❌ | ✅ | 1/3   |
 ```
 
-This baseline is the ground truth. Do not skip it—without it, "improvement" is unverifiable.
+このベースラインが ground truth となる。これを省略してはならない。これがなければ「改善」は検証不能である。
 
-## Step 3: Implement
+## Step 3: 実装
 
-Make targeted changes to fix failing criteria. One criterion at a time is preferred.
+ルーブリックで失敗とされた基準を修正するためのターゲットを絞った変更を行う。1 度に 1 基準が望ましい。
 
-- Fix only what the rubric flags as failing
-- Do not introduce changes outside the rubric's scope
+- ルーブリックが失敗としてフラグした内容のみを修正する
+- ルーブリックの範囲外の変更は行わない
 
-## Step 4: Eval After and Compare
+## Step 4: 評価と比較
 
-Re-score using the identical rubric. Present a side-by-side comparison.
+同一のルーブリックで再採点する。サイドバイサイドで比較を提示する。
 
 ```markdown
 | Target | E1 Before→After | E2 Before→After | E3 Before→After | Score Before→After |
@@ -68,33 +70,33 @@ Re-score using the identical rubric. Present a side-by-side comparison.
 | bar    | ❌ → ✅         | ❌ → ✅         | ✅ → ✅         | 1/3 → 3/3          |
 ```
 
-If a criterion still fails after changes, note it explicitly and explain why.
+変更後も基準が満たされない場合は、その旨と理由を明示する。
 
-## Output Format
+## 出力フォーマット
 
-Always present all four steps visibly, in order:
+4 つのステップすべてを順番に可視化して提示すること。
 
 ```
 ## Rubric
-[Criteria table]
+[基準の表]
 
 ## Baseline (Before)
-[Scoring table]
+[採点表]
 
 ## Changes
-[What was changed and why, mapped to failing criteria]
+[失敗した基準にひもづけて、何をなぜ変更したか]
 
 ## Result (After)
-[Comparison table]
-[Summary: X/Y criteria now passing across all targets]
+[比較表]
+[Summary: 全対象でX/Y基準が満たされるようになった]
 ```
 
-## When Rubric Criteria Are Unclear
+## ルーブリックの基準が不明確なとき
 
-If the spec or guidelines are ambiguous, surface the ambiguity before scoring:
+仕様やガイドラインが曖昧な場合は、採点の前に曖昧さを表に出す。
 
-1. Propose a candidate interpretation
-2. Ask for confirmation
-3. Lock in the interpretation, then proceed
+1. 候補となる解釈を提案する
+2. 確認を求める
+3. 解釈を確定し、その上で進める
 
-Never invent criteria without grounding them in an authoritative source.
+権威ある情報源に根拠を持たない基準を勝手に発明してはならない。
