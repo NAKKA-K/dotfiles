@@ -71,16 +71,17 @@
     "php-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "ralph-loop@claude-plugins-official": true,
-    "slack@claude-plugins-official": true
+    "slack@claude-plugins-official": true,
+    "claude-code-setup@claude-plugins-official": true
   },
   "language": "japanese",
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "preferredNotifChannel": "terminal_bell",
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754390441056
-  },
-  "skipAutoPermissionPrompt": true
+  }
 }
