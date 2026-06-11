@@ -1,8 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "env": {
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "claude-opus-4-5-20251101"
-  },
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
@@ -52,12 +49,9 @@
       "Read(.env)",
       "Read(.env.*)"
     ],
-    "ask": [
-      "Bash(git push *)"
-    ],
     "defaultMode": "auto"
   },
-  "model": "claude-opus-4-7",
+  "model": "claude-fable-5[1m]",
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
@@ -76,8 +70,10 @@
   },
   "language": "japanese",
   "effortLevel": "xhigh",
+  "skipDangerousModePermissionPrompt": true,
   "preferredNotifChannel": "terminal_bell",
   "remoteControlAtStartup": true,
+  "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,

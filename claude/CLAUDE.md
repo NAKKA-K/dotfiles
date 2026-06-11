@@ -36,7 +36,7 @@ Claude Codeは、任意のファイル、Issue、Pull Requestを変更する前�
 
 タスクを進めるにあたって、以下の状況となった時には音声通知でユーザーに知らせること
 
-- **タスク完了時**: `afplay /System/Library/Sounds/Glass.aiff` （必須：タスクが完了したら必ず実行する）
+- **タスク完了時**: cmuxが通知を送信するため、Claudeが通知する必要はない
 - **ユーザー確認必要時**: `afplay /System/Library/Sounds/Ping.aiff`
 - **エラー/問題発生時**: `afplay /System/Library/Sounds/Basso.aiff`
 
@@ -78,6 +78,7 @@ Issue → Branch → PR → Merge の基本フローに従う。
 4. **品質チェック**: すべての変更において、変更種別に関わらずLintツールとテストの成功を必ず確認する
 5. **Git Push**: 作成したbranchをremote repositoryにpushする
 6. **Pull Request作成**: 必ず `gh pr create --draft` コマンドでDraft Pull Requestとして作成する
+7. **関連Issueの整理**: PR作成後、その実装が紐づく GitHub Issue（特に umbrella issue）を整理する。詳細は「### Issueの整理」を参照
 
 ### Issue
 
@@ -147,6 +148,33 @@ Claude Code が確認できず、ユーザーが確認すべき項目はToDo形�
 
 ```
 
+### Issueの整理
+
+実装を進めて Pull Request を作成したら、そのタイミングで紐づく Issue を整理する。複数 PR で進める umbrella issue では、進捗が一目で追える状態を保つことを重視する。
+
+- 完了したタスクのチェックボックスを `[x]` に更新する
+- 各タスクに対応する Pull Request 番号をリンクする（例: `→ #1234`）
+- 着手できなかった項目には保留理由（前提待ち・環境依存など）を簡潔に併記する
+- umbrella issue では冒頭にマイルストーン単位の進捗サマリ表を置き、PR 番号と状態（✅ 完了 / ⏸ 保留 / ⬜ 未着手）を最新化する
+- 既存の人手記述や調査コメントは保持し、差分のみ追記・更新する。全体を上書きしない
+
+### 動作検証
+
+PR 作成時には変更内容に応じた検証を実施し、結果を PR の「検証内容」に記載する。
+
+- lint・フォーマッタ・静的解析・テストを実行する。ランタイムバージョンに依存する検証は本番と同じバージョンの Docker コンテナで実行する
+- パッケージを削除する場合は、コードに参照が残っていないことを grep で確認する
+- 特定の修正の取り込みを目的としたパッケージ更新では、対象コミットがそのバージョンに含まれることを GitHub API の compare で確認する
+
+#### ブランチ環境での動作検証（Claude in Chrome）
+
+変更ファイルに関連する画面を Claude in Chrome で操作して確認する。
+
+- GET 系: 関連画面が正常表示されること
+- POST 系: フォーム submit が成功すること。データは値を変えない再保存にするか、検証後に元の値へリストアする
+- 異常系: 必須項目を空にする等でバリデーションエラーが表示されること
+- ブラウザ console にエラーが出ていないこと
+
 ### TDD戦略
 
 #### t-wada流TDD（Test-Driven Development）の実施
@@ -167,6 +195,42 @@ Claude Code が確認できず、ユーザーが確認すべき項目はToDo形�
 4. **デバッグ用ログ追加**: 既存機能を変更しないログ出力の追加
 5. **定数値・設定値変更**: ロジックを変更しない値の調整
 6. **軽微なリファクタリング**: 外部仕様を変更しない変数名変更等
+
+## 依存関係のバージョン指定
+
+### パッケージバージョン
+
+`package.json` や `composer.json` 等のパッケージマネージャ設定では、バージョンを完全固定で指定する。`^`、`~`、`*` 等の範囲指定は使わない。
+
+```jsonc
+// ❌ 禁止
+"dependencies": {
+  "react": "^19.1.0",
+  "next": "~15.3.2",
+  "lodash": "*"
+}
+
+// ✅ 必須
+"dependencies": {
+  "react": "19.1.0",
+  "next": "15.3.2",
+  "lodash": "4.17.21"
+}
+```
+
+### GitHub Actions
+
+GitHub Actions の `uses` ではコミットハッシュで固定し、コメントでバージョンタグを併記する。
+
+```yaml
+# ❌ 禁止
+- uses: actions/setup-node@v4
+- uses: actions/checkout@main
+
+# ✅ 必須
+- uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+- uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+```
 
 ## GitHub 連携ガイドライン
 

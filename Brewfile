@@ -23,6 +23,11 @@ brew "pre-commit"
 brew "git-extras"
 brew "vim"
 
+# シェル拡張 (zsh プロンプト・補完・候補表示)
+brew "powerlevel10k"
+brew "zsh-autosuggestions"
+brew "zsh-completions"
+
 # 言語ランタイム (mise で管理しないもの)
 brew "perl"
 brew "php"
@@ -55,6 +60,7 @@ brew "microsoft/apm/apm"
 # brew "sanemat/font/ricty"     # Ricty フォント (旧 tap sanemat/font)
 
 cask "aws-vault-binary"
+cask "font-meslo-lg-nerd-font"
 cask "raycast"
 cask "warp"
 
