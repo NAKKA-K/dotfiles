@@ -145,6 +145,45 @@
     line-height: 1.5;
   }
 
+  .update {
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 3px 3px 0;
+    background: var(--paper);
+    padding: 14px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .update-h {
+    font-size: .66rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .update ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    gap: 5px 26px;
+  }
+  .update li {
+    display: flex;
+    gap: 9px;
+    align-items: baseline;
+    font-size: .84rem;
+    color: var(--ink-2);
+    line-height: 1.7;
+  }
+  .update li .ref {
+    flex: none;
+    font-size: .68rem;
+    color: var(--ink-3);
+    min-width: 4.2em;
+  }
+
   /* ---------- shell ---------- */
   .shell {
     max-width: 1180px;
@@ -462,6 +501,22 @@
       <div class="vital"><dt>認定</dt><dd>長期優良住宅</dd></div>
       <div class="vital"><dt>同居</dt><dd>犬あり</dd></div>
     </dl>
+
+    <div class="update">
+      <p class="update-h mono">2026-08-29 更新 &nbsp;/&nbsp; 決まったこと</p>
+      <ul>
+        <li><span class="ref mono">A-3</span><span>洗濯は洗濯乾燥機で完結。乾かないものは浴室に干す</span></li>
+        <li><span class="ref mono">A-3</span><span>トイレの手洗いは不要。洗面が来客用を兼ねる</span></li>
+        <li><span class="ref mono">A-3</span><span>浴室も脱衣室も専用暖房なし。脱衣室はエアコンで賄う</span></li>
+        <li><span class="ref mono">A-1</span><span>仕事部屋が2室必要</span></li>
+        <li><span class="ref mono">A-8</span><span>有線 LAN 3か所（リビング TV 裏・仕事部屋×2）、Cat6A</span></li>
+        <li><span class="ref mono">A-8</span><span>モニター付きインターホン</span></li>
+        <li><span class="ref mono">A-8</span><span>ホームジムは床補強か荷重分散マットで対応</span></li>
+        <li><span class="ref mono">B-5</span><span>リビング・寝室・仕事部屋は調光＋調色</span></li>
+        <li><span class="ref mono">C-3</span><span>キッチンは3社に絞り込み（LIXIL は候補外）</span></li>
+        <li><span class="ref mono">E-2</span><span>バルコニー・犬の定位置・EV 充電は条件つきで継続検討</span></li>
+      </ul>
+    </div>
   </div>
 </header>
 
@@ -538,6 +593,24 @@
       <article class="item" data-tag="keep">
         <span class="tag keep">採用</span>
         <div class="item-body">
+          <h4>必要な部屋</h4>
+          <p>現時点で必要と分かっている部屋。35坪にこれを収める前提でプランを組む。</p>
+          <ul>
+            <li>リビング（縦長にするなら横幅 4.1m 前後）</li>
+            <li>寝室</li>
+            <li><b>仕事部屋 × 2</b> ─ それぞれに有線 LAN が必要（A-8）</li>
+            <li>ホームジム（パワーラック）</li>
+            <li>パントリー 1.3畳（A-2）</li>
+            <li>ファミリークローク／コートクローク（A-4）</li>
+            <li>犬の定位置 ─ リビング内か、専用の部屋か（E-2）</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>仕事部屋が2室ある点は面積配分に効く。延床 35坪 で2階建てという条件で、この構成が成立するかを早い段階でボリューム検討してほしい。あわせて、2室で同時に Web 会議をする可能性があるなら、部屋どうしの遮音（A-6 のドアの取捨）も一緒に見たい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
           <h4>南側が正面に来ない土地を選ぶ</h4>
           <p>南向きに窓を取りたくなるので、南接道だと家の正面に大きな窓が並んでしまう。道路と採光面をずらせる土地を優先する。</p>
           <p>日陰になるという意味では北庭も悪くない。土地の形によっては開けている側を庭にしたくなるので、その場合はシェード等で調整する。</p>
@@ -557,7 +630,7 @@
         <div class="item-body">
           <h4>家事動線を最優先で見る</h4>
           <p>洗う・干す・しまう、買って冷蔵庫に入れる、犬まわりの世話。日常で一番回数が多い動きを短くする。</p>
-          <div class="ask"><b>確認</b><span>ランドリールームを作らない前提（A-3）なので、洗濯機の位置・干す場所・しまう場所の三点をどこに置くかは早い段階で確定させたい。</span></div>
+          <p>洗濯は洗濯乾燥機で完結させる方針が決まったので（A-3）、動線としては「洗濯機 → しまう場所」の距離が主眼になる。干す動作は例外運用。</p>
         </div>
       </article>
     </div>
@@ -712,7 +785,8 @@
         <div class="item-body">
           <h4>浴室暖房乾燥機</h4>
           <p>設置費・修理費・ランニングコストのすべてが高い高級品。ただし浴室の換気そのものは必要なので、換気扇は入れる。</p>
-          <div class="ask"><b>確認</b><span>浴室暖房を入れないと冬のヒートショックが気になるため、脱衣室の暖房をどうするか（断熱で吸収するのか、小型の暖房機を置くのか）を C-1 とあわせて詰めたい。</span></div>
+          <p>浴室の暖房は現在も使っておらず、無しで問題ない。脱衣室についても専用の暖房は設けず、エアコンで賄う前提。</p>
+          <div class="ask"><b>確認</b><span>エアコンの空気が脱衣室まで届く必要がある。ドアを開けておくのか、建具にガラリを入れるのか、通気の経路を A-6（ドアの取捨）とあわせて図面で確認したい。</span></div>
         </div>
       </article>
 
@@ -721,7 +795,17 @@
         <div class="item-body">
           <h4>ランドリールーム</h4>
           <p>専用室は作らない。洗濯物を畳むための造作カウンターも絶対に要らない。</p>
-          <div class="ask"><b>確認</b><span>代わりに「洗う・干す・しまう」をどこで行うかの想定が必要。乾燥機（ドラム式 or 別置き）前提にするのか、室内干しスペースを取るのか、バルコニーを設けるのか。ここが未定のまま進むと後から一番困る。</span></div>
+          <p>洗濯は<b>洗濯乾燥機で完結させる</b>。乾燥にかけられないものが稀に出るので、それは<b>浴室に干す</b>。干すための専用スペースも室内物干しも要らない。</p>
+          <div class="ask"><b>確認</b><span>洗濯乾燥機はドラム式一体型か、洗濯機と乾燥機の別置き（上下設置）か。機種によって必要な間口・防水パン・搬入経路・排熱と電源が変わるので、想定機種を先に決めて設置スペースを図面に入れたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>浴室に物干しバーを付ける</h4>
+          <p>乾燥機にかけられないものを干す場所として使う（A-3 のランドリールーム参照）。使用頻度は低いので、竿は最小限でよい。</p>
+          <div class="ask"><b>確認</b><span>浴室暖房乾燥機を入れない以上、乾かすのは換気扇のみになる。換気扇の風量で現実的に乾くのか、乾くまで浴室が使えない時間がどのくらいかを確認したい。物干しバーの本数と高さもここで決める。</span></div>
         </div>
       </article>
 
@@ -779,7 +863,7 @@
         <div class="item-body">
           <h4>トイレ内の手洗い場</h4>
           <p>タオルを掛ける場所が要る／水はねで掃除が増える、と手間が積み上がる。トイレを出てすぐ洗面に行ける動線にすることで代替する。</p>
-          <div class="ask"><b>確認</b><span>この要望は「トイレの出口＝洗面のすぐ隣」を間取りの条件にするということ。来客時に洗面（生活空間）を通ることになる点も含め、配置を検討したい。</span></div>
+          <p><b>洗面が来客用の手洗いを兼ねる</b>前提でよい。来客が洗面を使うことは問題にしない。したがって「トイレの出口から洗面がすぐ」が間取りの条件になる。</p>
         </div>
       </article>
 
@@ -1120,8 +1204,42 @@
         <span class="tag keep">採用</span>
         <div class="item-body">
           <h4>ホームジム（パワーラック）の設置場所</h4>
-          <p>パワーラックを置ける場所を最初から確保する。</p>
-          <div class="ask"><b>確認</b><span>設置階によって床の補強とラックに必要な天井高（懸垂バーの上に余裕が要る）の条件が変わる。1階に置くのか、2階なら床荷重をどう見るのかを構造と一緒に確認したい。</span></div>
+          <p>パワーラックを置ける場所を最初から確保する。荷重への対策は<b>床補強</b>か<b>荷重分散マット</b>のどちらかで行う。</p>
+          <div class="ask"><b>確認</b><span>どちらで対応するかは設置階で決まる。1階なら分散マットで足りる可能性があり、2階なら床補強が要る見込み。設置階を決めたうえで、ラック本体＋プレートの想定重量に対して必要な対策を構造で判定してほしい。ラックに必要な天井高（懸垂バーの上の余裕）も同時に確認する。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>有線 LAN を3か所に配線する</h4>
+          <p>高気密高断熱の家は壁を閉じたあとに配線を通せないので、必要な場所を先に確定させる。</p>
+          <ul>
+            <li>リビングのテレビ裏</li>
+            <li>仕事部屋 A</li>
+            <li>仕事部屋 B</li>
+          </ul>
+          <p>ケーブルは<b>カテゴリ 6A</b>（10GBASE-T 対応）で通す。</p>
+          <div class="spec mono"><span>Cat6A</span><span>10GbE 対応</span><span>3か所</span></div>
+          <div class="ask"><b>確認</b><span>3か所を集約するルーター／スイッチングハブをどこに置くか（情報分電盤にするか、収納の一角にするか）。10GbE 対応機器は発熱するので、放熱できる場所と電源が要る。テレビ裏はケーブルを隠す造作（A-4）との取り合いも確認したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>モニター付きインターホン</h4>
+          <p>玄関の来客を室内のモニターで確認できるようにする。</p>
+          <div class="ask"><b>確認</b><span>ポストを玄関横のシューズクロークに抜けさせる計画（A-4）があるので、玄関子機・ポスト・表札の外壁面での配置をまとめて決めたい。室内モニターの設置場所と高さも指定する。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>EV 車用の充電ポート</h4>
+          <p>将来 EV に乗り換える可能性を想定して、充電ポートを用意するかどうかを検討する。</p>
+          <div class="ask"><b>確認</b><span>今すぐ本体を付けなくても、分電盤から駐車場まで空配管を通して 200V の回路容量だけ確保しておく選択肢がある。あとから引き直す場合の費用と比較して判断したい。</span></div>
         </div>
       </article>
 
@@ -1333,9 +1451,14 @@
       <article class="item" data-tag="keep">
         <span class="tag keep">採用</span>
         <div class="item-body">
-          <h4>照明の光量を調整できるようにする</h4>
-          <p>数を減らすぶん、時間帯や用途で明るさを変えられることの価値が上がる。調光する範囲を指定する。</p>
-          <div class="ask"><b>確認</b><span>調光は器具・スイッチ・電源の3点が対応している必要がある。どの部屋を調光対応にするかを電気打合せ前に決めておきたい。あわせて色温度（2700K / 3000K など）を家全体で統一するかも決めたい。</span></div>
+          <h4>調光・調色に対応させる部屋</h4>
+          <p>ダウンライトの数を減らすぶん、明るさと色を変えられることの価値が上がる。次の3室は<b>調光・調色の両方</b>を必須とする。</p>
+          <ul>
+            <li>リビング</li>
+            <li>寝室</li>
+            <li>仕事部屋（2室とも）</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>調光・調色は器具・スイッチ・電源の3点が揃って初めて機能する。Panasonic アドバンスシリーズ（下記）で調光調色に対応する品番の組み合わせを提示してほしい。また、この3室以外は固定色になるので、そちらの色温度（2700K / 3000K など）を家全体でどう揃えるかも決めたい。</span></div>
         </div>
       </article>
 
@@ -1478,21 +1601,27 @@
       <article class="item" data-tag="keep">
         <span class="tag keep">採用</span>
         <div class="item-body">
-          <h4>キッチンは Panasonic L-Class を想定</h4>
-          <p>IH の薄さが決め手。他に、トリプルワイドコンロ（調理メニュー設定が揃っていて保温やハンバーグモードがある／スイッチをしまえるので汚れにくい）、熱を感知して自動で風量が上がるレンジフード、スゴピカ素材。</p>
+          <h4>キッチンの候補は3社</h4>
+          <p>現在、次の3つで検討中。LIXIL は A-2 の必須要件（天板勝ち・シンク下オープン）を満たせないため候補から外れている。</p>
+          <ul>
+            <li><b>Panasonic L-Class</b> ─ IH の薄さが決め手。トリプルワイドコンロ（調理メニュー設定が揃っていて保温やハンバーグモードがある／スイッチをしまえるので汚れにくい）、熱を感知して自動で風量が上がるレンジフード、スゴピカ素材</li>
+            <li><b>クリナップ ステディア</b></li>
+            <li><b>グラフテクト</b></li>
+          </ul>
+          <p>それぞれの詳細は下の調査結果を参照。</p>
         </div>
       </article>
 
       <article class="item" data-tag="maybe">
         <span class="tag maybe">検討</span>
         <div class="item-body">
-          <h4>比較対象メーカーの調査結果</h4>
+          <h4>各社の調査結果</h4>
           <ul>
             <li><b>クリナップ</b> ─ ステディア / セントロ。人大（フォルテックス）またはセラミック天板。流れーるシンク、自動お掃除レンジフード。価格帯 100〜200万円</li>
             <li><b>グラフテクト</b> ─ どのレイアウトでも値段が変わらないのが強み。価格帯 140〜200万円。高機能素材エバルト天板は、メラミン樹脂なので剥がれたら終わりという弱さもある。全体の統一感は良い</li>
-            <li><b>LIXIL</b> ─ ノクトだと天板勝ちにできず、シンク下を開けることもできない（A-2 の要件と衝突）。それ以外は大体同じ。カウンターの長さを変えたり、一部だけカウンターにしたりできるのは良い</li>
+            <li><b>LIXIL</b>（候補外）─ ノクトだと天板勝ちにできず、シンク下を開けることもできない（A-2 の要件と衝突）。それ以外は大体同じ。カウンターの長さを変えたり、一部だけカウンターにしたりできるのは良い</li>
           </ul>
-          <div class="ask"><b>確認</b><span>A-2 の必須要件（二型／壁側コンロ／シンク下オープン／カウンター 170cm 級／60cm フロントオープン食洗機／天板勝ち）を満たせるかどうかで、まず候補を機械的に絞りたい。</span></div>
+          <div class="ask"><b>確認</b><span>残る3社について、A-2 の必須要件（二型／壁側コンロ／シンク下オープン／カウンター 170cm 級／60cm フロントオープン食洗機／天板勝ち）をすべて満たした構成で相見積もりを出してほしい。同じ条件で並べないと価格が比較できない。</span></div>
         </div>
       </article>
 
@@ -1755,18 +1884,19 @@
     <div class="phase">
       <div class="phase-head"><span class="step mono">2</span><h3>基本設計</h3><span class="when mono">間取り確定まで</span></div>
       <ul class="checks">
-        <li><span class="who">動線</span><div class="q"><b>洗濯の「洗う・干す・しまう」をどこで行うか</b><span>ランドリールームを作らない（A-3）以上、これが未定のまま進むのが一番危険。乾燥機前提にするか、室内干しスペースを取るか、バルコニーを設けるか。</span></div></li>
-        <li><span class="who">プラン</span><div class="q"><b>バルコニーを設けるかどうか</b><span>メモに記載がない。防水のメンテ費用と、洗濯の方針次第。</span></div></li>
-        <li><span class="who">プラン</span><div class="q"><b>1階と2階の機能配分</b><span>寝室・ホームジム・ファミリークローク・水回りをどちらに置くか。ここが決まらないと階段の位置も決まらない。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>延床 35坪 に部屋構成が収まるか</b><span>リビング／寝室／仕事部屋2室／ホームジム／パントリー／各クローク（A-1）。仕事部屋が2室ある前提でのボリューム検討を先に出してもらう。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>1階と2階の機能配分</b><span>寝室・仕事部屋2室・ホームジム・水回りをどちらに置くか。ここが決まらないと階段の位置も決まらない。</span></div></li>
         <li><span class="who">プラン</span><div class="q"><b>階段の位置と形状</b><span>リビング階段かホール階段か。踊り場付きで四角く折れる形（A-5）に必要な面積をどこから捻出するか。</span></div></li>
         <li><span class="who">プラン</span><div class="q"><b>吹き抜けを設けるか</b><span>高天井・下がり床の話（A-7）はあるが吹き抜けの可否は未定。高気密高断熱なら空調上は成立するが、2階の面積と音に効く。</span></div></li>
+        <li><span class="who">犬</span><div class="q"><b>犬の定位置をリビングにするか、専用の部屋にするか</b><span>専用の部屋にすると1室ぶん面積が増えるので、上の部屋構成と一緒に決める必要がある。リビングなら床材（B-4）とソファまわりの計画に効く。</span></div></li>
+        <li><span class="who">犬</span><div class="q"><b>散歩帰りの足洗い場をどこにするか</b><span>立水栓（A-8）で外で洗うのか、玄関土間で洗えるようにするのか。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>ホームジムの設置階</b><span>床補強か荷重分散マットかは設置階で決まる（A-8）。ラックの天井高も同時に確認する。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>仕事部屋2室の広さと相互の遮音</b><span>同時に Web 会議をする可能性があるなら、隣接させない・間に収納を挟むなどの対処が要る。廊下を削る方針（A-1）とのトレードオフになる。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>バルコニーを設けるか</b><span>洗濯は乾燥機で完結するので干す目的では不要（A-3）。判断材料はエアコン室外機の置き場所と、2階の避難経路として要るかどうかの2点。</span></div></li>
         <li><span class="who">プラン</span><div class="q"><b>2階に水回り（トイレ・洗面）を置くか</b><span>置くなら配管の縦経路と、1階の下がり天井の位置に影響する。</span></div></li>
-        <li><span class="who">プラン</span><div class="q"><b>書斎・ワークスペースの要否</b><span>メモに記載がない。在宅勤務の有無で必要な広さと防音が変わる。</span></div></li>
-        <li><span class="who">犬</span><div class="q"><b>犬の定位置・トイレ・足洗い場をどこにするか</b><span>ペットカート・ご飯・シーツの収納（A-4）は決まっているが、犬自身の居場所が未定。散歩から帰ったときの足洗いの動線（立水栓か玄関土間か）も含めて決める。</span></div></li>
-        <li><span class="who">プラン</span><div class="q"><b>ホームジムの設置階と床の条件</b><span>パワーラックの荷重と、懸垂バーの上に必要な天井高（A-8）。2階に置くなら床補強の要否を構造で確認。</span></div></li>
+        <li><span class="who">設備</span><div class="q"><b>洗濯乾燥機の想定機種と設置スペース</b><span>ドラム式一体型か別置きか（A-3）。間口・防水パン・搬入経路・電源が変わる。</span></div></li>
         <li><span class="who">プラン</span><div class="q"><b>パントリーの広さと冷蔵庫の納まり</b><span>1.3畳想定（A-2）。扉の開き勝手・放熱・専用コンセント・通路幅まで図面に落とす。</span></div></li>
         <li><span class="who">収納</span><div class="q"><b>収納リストを場所ごとに割り付ける</b><span>合計 3.5畳 + ポール 3m + カート（A-4）を、シューズクローク／コートクローク／ファミリークローク／各室にどう配分するか。奥行きは場所ごとに指定する。</span></div></li>
-        <li><span class="who">プラン</span><div class="q"><b>来客動線とトイレ・洗面の見え方</b><span>トイレに手洗いを付けない（A-3）ため、来客が洗面（生活空間）を使うことになる。それを許容するか、配置で解決するか。</span></div></li>
       </ul>
     </div>
 
@@ -1777,7 +1907,7 @@
         <li><span class="who">性能</span><div class="q"><b>断熱材の種類・厚み・付加断熱の有無</b><span>同上。屋根／壁／基礎それぞれの仕様を数値で押さえる。</span></div></li>
         <li><span class="who">設備</span><div class="q"><b>24時間換気の方式（第1種か第3種か）</b><span>犬の毛による詰まりの懸念（A-8）。ペットのいる家での実例で判断する。</span></div></li>
         <li><span class="who">設備</span><div class="q"><b>給湯方式</b><span>メモには給湯器の「位置」だけがあり、方式が未定。エコキュートかガスか、容量はどうするか。</span></div></li>
-        <li><span class="who">設備</span><div class="q"><b>冷暖房の方式</b><span>エアコンのみか、床暖房を入れるか、全館空調にするか。浴室暖房を入れない（A-3）ぶん、脱衣室の冬の寒さをどこで吸収するか。</span></div></li>
+        <li><span class="who">設備</span><div class="q"><b>冷暖房の方式</b><span>エアコンのみか、床暖房を入れるか、全館空調にするか。脱衣室はエアコンで賄う方針が決まっている（A-3）ので、その空気が届く経路も含めて方式を選ぶ。</span></div></li>
         <li><span class="who">外観</span><div class="q"><b>屋根形状 ─ 寄棟かキューブか</b><span>玄関の 1.5m 庇（A-7）と太陽光の載せ方（C-2）に直結する。見た目とコスト・維持費の両面で比較する（B-6）。</span></div></li>
         <li><span class="who">外観</span><div class="q"><b>外壁材と色</b><span>「メンテナンスフリー」の定義を各社に出させて、30年の維持費で比較する（B-6）。</span></div></li>
         <li><span class="who">内装</span><div class="q"><b>床材の最終決定と色トーン</b><span>タイル調フローリング＋ペットコーティングが有力（B-4）。コーティングの耐用年数と再施工費用も込みで決める。</span></div></li>
@@ -1787,7 +1917,7 @@
         <li><span class="who">内装</span><div class="q"><b>巾木の高さ・形状</b><span>薄い巾木（B-3）の具体寸法。入巾木（壁と面一）まで踏み込むかどうか。</span></div></li>
         <li><span class="who">建具</span><div class="q"><b>建具の色・面材・ハンドル形状</b><span>上吊り引き戸（A-6）の製品を決めると、ハンドル高さが確定してスイッチ高さも決められる（A-8）。</span></div></li>
         <li><span class="who">内装</span><div class="q"><b>天井の色・素材を変える範囲</b><span>内外を連続させる部分（A-7）だけ変えるのか、リビング全体にかけるのか。軒天の材との取り合いを確認する。</span></div></li>
-        <li><span class="who">キッチン</span><div class="q"><b>キッチンメーカーの最終決定</b><span>A-2 の必須要件を満たせるかで機械的に絞る。L-Class 想定だが、クリナップ・グラフテクトとの相見積もりは取る（C-3）。</span></div></li>
+        <li><span class="who">キッチン</span><div class="q"><b>キッチンメーカーの最終決定</b><span>Panasonic L-Class / クリナップ ステディア / グラフテクトの3社で検討中（C-3）。A-2 の必須要件をすべて満たした同一条件で相見積もりを取って比較する。</span></div></li>
         <li><span class="who">壁</span><div class="q"><b>マグネット対応パネルの採用箇所と工法</b><span>鋼板下地かマグネット塗料か。下地なら壁を閉じる前に決めておく必要がある（B-2）。</span></div></li>
       </ul>
     </div>
@@ -1796,14 +1926,16 @@
       <div class="phase-head"><span class="step mono">4</span><h3>電気・設備打合せ</h3><span class="when mono">着工前</span></div>
       <ul class="checks">
         <li><span class="who">照明</span><div class="q"><b>ダウンライトの目標数と配置</b><span>提案数から何割減らすか。減らした場所に将来用の配線を先行させるか（B-5）。</span></div></li>
-        <li><span class="who">照明</span><div class="q"><b>色温度を家全体で統一するか</b><span>メモに記載がない。2700K か 3000K か、部屋で変えるか。ここがバラバラだと雰囲気が崩れる。</span></div></li>
-        <li><span class="who">照明</span><div class="q"><b>調光対応にする部屋と、間接照明の有無</b><span>器具・スイッチ・電源の3点が揃って初めて調光できる（B-5）。</span></div></li>
+        <li><span class="who">照明</span><div class="q"><b>調光・調色対応の器具とスイッチの品番</b><span>リビング・寝室・仕事部屋2室が対象（B-5）。Panasonic アドバンスシリーズで組める構成を出してもらう。</span></div></li>
+        <li><span class="who">照明</span><div class="q"><b>調光・調色をしない部屋の色温度</b><span>3室以外は固定色になるので、2700K か 3000K かを家全体で揃えるかを決める（B-5）。</span></div></li>
+        <li><span class="who">照明</span><div class="q"><b>間接照明を入れる場所</b><span>入れるなら壁を閉じる前に下地と配線が要る。</span></div></li>
         <li><span class="who">電気</span><div class="q"><b>コンセント・スイッチの位置と高さの一覧</b><span>場所ごとに個別指定する（A-8）。スイッチの並び順ルールもここで確定させる。</span></div></li>
-        <li><span class="who">電気</span><div class="q"><b>LAN 配線・Wi-Fi アクセスポイント・TV 配線</b><span>メモに記載がない。高気密高断熱の家は壁内配線をあとから通せないので、必要な部屋への有線と AP 用の PoE を先に決めておく。</span></div></li>
-        <li><span class="who">電気</span><div class="q"><b>EV 充電用コンセントを付けるか</b><span>今すぐ不要でも、駐車場まで空配管だけ通しておく判断はここで行う。</span></div></li>
-        <li><span class="who">空調</span><div class="q"><b>エアコンの設置位置・台数・先行配管</b><span>空気の流れから位置を決め、隠蔽配管は避ける。後付け分のスリーブと電源も同時に（A-8）。</span></div></li>
+        <li><span class="who">電気</span><div class="q"><b>ルーター／スイッチングハブの設置場所</b><span>有線 LAN 3か所（A-8）を集約する場所。10GbE 機器の発熱を逃がせて、電源が取れることが条件。</span></div></li>
+        <li><span class="who">電気</span><div class="q"><b>TV アンテナ・光回線の引込位置</b><span>LAN の集約場所と近いほど取り回しが楽になる。</span></div></li>
+        <li><span class="who">電気</span><div class="q"><b>EV 充電ポートを用意するか</b><span>本体を付けるか、空配管と 200V 回路だけ先行させるか、何もしないか（A-8）。</span></div></li>
+        <li><span class="who">空調</span><div class="q"><b>エアコンの設置位置・台数・先行配管</b><span>空気の流れから位置を決め、隠蔽配管は避ける。脱衣室まで空気が届く経路も確認する（A-3 / A-8）。後付け分のスリーブと電源も同時に。</span></div></li>
         <li><span class="who">設備</span><div class="q"><b>床下・天井点検口の位置</b><span>生活動線から少し外す（A-8）。ダクト経路（A-2）で生じる下がり天井の位置と一緒に確認する。</span></div></li>
-        <li><span class="who">防犯</span><div class="q"><b>インターホン・防犯カメラ</b><span>メモに記載がない。ポストをシューズクロークに抜けさせる（A-4）関係で、玄関まわりの機器配置と一緒に決める。</span></div></li>
+        <li><span class="who">防犯</span><div class="q"><b>防犯カメラを付けるか</b><span>モニター付きインターホンは採用済み（A-8）。カメラを足すなら電源と配線をここで決める。</span></div></li>
       </ul>
     </div>
 
