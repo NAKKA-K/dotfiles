@@ -1,0 +1,3081 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>35坪の家 要望整理</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600;700&family=Noto+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  :root {
+    color-scheme: light;
+    --paper:        #F1F2EE;
+    --surface:      #FBFBF9;
+    --surface-2:    #E7EAE4;
+    --ink:          #1A2426;
+    --ink-2:        #4B5A59;
+    --ink-3:        #77847E;
+    --rule:         #D8DBD3;
+    --rule-strong:  #BCC2B8;
+    --accent:       #2F6B5C;
+    --accent-soft:  #DCE8E2;
+    --warn:         #8C6210;
+    --warn-soft:    #EFE4C9;
+    --todo:         #9E4438;
+    --todo-soft:    #F1DDD9;
+    --off:          #66706B;
+    --off-soft:     #E2E5DF;
+    --shadow:       0 1px 2px rgba(26,36,38,.05);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --paper:       #121716;
+      --surface:     #19201E;
+      --surface-2:   #222A28;
+      --ink:         #E7EBE6;
+      --ink-2:       #AFBAB4;
+      --ink-3:       #87928C;
+      --rule:        #2B3432;
+      --rule-strong: #3D4946;
+      --accent:      #74B49E;
+      --accent-soft: #1D3129;
+      --warn:        #CFA657;
+      --warn-soft:   #322810;
+      --todo:        #E08D7F;
+      --todo-soft:   #38201B;
+      --off:         #929D97;
+      --off-soft:    #252C2A;
+      --shadow:      0 1px 2px rgba(0,0,0,.3);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --paper:       #121716;
+    --surface:     #19201E;
+    --surface-2:   #222A28;
+    --ink:         #E7EBE6;
+    --ink-2:       #AFBAB4;
+    --ink-3:       #87928C;
+    --rule:        #2B3432;
+    --rule-strong: #3D4946;
+    --accent:      #74B49E;
+    --accent-soft: #1D3129;
+    --warn:        #CFA657;
+    --warn-soft:   #322810;
+    --todo:        #E08D7F;
+    --todo-soft:   #38201B;
+    --off:         #929D97;
+    --off-soft:    #252C2A;
+    --shadow:      0 1px 2px rgba(0,0,0,.3);
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.9;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .mono {
+    font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+  p { margin: 0; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  /* ---------- masthead ---------- */
+  .masthead {
+    border-bottom: 1px solid var(--rule-strong);
+    background: var(--surface);
+  }
+  .masthead-in {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 44px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  .eyebrow {
+    font-size: .68rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .masthead h1 {
+    font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+    font-weight: 700;
+    font-size: clamp(1.95rem, 4.2vw, 2.7rem);
+    line-height: 1.35;
+    letter-spacing: .02em;
+  }
+  .lede { max-width: 42em; color: var(--ink-2); font-size: .95rem; }
+
+  .vitals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--paper);
+  }
+  .vital {
+    flex: 1 1 128px;
+    padding: 11px 16px;
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .vital:last-child { border-right: 0; }
+  .vital dt { font-size: .66rem; letter-spacing: .12em; color: var(--ink-3); }
+  .vital dd {
+    margin: 0;
+    font-size: .95rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .update {
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 3px 3px 0;
+    background: var(--paper);
+    padding: 14px 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .update-h {
+    font-size: .66rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .update ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    gap: 5px 26px;
+  }
+  .update li {
+    display: flex;
+    gap: 9px;
+    align-items: baseline;
+    font-size: .84rem;
+    color: var(--ink-2);
+    line-height: 1.7;
+  }
+  .update li .ref {
+    flex: none;
+    font-size: .68rem;
+    color: var(--ink-3);
+    min-width: 4.2em;
+  }
+
+  /* ---------- 目次 ---------- */
+  .toc {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 28px 30px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .toc-h {
+    font-size: .66rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding-bottom: 16px;
+  }
+  .toc-grid {
+    display: grid;
+    /* Section A carries half the chapters, so it gets a double-width column
+       with a two-up list; the other four sit beside it on one row. */
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 26px 28px;
+    align-items: start;
+  }
+  .toc-col.wide { grid-column: span 1; }
+  .toc-col.wide .toc-list { display: block; columns: 2; column-gap: 26px; }
+  .toc-col.wide .toc-list li { break-inside: avoid; }
+  @media (max-width: 1000px) {
+    .toc-grid { grid-template-columns: 1fr 1fr; }
+    .toc-col.wide { grid-column: span 2; }
+  }
+  @media (max-width: 620px) {
+    .toc-grid { grid-template-columns: 1fr; }
+    .toc-col.wide { grid-column: span 1; }
+    .toc-col.wide .toc-list { display: flex; columns: 1; }
+  }
+  .toc-col { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+  .toc-sec {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    font-size: .88rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .toc-sec .mono { font-size: .7rem; color: var(--accent); }
+  .toc-sec:hover { color: var(--accent); }
+  .toc-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1px; }
+  .toc-list a {
+    display: flex;
+    gap: 9px;
+    align-items: baseline;
+    padding: 2px 0;
+    font-size: .8rem;
+    line-height: 1.6;
+    color: var(--ink-2);
+    text-decoration: none;
+  }
+  .toc-list a .mono { flex: none; font-size: .68rem; color: var(--ink-3); min-width: 2.6em; }
+  .toc-list a:hover { color: var(--accent); }
+  .toc-list a:hover .mono { color: var(--accent); }
+
+  /* ---------- shell ---------- */
+  .shell {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 28px 110px;
+    display: grid;
+    grid-template-columns: 216px minmax(0, 1fr);
+    gap: 0 52px;
+    align-items: start;
+  }
+
+  /* ---------- rail ---------- */
+  .rail {
+    position: sticky;
+    top: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 34px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    font-size: .8rem;
+  }
+  .rail-block { display: flex; flex-direction: column; gap: 8px; }
+  .rail-title {
+    font-size: .64rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .rail nav { display: flex; flex-direction: column; gap: 2px; }
+  .nav-group { display: flex; flex-direction: column; }
+  .rail nav a {
+    display: flex;
+    gap: 9px;
+    align-items: baseline;
+    padding: 4px 0 4px 10px;
+    margin-left: -12px;
+    color: var(--ink-2);
+    text-decoration: none;
+    line-height: 1.5;
+    border-left: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  .rail nav a .k { font-size: .66rem; color: var(--ink-3); flex: none; }
+  .nav-sec .k { min-width: 1.1em; }
+  .nav-sub .k { min-width: 2.5em; }
+  .nav-sec { font-weight: 500; color: var(--ink); }
+  .nav-sub { font-size: .76rem; padding-left: 20px !important; }
+  .rail nav a:hover { color: var(--accent); }
+  .nav-subs { display: none; flex-direction: column; padding: 2px 0 6px; }
+  .nav-group.open .nav-subs { display: flex; }
+  .nav-group.open > .nav-sec { border-left-color: var(--accent); }
+  .nav-group.open > .nav-sec .k { color: var(--accent); }
+  .rail nav a.on { color: var(--ink); font-weight: 500; }
+  .nav-sub.on { border-left-color: var(--accent); color: var(--accent); }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 6px; }
+  .fbtn {
+    font-family: "Noto Sans JP", system-ui, sans-serif;
+    font-size: .72rem;
+    line-height: 1.4;
+    padding: 4px 10px;
+    border-radius: 99px;
+    border: 1px solid var(--rule-strong);
+    background: transparent;
+    color: var(--ink-2);
+    cursor: pointer;
+    transition: background .15s, color .15s, border-color .15s;
+  }
+  .fbtn:hover { border-color: var(--ink-3); color: var(--ink); }
+  .fbtn[aria-pressed="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+  .fcount { font-size: .7rem; color: var(--ink-3); }
+
+  .legend { display: flex; flex-direction: column; gap: 7px; }
+  .legend-row { display: flex; gap: 9px; align-items: baseline; line-height: 1.5; }
+  .legend-row span:last-child { font-size: .74rem; color: var(--ink-3); }
+
+  /* ---------- tags ---------- */
+  .tag {
+    display: inline-block;
+    font-family: "Noto Sans JP", system-ui, sans-serif;
+    font-size: .68rem;
+    font-weight: 500;
+    letter-spacing: .06em;
+    line-height: 1.6;
+    padding: 1px 8px;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .tag.keep  { background: var(--accent-soft); color: var(--accent); }
+  .tag.maybe { background: var(--warn-soft);   color: var(--warn); }
+  .tag.no    { background: var(--off-soft);    color: var(--off); }
+  .tag.todo  { background: var(--todo-soft);   color: var(--todo); }
+  .tag.memo  { background: transparent; color: var(--ink-3); box-shadow: inset 0 0 0 1px var(--rule-strong); }
+
+  /* ---------- sections ---------- */
+  main { padding-top: 34px; display: flex; flex-direction: column; gap: 0; }
+  .section { scroll-margin-top: 18px; padding-top: 46px; }
+  .section-head {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--ink);
+  }
+  .section-head .kicker {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: .66rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .section-head h2 {
+    font-family: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 2.8vw, 1.8rem);
+    letter-spacing: .03em;
+    line-height: 1.4;
+  }
+  .section-head .desc { max-width: 40em; color: var(--ink-2); font-size: .88rem; }
+
+  .sub { padding-top: 34px; scroll-margin-top: 14px; }
+  .sub-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding-bottom: 4px;
+  }
+  .sub-head .code {
+    font-size: .72rem;
+    color: var(--accent);
+    letter-spacing: .1em;
+    padding-top: 2px;
+  }
+  .sub-head h3 {
+    font-size: 1.02rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+  }
+  .sub-head .sub-n {
+    margin-left: auto;
+    font-size: .68rem;
+    color: var(--ink-3);
+    padding-top: 3px;
+  }
+  .sub-note {
+    font-size: .82rem;
+    color: var(--ink-3);
+    max-width: 40em;
+    padding-bottom: 6px;
+  }
+
+  /* ---------- items ---------- */
+  .item {
+    display: grid;
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 0 18px;
+    padding: 16px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .item > .tag { justify-self: start; align-self: start; margin-top: 4px; }
+  .item-body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+  .item h4 {
+    margin: 0;
+    font-size: .96rem;
+    font-weight: 700;
+    line-height: 1.65;
+    letter-spacing: .01em;
+  }
+  .item p { max-width: 44em; font-size: .89rem; color: var(--ink-2); }
+  .item ul {
+    margin: 2px 0 0;
+    padding-left: 1.15em;
+    max-width: 44em;
+    font-size: .89rem;
+    color: var(--ink-2);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .item li::marker { color: var(--ink-3); }
+  .spec {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    margin-top: 2px;
+  }
+  .spec span {
+    font-size: .74rem;
+    padding: 1px 8px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 2px;
+    color: var(--ink-2);
+    background: var(--surface);
+  }
+  .ask {
+    display: flex;
+    gap: 9px;
+    align-items: baseline;
+    margin-top: 4px;
+    padding: 7px 11px;
+    border-left: 2px solid var(--todo);
+    background: var(--surface);
+    border-radius: 0 2px 2px 0;
+  }
+  .ask b {
+    flex: none;
+    font-size: .68rem;
+    font-weight: 500;
+    letter-spacing: .08em;
+    color: var(--todo);
+  }
+  .ask span { font-size: .84rem; color: var(--ink-2); max-width: 40em; }
+
+  /* ---------- decision list (section E) ---------- */
+  .phase { padding-top: 30px; }
+  .phase-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule-strong);
+  }
+  .phase-head .step {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: .04em;
+  }
+  .phase-head h3 { font-size: 1rem; font-weight: 700; letter-spacing: .03em; }
+  .phase-head .when { margin-left: auto; font-size: .72rem; color: var(--ink-3); white-space: nowrap; }
+  .checks { list-style: none; margin: 0; padding: 0; }
+  .checks li {
+    display: grid;
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 0 18px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .checks .who {
+    font-size: .7rem;
+    color: var(--ink-3);
+    letter-spacing: .06em;
+    padding-top: 3px;
+  }
+  .checks .q { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+  .checks .q b { font-size: .9rem; font-weight: 700; line-height: 1.65; }
+  .checks .q span { font-size: .84rem; color: var(--ink-2); max-width: 44em; }
+
+  /* ---------- misc ---------- */
+  .links { display: flex; flex-direction: column; gap: 4px; margin-top: 2px; }
+  .links a { font-size: .86rem; word-break: break-all; }
+
+  footer {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 26px 28px 60px;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-3);
+    font-size: .78rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 20px;
+  }
+
+  .empty { display: none; }
+  body[data-filter="keep"]  .item:not([data-tag="keep"]),
+  body[data-filter="maybe"] .item:not([data-tag="maybe"]),
+  body[data-filter="no"]    .item:not([data-tag="no"]),
+  body[data-filter="todo"]  .item:not([data-tag="todo"]) { display: none; }
+  .hidden { display: none !important; }
+
+  @media (max-width: 900px) {
+    .shell { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .rail {
+      position: static;
+      max-height: none;
+      padding: 26px 0 6px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .rail nav { flex-direction: row; flex-wrap: wrap; gap: 4px 16px; }
+    .rail nav a { border-left: 0; margin-left: 0; padding-left: 0; }
+    .rail .nav-subs { display: none !important; }
+    .rail nav a.on { border-left: 0; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; }
+    main { padding-top: 6px; }
+  }
+  @media (max-width: 560px) {
+    .item, .checks li { grid-template-columns: minmax(0, 1fr); gap: 7px; }
+    .item > .tag { margin-top: 0; align-self: start; }
+    .checks .who { padding-top: 0; }
+    .masthead-in { padding: 32px 20px 26px; }
+    .toc { padding: 26px 20px 24px; }
+    .shell { padding: 0 20px 80px; }
+    footer { padding: 22px 20px 48px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+
+  @media print {
+    .rail, .filters, .fcount { display: none; }
+    .toc { break-after: page; }
+    .shell { grid-template-columns: 1fr; padding: 0 12mm 12mm; }
+    body { background: #fff; color: #000; font-size: 10pt; }
+    .section { break-inside: auto; page-break-before: always; }
+    .item, .checks li, .sub { break-inside: avoid; }
+    a { color: #000; }
+  }
+</style>
+
+<header class="masthead">
+  <div class="masthead-in">
+    <p class="eyebrow mono">Requirements brief &nbsp;/&nbsp; 木造2階建て 注文住宅</p>
+    <h1>35坪の家、決めたことと<br>まだ決めていないこと</h1>
+    <p class="lede">なぐり書きのメモを、担当者にそのまま渡せる形に整理したもの。要望は「採用/検討/不要」で色分けし、メモから読み取れる意図を理由として補い、話が詰まっていない箇所は「要決定」として最後にまとめている。本文は 44 の章に分けてあり、A 章は<b>場所ごと</b>（玄関・リビング・キッチン・浴室…）、B 章は<b>部位ごと</b>（壁・床・照明…）、C 章は<b>分野ごと</b>に並べている。各章には <span class="mono">A-8</span> のような番号を振ってあるので、打合せでは番号で指せる。</p>
+    <dl class="vitals mono">
+      <div class="vital"><dt>土地</dt><dd>40坪</dd></div>
+      <div class="vital"><dt>延床</dt><dd>35坪 前後</dd></div>
+      <div class="vital"><dt>階数</dt><dd>2階建て</dd></div>
+      <div class="vital"><dt>家族</dt><dd>2人＋中型犬1</dd></div>
+      <div class="vital"><dt>総予算</dt><dd>6,000〜7,000万</dd></div>
+      <div class="vital"><dt>UA値</dt><dd>0.40 以下</dd></div>
+      <div class="vital"><dt>C値</dt><dd>1.0 以下</dd></div>
+      <div class="vital"><dt>耐震</dt><dd>等級3</dd></div>
+      <div class="vital"><dt>認定</dt><dd>長期優良住宅</dd></div>
+    </dl>
+
+    <div class="update">
+      <p class="update-h mono">2026-09-04 更新 &nbsp;/&nbsp; ヒアリングで決まったこと</p>
+      <ul>
+        <li><span class="ref mono">C-9</span><span>駐車は土間コン。タイヤ痕対策に刷毛引きにするか検討</span></li>
+        <li><span class="ref mono">A-22</span><span>立水栓は1つだけ。掃除する対象を増やさない</span></li>
+        <li><span class="ref mono">C-9</span><span>目隠しはフェンスに限らない。塀で内庭風にするのも良い</span></li>
+        <li><span class="ref mono">C-9</span><span>内庭が成立するなら庭は小さくなってよい</span></li>
+        <li><span class="ref mono">A-20</span><span>インターホンは NASTA の製品にする（型番は要確定）</span></li>
+        <li><span class="ref mono">A-20</span><span>防犯カメラを付ける。玄関前と駐車・自転車置き場を映す</span></li>
+        <li><span class="ref mono">A-3</span><span>玄関アプローチを全てスロープにする案も検討</span></li>
+        <li><span class="ref mono">C-9</span><span>自転車2台の置き場を確保する（駐車1台とは別枠）</span></li>
+        <li><span class="ref mono">C-9</span><span>自転車はチェーン用アンカーで留める。電動の充電は室内なので屋外電源は不要</span></li>
+        <li><span class="ref mono">A-3</span><span>ポストはダイヤル錠付きにする。鍵を持ち歩かない</span></li>
+        <li><span class="ref mono">C-9</span><span>庭は全面人工芝。グレード（芝丈・耐熱・防臭）は要検討</span></li>
+        <li><span class="ref mono">C-9</span><span>目隠しフェンスは「人がいるかどうかも分からない」高さを狙う</span></li>
+        <li><span class="ref mono">A-18</span><span>ウッドデッキは必須ではない。床の連続感と犬の庭のトレードオフ</span></li>
+        <li><span class="ref mono">A-1</span><span>二人暮らし＋中型犬1匹。子ども部屋は不要</span></li>
+        <li><span class="ref mono">A-1</span><span>2人ともほぼ毎日在宅。仕事部屋の遮音は必須</span></li>
+        <li><span class="ref mono">A-1</span><span>寝室も1階にしたい（間取り次第で2階も）</span></li>
+        <li><span class="ref mono">A-2</span><span>吹き抜けは作らない</span></li>
+        <li><span class="ref mono">A-12</span><span>仕事部屋は3畳ずつ・収納なし</span></li>
+        <li><span class="ref mono">A-18</span><span>下がり床は作らない。高さは天井側だけでつくる</span></li>
+        <li><span class="ref mono">A-9</span><span>干す・畳むが発生しない。乾燥機→ハンガー→そのまま収納</span></li>
+        <li><span class="ref mono">E-1</span><span>接道方向は土地選びの条件から外した</span></li>
+        <li><span class="ref mono">A-3</span><span>ポストは気密優先で独立型に。壁貫通はしない</span></li>
+        <li><span class="ref mono">A-3</span><span>不在時は玄関前への置き配を基本運用に</span></li>
+        <li><span class="ref mono">A-6</span><span>コンロ周りの透明板（オイルガード）は不要</span></li>
+        <li><span class="ref mono">A-8</span><span>浴槽の人造大理石は検討に戻す（FRPと比較）</span></li>
+        <li><span class="ref mono">A-8</span><span>浴室ドアを透明パネルにするか検討</span></li>
+        <li><span class="ref mono">A-8</span><span>浴室の床はタイルでなければ何でもよい</span></li>
+        <li><span class="ref mono">A-9</span><span>洗面台は造作風の見た目にしたい（掃除のしやすさは維持）</span></li>
+        <li><span class="ref mono">A-10</span><span>ペーパーホルダーは1連。スマホが置ける天板は欲しい</span></li>
+        <li><span class="ref mono">A-10</span><span>コンセントは入口から死角の奥側へ。便器の真裏は避ける</span></li>
+        <li><span class="ref mono">A-11</span><span>パワーラック実測 2,000×2,080×1,500mm。2階にも収まる</span></li>
+        <li><span class="ref mono">A-12</span><span>ベッドはローベッド式。犬が飛び降りても負担がない高さに</span></li>
+        <li><span class="ref mono">A-2</span><span>犬は寝室では寝ない。夜はサークルで過ごす</span></li>
+        <li><span class="ref mono">A-6</span><span>カップボード上のコンセントは6口以上、できれば8口</span></li>
+        <li><span class="ref mono">B-3</span><span>馬目地・真ん中揃えはタイルの話。クロスの指定ではない</span></li>
+        <li><span class="ref mono">B-6</span><span>リビングはライン照明も検討（眩しさを実物で確認）</span></li>
+        <li><span class="ref mono">B-7</span><span>屋根形状は決め打ちせず、条件から複数案を出してもらう</span></li>
+        <li><span class="ref mono">A-14</span><span>収納の建具は3枚連動引戸か壁面収納かを比較</span></li>
+        <li><span class="ref mono">A-3</span><span>玄関ドアは高断熱＋後付けスマートロック対応。宅配ボックスは不要</span></li>
+        <li><span class="ref mono">A-8</span><span>浴室は 1616</span></li>
+        <li><span class="ref mono">A-9</span><span>洗濯乾燥機はドラム式一体型</span></li>
+        <li><span class="ref mono">A-12</span><span>衣類は全部1階に集約 → 寝室にクローゼット不要</span></li>
+        <li><span class="ref mono">A-17</span><span>基本カーテンレス。予備でレール1本だけ</span></li>
+        <li><span class="ref mono">A-18</span><span>車まで濡れずに行けるようにしたい（軒かカーポート）</span></li>
+        <li><span class="ref mono">A-21</span><span>エアコンは1階・2階に各1台。バルコニーは室外機置き場のみ</span></li>
+        <li><span class="ref mono">A-23</span><span>EV 充電用コンセントを付ける</span></li>
+        <li><span class="ref mono">B-1</span><span>白壁にアクセントで黒や木</span></li>
+        <li><span class="ref mono">B-2</span><span>造作はテレビ周りのみ。カップボードはキッチンと同時購入</span></li>
+        <li><span class="ref mono">C-1</span><span>耐震等級3。工法はこだわらない</span></li>
+        <li><span class="ref mono">C-2</span><span>アルミ樹脂複合サッシ＋トリプルガラス</span></li>
+        <li><span class="ref mono">C-8</span><span>総予算 6,000〜7,000万円。入居は1年以内か2〜3年後</span></li>
+        <li><span class="ref mono">C-9</span><span>庭は人工芝。駐車土間とリビング前の高いフェンス</span></li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section class="toc" id="toc">
+  <p class="toc-h mono">目次 &nbsp;/&nbsp; 44章</p>
+  <div class="toc-grid">
+    <div class="toc-col wide">
+      <a class="toc-sec" href="#a"><span class="mono">A</span>間取りに影響する要望</a>
+      <ol class="toc-list">
+        <li><a href="#a-1"><span class="mono">A-1</span>全体方針とボリューム</a></li>
+        <li><a href="#a-2"><span class="mono">A-2</span>部屋構成</a></li>
+        <li><a href="#a-3"><span class="mono">A-3</span>玄関まわり</a></li>
+        <li><a href="#a-4"><span class="mono">A-4</span>リビング・ダイニング</a></li>
+        <li><a href="#a-5"><span class="mono">A-5</span>キッチン ─ 形と寸法</a></li>
+        <li><a href="#a-6"><span class="mono">A-6</span>キッチン ─ 機器と収まり</a></li>
+        <li><a href="#a-7"><span class="mono">A-7</span>パントリー・冷蔵庫</a></li>
+        <li><a href="#a-8"><span class="mono">A-8</span>浴室</a></li>
+        <li><a href="#a-9"><span class="mono">A-9</span>洗面・脱衣・洗濯</a></li>
+        <li><a href="#a-10"><span class="mono">A-10</span>トイレ</a></li>
+        <li><a href="#a-11"><span class="mono">A-11</span>ホームジム</a></li>
+        <li><a href="#a-12"><span class="mono">A-12</span>個室 ─ 寝室と仕事部屋</a></li>
+        <li><a href="#a-13"><span class="mono">A-13</span>階段</a></li>
+        <li><a href="#a-14"><span class="mono">A-14</span>収納 ─ 必要量</a></li>
+        <li><a href="#a-15"><span class="mono">A-15</span>収納 ─ 場所とつくり</a></li>
+        <li><a href="#a-16"><span class="mono">A-16</span>ドアと引き戸</a></li>
+        <li><a href="#a-17"><span class="mono">A-17</span>窓</a></li>
+        <li><a href="#a-18"><span class="mono">A-18</span>内と外のつなぎ</a></li>
+        <li><a href="#a-19"><span class="mono">A-19</span>電気 ─ コンセントとスイッチ</a></li>
+        <li><a href="#a-20"><span class="mono">A-20</span>通信・インターホン</a></li>
+        <li><a href="#a-21"><span class="mono">A-21</span>空調・換気</a></li>
+        <li><a href="#a-22"><span class="mono">A-22</span>給湯・屋外の水まわり</a></li>
+        <li><a href="#a-23"><span class="mono">A-23</span>点検口と将来の備え</a></li>
+      </ol>
+    </div>
+    <div class="toc-col">
+      <a class="toc-sec" href="#b"><span class="mono">B</span>雰囲気に影響する要望</a>
+      <ol class="toc-list">
+        <li><a href="#b-1"><span class="mono">B-1</span>全体の方向性</a></li>
+        <li><a href="#b-2"><span class="mono">B-2</span>壁 ─ クロスと目地</a></li>
+        <li><a href="#b-3"><span class="mono">B-3</span>壁 ─ タイルとパネル</a></li>
+        <li><a href="#b-4"><span class="mono">B-4</span>床</a></li>
+        <li><a href="#b-5"><span class="mono">B-5</span>巾木・框</a></li>
+        <li><a href="#b-6"><span class="mono">B-6</span>照明</a></li>
+        <li><a href="#b-7"><span class="mono">B-7</span>外観</a></li>
+      </ol>
+    </div>
+    <div class="toc-col">
+      <a class="toc-sec" href="#c"><span class="mono">C</span>その他要望</a>
+      <ol class="toc-list">
+        <li><a href="#c-1"><span class="mono">C-1</span>断熱・気密の目標値</a></li>
+        <li><a href="#c-2"><span class="mono">C-2</span>性能を担保する仕様と検査</a></li>
+        <li><a href="#c-3"><span class="mono">C-3</span>認定と補助金</a></li>
+        <li><a href="#c-4"><span class="mono">C-4</span>太陽光</a></li>
+        <li><a href="#c-5"><span class="mono">C-5</span>キッチンメーカーの選定</a></li>
+        <li><a href="#c-6"><span class="mono">C-6</span>その他の設備・機器</a></li>
+        <li><a href="#c-7"><span class="mono">C-7</span>施主支給と値引き</a></li>
+        <li><a href="#c-8"><span class="mono">C-8</span>資金計画</a></li>
+        <li><a href="#c-9"><span class="mono">C-9</span>外構の進め方</a></li>
+      </ol>
+    </div>
+    <div class="toc-col">
+      <a class="toc-sec" href="#d"><span class="mono">D</span>覚えておきたいこと・メモ</a>
+      <ol class="toc-list">
+        <li><a href="#d-1"><span class="mono">D-1</span>壊れると高くつくもの</a></li>
+        <li><a href="#d-2"><span class="mono">D-2</span>コストを下げる打ち手</a></li>
+        <li><a href="#d-3"><span class="mono">D-3</span>寸法・製品の注意点</a></li>
+        <li><a href="#d-4"><span class="mono">D-4</span>トレードオフと進め方</a></li>
+        <li><a href="#d-5"><span class="mono">D-5</span>参考情報源</a></li>
+      </ol>
+    </div>
+    <div class="toc-col">
+      <a class="toc-sec" href="#e"><span class="mono">E</span>これから決める必要がある項目</a>
+      <ol class="toc-list">
+        <li><a href="#e"><span class="mono">E-1</span>土地・予算・依頼先</a></li>
+        <li><a href="#e"><span class="mono">E-2</span>基本設計</a></li>
+        <li><a href="#e"><span class="mono">E-3</span>仕様決定</a></li>
+        <li><a href="#e"><span class="mono">E-4</span>電気・設備打合せ</a></li>
+        <li><a href="#e"><span class="mono">E-5</span>施主支給・外構・引渡し</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-block">
+      <p class="rail-title mono">Sections</p>
+      <nav id="nav">
+        <div class="nav-group" data-sec="a">
+          <a class="nav-sec" href="#a"><span class="k mono">A</span><span>間取りに影響する要望</span></a>
+          <div class="nav-subs">
+            <a class="nav-sub" href="#a-1"><span class="k mono">A-1</span><span>全体方針とボリューム</span></a>
+            <a class="nav-sub" href="#a-2"><span class="k mono">A-2</span><span>部屋構成</span></a>
+            <a class="nav-sub" href="#a-3"><span class="k mono">A-3</span><span>玄関まわり</span></a>
+            <a class="nav-sub" href="#a-4"><span class="k mono">A-4</span><span>リビング・ダイニング</span></a>
+            <a class="nav-sub" href="#a-5"><span class="k mono">A-5</span><span>キッチン ─ 形と寸法</span></a>
+            <a class="nav-sub" href="#a-6"><span class="k mono">A-6</span><span>キッチン ─ 機器と収まり</span></a>
+            <a class="nav-sub" href="#a-7"><span class="k mono">A-7</span><span>パントリー・冷蔵庫</span></a>
+            <a class="nav-sub" href="#a-8"><span class="k mono">A-8</span><span>浴室</span></a>
+            <a class="nav-sub" href="#a-9"><span class="k mono">A-9</span><span>洗面・脱衣・洗濯</span></a>
+            <a class="nav-sub" href="#a-10"><span class="k mono">A-10</span><span>トイレ</span></a>
+            <a class="nav-sub" href="#a-11"><span class="k mono">A-11</span><span>ホームジム</span></a>
+            <a class="nav-sub" href="#a-12"><span class="k mono">A-12</span><span>個室 ─ 寝室と仕事部屋</span></a>
+            <a class="nav-sub" href="#a-13"><span class="k mono">A-13</span><span>階段</span></a>
+            <a class="nav-sub" href="#a-14"><span class="k mono">A-14</span><span>収納 ─ 必要量</span></a>
+            <a class="nav-sub" href="#a-15"><span class="k mono">A-15</span><span>収納 ─ 場所とつくり</span></a>
+            <a class="nav-sub" href="#a-16"><span class="k mono">A-16</span><span>ドアと引き戸</span></a>
+            <a class="nav-sub" href="#a-17"><span class="k mono">A-17</span><span>窓</span></a>
+            <a class="nav-sub" href="#a-18"><span class="k mono">A-18</span><span>内と外のつなぎ</span></a>
+            <a class="nav-sub" href="#a-19"><span class="k mono">A-19</span><span>電気 ─ コンセントとスイッチ</span></a>
+            <a class="nav-sub" href="#a-20"><span class="k mono">A-20</span><span>通信・インターホン</span></a>
+            <a class="nav-sub" href="#a-21"><span class="k mono">A-21</span><span>空調・換気</span></a>
+            <a class="nav-sub" href="#a-22"><span class="k mono">A-22</span><span>給湯・屋外の水まわり</span></a>
+            <a class="nav-sub" href="#a-23"><span class="k mono">A-23</span><span>点検口と将来の備え</span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-sec="b">
+          <a class="nav-sec" href="#b"><span class="k mono">B</span><span>雰囲気に影響する要望</span></a>
+          <div class="nav-subs">
+            <a class="nav-sub" href="#b-1"><span class="k mono">B-1</span><span>全体の方向性</span></a>
+            <a class="nav-sub" href="#b-2"><span class="k mono">B-2</span><span>壁 ─ クロスと目地</span></a>
+            <a class="nav-sub" href="#b-3"><span class="k mono">B-3</span><span>壁 ─ タイルとパネル</span></a>
+            <a class="nav-sub" href="#b-4"><span class="k mono">B-4</span><span>床</span></a>
+            <a class="nav-sub" href="#b-5"><span class="k mono">B-5</span><span>巾木・框</span></a>
+            <a class="nav-sub" href="#b-6"><span class="k mono">B-6</span><span>照明</span></a>
+            <a class="nav-sub" href="#b-7"><span class="k mono">B-7</span><span>外観</span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-sec="c">
+          <a class="nav-sec" href="#c"><span class="k mono">C</span><span>その他要望</span></a>
+          <div class="nav-subs">
+            <a class="nav-sub" href="#c-1"><span class="k mono">C-1</span><span>断熱・気密の目標値</span></a>
+            <a class="nav-sub" href="#c-2"><span class="k mono">C-2</span><span>性能を担保する仕様と検査</span></a>
+            <a class="nav-sub" href="#c-3"><span class="k mono">C-3</span><span>認定と補助金</span></a>
+            <a class="nav-sub" href="#c-4"><span class="k mono">C-4</span><span>太陽光</span></a>
+            <a class="nav-sub" href="#c-5"><span class="k mono">C-5</span><span>キッチンメーカーの選定</span></a>
+            <a class="nav-sub" href="#c-6"><span class="k mono">C-6</span><span>その他の設備・機器</span></a>
+            <a class="nav-sub" href="#c-7"><span class="k mono">C-7</span><span>施主支給と値引き</span></a>
+            <a class="nav-sub" href="#c-8"><span class="k mono">C-8</span><span>資金計画</span></a>
+            <a class="nav-sub" href="#c-9"><span class="k mono">C-9</span><span>外構の進め方</span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-sec="d">
+          <a class="nav-sec" href="#d"><span class="k mono">D</span><span>覚えておきたいこと・メモ</span></a>
+          <div class="nav-subs">
+            <a class="nav-sub" href="#d-1"><span class="k mono">D-1</span><span>壊れると高くつくもの</span></a>
+            <a class="nav-sub" href="#d-2"><span class="k mono">D-2</span><span>コストを下げる打ち手</span></a>
+            <a class="nav-sub" href="#d-3"><span class="k mono">D-3</span><span>寸法・製品の注意点</span></a>
+            <a class="nav-sub" href="#d-4"><span class="k mono">D-4</span><span>トレードオフと進め方</span></a>
+            <a class="nav-sub" href="#d-5"><span class="k mono">D-5</span><span>参考情報源</span></a>
+          </div>
+        </div>
+        <div class="nav-group" data-sec="e">
+          <a class="nav-sec" href="#e"><span class="k mono">E</span><span>これから決める必要がある項目</span></a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="rail-block">
+      <p class="rail-title mono">Filter</p>
+      <div class="filters" id="filters">
+        <button class="fbtn" type="button" data-f="all" aria-pressed="true">すべて</button>
+        <button class="fbtn" type="button" data-f="keep" aria-pressed="false">採用</button>
+        <button class="fbtn" type="button" data-f="maybe" aria-pressed="false">検討</button>
+        <button class="fbtn" type="button" data-f="no" aria-pressed="false">不要</button>
+        <button class="fbtn" type="button" data-f="todo" aria-pressed="false">要決定</button>
+      </div>
+      <p class="fcount mono" id="fcount"></p>
+    </div>
+
+    <div class="rail-block">
+      <p class="rail-title mono">Legend</p>
+      <div class="legend">
+        <div class="legend-row"><span class="tag keep">採用</span><span>方針が固まっている</span></div>
+        <div class="legend-row"><span class="tag maybe">検討</span><span>やりたいが判断待ち</span></div>
+        <div class="legend-row"><span class="tag no">不要</span><span>入れない、と決めた</span></div>
+        <div class="legend-row"><span class="tag todo">要決定</span><span>まだ決めていない</span></div>
+        <div class="legend-row"><span class="tag memo">メモ</span><span>要望ではなく判断材料</span></div>
+      </div>
+      <p class="fcount">赤い枠の「確認」は、メモを整理する過程で出てきた担当者への確認事項。</p>
+    </div>
+  </aside>
+
+  <main>
+
+  <section class="section" id="a">
+    <div class="section-head">
+      <p class="kicker mono"><span>Section A</span><span data-count="a"></span></p>
+      <h2>間取りに影響する要望</h2>
+      <p class="desc">プラン図が引かれる前に伝えないと手戻りになるもの。担当者が部屋単位で設計できるよう、<b>場所ごと</b>に章を分けている。A-5 のキッチンだけは「間取りを描いてから当てはめる」のではなく、ここを起点に間取りを組み立ててほしい、という位置づけ。</p>
+    </div>
+
+    <div class="sub" id="a-1">
+      <div class="sub-head"><span class="code mono">A-1</span><h3>全体方針とボリューム</h3><span class="sub-n mono">5</span></div>
+      <p class="sub-note">40坪の土地に延床35坪。面積を贅沢に使える広さではないので、削れる面積は削って居室に回す。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>住まい手の前提</h4>
+          <p>間取りの根拠になる条件。ここが変わると配分が根本から変わる。</p>
+          <ul>
+            <li>二人暮らし。今後も変わらない想定なので<b>子ども部屋は不要</b></li>
+            <li>中型犬 1匹。将来2匹になる可能性は残す</li>
+            <li><b>2人ともほぼ毎日在宅勤務</b>。仕事部屋2室で同時に Web 会議をする前提</li>
+            <li>駐車は 1台。ほかに<b>自転車2台</b>の置き場が要る（C-9）</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>2室で同時に会議をするので、仕事部屋どうしの遮音は「あると良い」ではなく必須条件として扱ってほしい。隣接させない、間に収納やクローゼットを挟む、といった対処をプランの段階で織り込みたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>寝室も1階に置きたい</h4>
+          <p>日常の上下移動を減らしたい。中型犬にとっても階段の上り下りが減るほうがよい。</p>
+          <p>ただし 40坪の土地で 1階に LDK・水回り・寝室・犬のサークルを収めるのは面積的に厳しいと見ている。<b>間取りの都合で2階に移す可能性も考慮しておく</b>。</p>
+          <div class="ask"><b>確認</b><span>「寝室1階」案と「寝室2階」案の2パターンでボリューム検討を出してほしい。1階に寝室を入れた場合に、他の何が2階へ追い出されるのか（ホームジムか、仕事部屋か）を並べて比較したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>廊下は限界まで削る</h4>
+          <p>「廊下はお札を敷き詰めていると思え」。通るだけの面積にコストを払わない。部屋どうしを直接つなぐ配置を優先する。</p>
+          <p>ただし廊下は部屋と部屋の間の緩衝材でもあり、削るほど音は伝わりやすくなる。A-16 のドアの取捨とセットで判断したい。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>2階の天井高を下げる</h4>
+          <p>2階に高さは要らないので 2,250mm 程度まで下げる。数十万円のコストダウンになるはず。浮いた分は1階の天井高に回す。</p>
+          <div class="spec"><span>2階 CH 2,250mm 案</span><span>1階は逆に高く</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>家事動線を最優先で見る</h4>
+          <p>買って冷蔵庫に入れる、犬まわりの世話、そして洗濯。日常で一番回数が多い動きを短くする。</p>
+          <p>洗濯は<b>「洗濯乾燥機 → ハンガーに掛ける → そのまま収納」</b>で完結し、干す・畳むが発生しない（A-9）。したがって家事動線の要は<b>洗濯機とファミリークローク（A-15）の距離</b>ひとつに絞られる。この2つを近づけることを、間取りの優先条件として扱ってほしい。</p>
+          <div class="ask"><b>確認</b><span>洗濯機は洗面室、衣類の収納は1階のファミリークローク（A-15）。この2つを隣接させられるか、あるいは扉1枚でつながる配置にできるかをプランで確認したい。ハンガーに掛けた状態のまま運ぶので、途中に段差や狭い曲がりがないことも見ておきたい。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-2">
+      <div class="sub-head"><span class="code mono">A-2</span><h3>部屋構成</h3><span class="sub-n mono">4</span></div>
+      <p class="sub-note">必要な部屋の一覧。ここが35坪に収まるかの検証が最初の関門になる。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>必要な部屋</h4>
+          <p>現時点で必要と分かっている部屋。35坪にこれを収める前提でプランを組む。</p>
+          <ul>
+            <li>リビング（縦長にするなら横幅 4.1m 前後）</li>
+            <li>寝室 4.5畳（シングルベッド2台 → A-12）</li>
+            <li><b>仕事部屋 × 2</b> ─ 各室コンセント10口＋有線LAN 1口（A-12）</li>
+            <li>ホームジム（パワーラック）</li>
+            <li>パントリー 1.3畳（A-5）</li>
+            <li>ファミリークローク／コートクローク（A-15）</li>
+            <li>犬のサークル置き場 <b>1畳ちょい</b> ─ 場所は未定（下記）</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>仕事部屋が2室ある点は面積配分に効く。延床 35坪 で2階建てという条件で、この構成が成立するかを早い段階でボリューム検討してほしい。あわせて、2室で同時に Web 会議をする可能性があるなら、部屋どうしの遮音（A-16 のドアの取捨）も一緒に見たい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>犬のサークル置き場に 1畳ちょい</h4>
+          <p>サークルを常設で置く場所として <b>1畳ちょい</b>（約 1.8m² 強）を確保する。犬のご飯・シーツ予備・おもちゃの収納 0.5畳（A-14）とは別枠。</p>
+          <p>1畳ちょいという広さは部屋を1室増やす規模ではないので、どこかの部屋の中に取り込むのが前提になる。リビングの一角が第一候補だが、場所は未定（E-2）。</p>
+          <p>犬は寝室では寝ない（A-12）ので、<b>ここが夜の寝場所になる</b>。日中の居場所というだけでなく、一晩そこで過ごす場所として考える必要がある。</p>
+          <p>サークルの近くに<b>ペットカメラ用のコンセントを、少し高い位置に</b>1口。サークル全体を見下ろせる高さに付けたい。サーキュレーターやヒーター用の電源は不要。</p>
+          <div class="ask"><b>確認</b><span>ペットカメラ用コンセントの高さを具体的に決めたい（床から 1.8〜2.0m 程度が目安。カメラの画角とサークルの位置関係で決まる）。コンセント位置を場所ごとに指定する方針（A-19）に含める。</span></div>
+          <div class="ask"><b>確認</b><span>置き場所が決まったら、あわせて次も指定したい。① エアコンの風が直接当たらない位置か（A-21）② サークル下の床の傷・汚れを床材でどう受けるか（B-4）③ 人の動線をふさがず、かつ人の気配が伝わる位置か。においの対策は A-21 を参照。</span></div>
+          <div class="ask"><b>確認</b><span>夜はここで過ごすので、<b>寝室と階が離れる場合の扱い</b>も見ておきたい。寝室が2階になる（A-1）と、犬は夜のあいだ1階に一頭で過ごすことになります。エアコンは1階・2階に各1台（A-21）なので、夜も1階側を動かし続けるのかを含めて、温度をどう保つかを決めたい。ペットカメラ（上記）の意味もここで大きくなります。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>吹き抜けは作らない</h4>
+          <p>35坪で仕事部屋2室と寝室を確保する以上、2階の床面積を削る余裕がない。耐震等級3（C-1）とも相性が良い。</p>
+          <p>抜け感は吹き抜けではなく、天井までの大型窓と内外の連続（A-18）で出す。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>リビングは縦長にするなら横幅 4.1m 前後</h4>
+          <p>縦長のリビングは幅が効く。少し広げるだけで体感がかなり変わるので、4.1m 程度を目安にする。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-3">
+      <div class="sub-head"><span class="code mono">A-3</span><h3>玄関まわり</h3><span class="sub-n mono">6</span></div>
+      <p class="sub-note">犬の道具と荷物の出入りが集中する場所。土間・シューズクローク・玄関前の置き配スペースをひとまとまりで考える。ポストは気密を優先して独立型にする。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>玄関土間にペットカートを置く</h4>
+          <p>外部収納でも成立するが、40坪では土地に余裕がないはずなので屋内にまとめる方が現実的。</p>
+          <div class="ask"><b>確認</b><span>カートを押して土間に出し入れするなら、上がり框をまたがずに済むスロープ（またはフラットな土間の連続）が要るかもしれない。要不要を判断したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>ポストは独立型にする（壁貫通はしない）</h4>
+          <p>当初は外壁を貫通させてシューズクロークで受け取る案だったが、<b>取りやめる</b>。壁に穴を開けるぶん気密が下がり、UA値 0.4・C値 1.0（C-1）を狙ううえで弱点になる。</p>
+          <p>外構工事で<b>独立したポスト</b>を立てる（C-9）。受け取りに一度外へ出ることになるが、性能を優先する。</p>
+          <p>錠は<b>ダイヤル錠付き</b>のものにする。鍵を持ち歩かずに済み、鍵をなくす心配もない。玄関の鍵は後付けスマートロック（上記）にする方針なので、ポストのためだけに物理キーを持つことになるのを避けたい。</p>
+          <div class="spec mono"><span>独立型</span><span>ダイヤル錠</span></div>
+          <div class="ask"><b>確認</b><span>ダイヤル錠は<b>屋外に出しっぱなし</b>になるので、耐候性を確認したい。① 雨や砂埃でダイヤルが回しにくくならないか、冬に凍結しないか ② <b>番号を後から変更できるか</b>（引渡し時の初期番号のままにしない）③ ダイヤル面が道路側を向くと、操作しているところを見られます。玄関側や壁側に向けられる製品・向きにできるか。</span></div>
+          <div class="ask"><b>確認</b><span>ポストの位置は、玄関ドアから最短で、かつ庇（A-18）の下に入る場所にしたい。雨の日に濡れずに取りに行けるかを配置図で確認したい。門柱と一体にするか、独立で立てるかも外構の相見積もり（C-9）の前に決める。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>玄関ドアは高断熱＋後付けスマートロック対応</h4>
+          <p>条件は2つ。</p>
+          <ul>
+            <li><b>断熱性能の高いもの</b> ─ サッシがアルミ樹脂複合（C-2）なので、ドアで挽回しておきたい</li>
+            <li><b>後付けスマートロックが付くこと</b> ─ 備え付けは採用しない方針（C-6）なので、サムターン形状と扉厚が主要製品に対応していることを選定時に確認する</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>宅配ボックス</h4>
+          <p>設置しない。理由は2つ。</p>
+          <ul>
+            <li>2人ともほぼ毎日在宅（A-1）なので、その場で受け取れることが多い</li>
+            <li>そもそも<b>入らない大きさの荷物が多い</b>と見ている。入らなければ結局その場で対応することになり、箱の意味が薄い</li>
+          </ul>
+          <p>不在時は<b>玄関前に置いてもらう（置き配）運用を基本</b>とする。</p>
+          <div class="ask"><b>確認</b><span>置き配を前提にするなら、玄関前に<b>荷物を置いても濡れない場所</b>が要ります。玄関側の庇を 1.5m 伸ばす案（A-18）は、この点でも効いてきます。庇の下に荷物1〜2個を置ける奥行きが取れるか、配置図で確認したい。あわせて、置いた荷物が道路から見えにくい位置にできるかも見ておきたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>玄関アプローチを全てスロープにするか</h4>
+          <p><b>階段でも問題はない。</b>ただし道路から玄関まで<b>全てスロープ</b>にする案も検討したい。段差がなくなると効いてくる場面が複数ある。</p>
+          <ul>
+            <li>犬（A-1）の日常の出入り</li>
+            <li>ペットカート（上記）の出し入れ</li>
+            <li>自転車2台（C-9）を押して出入りする動線</li>
+            <li>買い物の荷物、将来の足腰</li>
+          </ul>
+          <p>難しいのは<b>勾配と長さ</b>。GL から玄関ポーチまで 300〜400mm 上がるとして、緩やかな 1/12 勾配なら水平距離が <b>3.6〜4.8m</b>、1/8 でも <b>2.4〜3.2m</b> 要る。40坪に建物35坪（A-1）だと、道路から玄関までこの距離を取れるかが最初の関門になる。</p>
+          <div class="ask"><b>確認</b><span>まず<b>GL から玄関ポーチまでの段差が何 mm になるか</b>を出してほしい。基礎の高さが決まらないと勾配が計算できません。そのうえで 1/12・1/8・1/6 それぞれで必要な水平距離を出し、<b>敷地に収まるか</b>を配置図で確認したい。まっすぐ取れないなら、折り返して長さを稼ぐ形も含めて見たい。</span></div>
+          <div class="ask"><b>確認</b><span><b>駐車土間（C-9）とスロープを兼ねられないか</b>を見てほしい。車を停める土間をそのまま緩い勾配で玄関まで繋げられれば、スロープのためだけの面積を使わずに済みます。40坪では一番現実的な形だと思うので、これが成立するかを優先して検討したい。</span></div>
+          <div class="ask"><b>確認</b><span>スロープは<b>濡れると滑ります</b>。犬も毎日歩く前提なので、表面の仕上げ（洗い出し・刷毛引き・ノンスリップ材など）を指定したい。<b>駐車土間の仕上げ（C-9）と同じにするか</b>も一緒に決めたい。手すりの要否と、夜間の足元灯（人感センサー → 下記）も一緒に決めたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>人感センサーライトは玄関だけ</h4>
+          <p>変な場所に付いていると勝手に点いて鬱陶しい。玄関に限定する。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-4">
+      <div class="sub-head"><span class="code mono">A-4</span><h3>リビング・ダイニング</h3><span class="sub-n mono">4</span></div>
+      <p class="sub-note">ダイニングテーブルを置かず、キッチンカウンターで食事する前提（A-5）。リビングは窓と天井で広さを出す。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>リビングの扉を天井近くまで高くして、垂れ壁をなくす</h4>
+          <p>扉の上に垂れ壁が残ると、そこで空間が切れて狭く見える。ハイドアで天井まで通す。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>掃き出し窓は天井までの大型窓</h4>
+          <p>窓の上に壁が残らないところまで上げる。A-18 の内外の連続とセットで効く。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>リビングの引き違い窓は召し合わせを片側に寄せる</h4>
+          <p>真ん中で分けず、片方に寄せて FIX 側を広く取る。視界を遮る縦框が中央から外れるので、外が広く見える。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>ゲーム類を隠す壁付棚・テレビ裏収納</h4>
+          <p>本体とケーブルが見えないようにする。テレビ背面に配線ごと収める。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-5">
+      <div class="sub-head"><span class="code mono">A-5</span><h3>キッチン ─ 形と寸法</h3><span class="sub-n mono">4</span></div>
+      <p class="sub-note">この形が成立することを先に確認してから、周りの間取りを描いてほしい。寸法は妥協点ではなく条件として扱う。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>キッチンを起点に間取りを描く</h4>
+          <p>キッチンとカウンターのような特別な配置を実現したい場合、間取りを先に決めてから当てはめると必ず妥協が出る。ここを固定点として周囲を組む。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>二型（セパレート）キッチン／壁側コンロ・IH</h4>
+          <p>コンロ側を壁付けにして、水栓側を島にする。壁付けコンロにすることで油はねと臭いの範囲を壁側に閉じ込められる。</p>
+          <ul>
+            <li>コンロ側が壁</li>
+            <li>水栓（シンク）側のカウンターを長く取る ─ 最低 100cm、できれば 170cm 以上</li>
+            <li>コンロもシンクも無い純粋なカウンター部分だけで 170cm 取れると理想</li>
+            <li>カウンター高さ 90cm</li>
+            <li>カップボードとキッチンカウンターの間は 100cm</li>
+          </ul>
+          <div class="spec mono"><span>H 900</span><span>通路 1000</span><span>カウンター 1000〜1700+</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>ダイニングテーブルは置かない</h4>
+          <p>カウンターの前面の一部を落として、そこで食事する。後片付けは洗い場から手を伸ばすだけで済む。椅子の座面高は 65〜68cm。</p>
+          <div class="ask"><b>確認</b><span>カウンターで食べる高さ（900mm）に足を入れるスペースが必要。前面をどれだけ落とすか、膝下の奥行きを何mm確保するかを図面に明記したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>キッチンの反対側もカウンター化</h4>
+          <p>作業台にも、物を置く場所にもなる。カップボードとの兼ね合いで決める。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-6">
+      <div class="sub-head"><span class="code mono">A-6</span><h3>キッチン ─ 機器と収まり</h3><span class="sub-n mono">9</span></div>
+      <p class="sub-note">機器の選定と、パネル・継ぎ目・ダクトといった収まりの指定。メーカー比較そのものは C-5。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>シンク下は開けてゴミ箱置き場に</h4>
+          <p>収納にせず空けておき、ゴミ箱を並べる。シンク側にコンセントを付ける。</p>
+          <p>メーカーによってはシンク下を開けられない（LIXIL ノクトなど）ので、C-5 のメーカー選定の判断材料になる。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>60cm フロントオープン食洗機</h4>
+          <p>国産の引き出し式より容量が大きく、鍋まで入る。メーカーは <b>Panasonic か BOSCH</b> の2択で検討する。</p>
+          <div class="ask"><b>確認</b><span>ショールームでカゴの入れやすさと運転音を実機で比べたい。どちらもキッチン本体（C-5）に組み込む前提なので、選んだキッチンメーカーで両方が選べるかも確認する。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>自動水栓</h4>
+          <p>勝手に出たり止まったりして邪魔になる。手動でよい。ただし TOTO の横センサー式（手をかざす位置が横にあるタイプ）は誤作動しにくく、これだけは悪くない。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>コンロ周りの透明板（オイルガード）</h4>
+          <p>付けない。二型でコンロを壁側に寄せる構成（A-5）なので、油はねはキッチンパネル（下記）が受ける。カウンター側まで飛ぶ量は許容する。</p>
+          <p>板を1枚減らすことで、拭く場所が減り、視界にも継ぎ目が出ない。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>コンロ横のキッチンパネルは壁の限界まで貼る</h4>
+          <p>途中で切れると、そこに意味のない区切り線ができる。壁の端まで通す。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>カップボード上のコンセントは6口以上、できれば8口</h4>
+          <p>調理家電をカウンター上に多く並べるので、口数を厚めに確保する。冷蔵庫はパントリー側（A-7）なので、これは調理家電専用の分。</p>
+          <div class="spec mono"><span>最低 6口</span><span>目標 8口</span></div>
+          <div class="ask"><b>確認</b><span>口数より<b>回路数</b>のほうが問題になります。電子レンジ・オーブン・電気ケトル・トースターあたりは同時に使うと 20A の1回路では落ちます。8口を何回路に分けるか、電子レンジやオーブンに専用回路を立てるかを電気図面で示してほしい。アースが要る機器（電子レンジなど）の口も分けて指定したい。</span></div>
+          <div class="ask"><b>確認</b><span>カップボードはキッチンと一緒にメーカー品で買う方針（B-2）なので、<b>本体に何口まで組み込めるか</b>を先に確認したい。足りない分を壁側のコンセントで補うことになりますが、8口ぶんのプレートが並ぶと「線を消す」方針（B-5）とぶつかります。家電の背面に隠れる高さに寄せる、扉付きの家電収納の内側に付けるなど、見え方も含めて配置を決めたい。</span></div>
+          <div class="ask"><b>確認</b><span>炊飯器や電気ケトルは<b>蒸気</b>が出ます。スライド棚に載せて引き出して使う想定なら、引き出した位置でコードが届くか、上の棚板が蒸気で傷まないかも見ておきたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>カップボードを2台つなげて、継ぎ目を研磨で消す</h4>
+          <p>人造大理石の天板なら、現場でつないで継ぎ目が分からなくなるまで研磨できる。1枚の面として見せられる。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="todo">
+        <span class="tag todo">要決定</span>
+        <div class="item-body">
+          <h4>キッチンダクトの経路</h4>
+          <p>レンジフードの排気経路を隠すために、廊下や部屋の角に変な出っ張り（下がり天井・PS）が出ることがある。プラン段階で経路を図面に出してもらう。</p>
+          <div class="ask"><b>確認</b><span>ダクトの通り道と、それによって生じる下がり天井・ふかし壁の位置を、平面図と展開図の両方に明記してほしい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="todo">
+        <span class="tag todo">要決定</span>
+        <div class="item-body">
+          <h4>レンジフードの動作音</h4>
+          <p>「10年お掃除不要」を謳うタイプは構造上かなりうるさいものがある。ダイニングがカウンター＝コンロのすぐ横なので、音は特に効く。ショールームで実機の音を必ず確認する。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-7">
+      <div class="sub-head"><span class="code mono">A-7</span><h3>パントリー・冷蔵庫</h3><span class="sub-n mono">1</span></div>
+      <p class="sub-note">生活感が一番出る冷蔵庫を視界から外すための章。キッチンの配置（A-5）と一体で決まる。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>冷蔵庫はパントリーに隠す</h4>
+          <p>生活感が一番出るのが冷蔵庫。視界から外す。別途、冷凍庫も置く。</p>
+          <ul>
+            <li>冷蔵庫を隠すならキッチンは壁付け寄りの配置が合いそう</li>
+            <li>二型なら、コンロ側に冷凍庫・シンク（切る）側に冷蔵庫の振り分けも良さそう</li>
+            <li>その場合のパントリーは 1.3畳 程度を想定</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>パントリー内に冷蔵庫を置く場合、扉の開き勝手・放熱スペース・専用コンセント・扉を開けたまま出し入れできる通路幅を図面に落としてほしい。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-8">
+      <div class="sub-head"><span class="code mono">A-8</span><h3>浴室</h3><span class="sub-n mono">7</span></div>
+      <p class="sub-note">共通の考え方は「掃除する部品を減らす」。棚・鏡・暖房乾燥機など、手入れが要るものは基本的に付けない。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>浴室サイズは 1616</h4>
+          <p>標準的な1坪サイズ。面積効率を優先し、浮いた分は他に回す。</p>
+          <div class="ask"><b>確認</b><span>メーカーやキャンペーンによっては 1620 のほうが安いことがある。標準設定で大きいほうが同額以下になるなら、そちらでも構わない。各社の価格表で 1616 と 1620 の差額を確認したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>浴槽の材質 ─ 人造大理石か FRP か</h4>
+          <p>人造大理石は FRP より汚れが落ちやすく掃除が楽、という理由で候補にしていた。ただし決め切るには材料が足りないので<b>検討に戻す</b>。</p>
+          <div class="ask"><b>確認</b><span>次の4点を並べて比較したい。① 標準仕様からの<b>差額</b>（メーカーによっては人大が標準のこともある）② 実際の<b>汚れの落ちやすさ</b>の差はどの程度か ③ <b>保温性能</b>の違い（追い焚き回数に効く）④ 経年での<b>変色やくすみ</b>の出方。ショールームで実物の手触りも確認したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>浴室ドアは開き戸</h4>
+          <p>折れ戸はレールと折れ目に汚れが溜まり掃除が大変。開き戸ならタオル掛けも付く。</p>
+          <div class="ask"><b>確認</b><span>開き戸は洗面室側に必要な逃げ寸法が出る。脱衣室の広さと洗濯機・収納の配置に干渉しないか、プランで確認したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>浴室ドアのパネルを透明タイプにする</h4>
+          <p>開き戸（上記）の パネル を、型ガラス調ではなく<b>透明タイプ</b>にする案。狙いは2つ。</p>
+          <ul>
+            <li>浴室と脱衣室がつながって見え、<b>両方が広く感じる</b></li>
+            <li>入浴中でも<b>犬の様子が見える</b></li>
+          </ul>
+          <div class="ask"><b>確認</b><span>透明にすると、逆に次の3点が出てきます。① 浴室から脱衣室が、脱衣室から浴室が<b>丸見え</b>になる（来客が洗面を使う前提＝A-10 なので、脱衣室と洗面が同室なら問題になりうる）② 水垢と皮脂汚れが<b>透明ほど目立つ</b>。「掃除する部品を減らす」という浴室の方針（この章）と逆に働く ③ 割れたときの安全性。中間案として、下半分だけ透明・上半分すりガラスといった組み合わせが選べるかも確認したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>浴室内の仕様 ─ 付けないものリスト</h4>
+          <ul>
+            <li>棚は作らない。ボトル類はすべて壁に貼り付ける（マグネット等）── 壁パネルがマグネット対応であることが条件</li>
+            <li>鏡は付けない</li>
+            <li>排水栓はプッシュワンウェイ</li>
+            <li>床は<b>タイルでなければ何でもよい</b>（各社の樹脂系フロアで可。キレイサーモフロアは TOTO の例）</li>
+            <li>水栓はワイドレバーではないタイプ</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>浴室暖房乾燥機</h4>
+          <p>設置費・修理費・ランニングコストのすべてが高い高級品。ただし浴室の換気そのものは必要なので、換気扇は入れる。</p>
+          <p>浴室の暖房は現在も使っておらず、無しで問題ない。脱衣室についても専用の暖房は設けず、エアコンで賄う前提。</p>
+          <div class="ask"><b>確認</b><span>エアコンの空気が脱衣室まで届く必要がある。ドアを開けておくのか、建具にガラリを入れるのか、通気の経路を A-16（ドアの取捨）とあわせて図面で確認したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>浴室の物干しバー（備え付け）</h4>
+          <p>造作・オプションでの取り付けは不要。<b>マグネット式のバーを施主側で用意する</b>ので、必要なときだけ付けて、使わないときは外せる状態にしておく。</p>
+          <div class="ask"><b>確認</b><span>マグネットが使えることが前提になるので、浴室の壁パネルが<b>マグネット対応（鋼板系）</b>である必要がある。メーカー・グレードによっては樹脂パネルでマグネットが付かないので、機種選定の時点で確認したい。ボトル類の壁付け（下記）も同じ条件。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-9">
+      <div class="sub-head"><span class="code mono">A-9</span><h3>洗面・脱衣・洗濯</h3><span class="sub-n mono">5</span></div>
+      <p class="sub-note">洗濯は洗濯乾燥機で完結させるので、専用室は持たない。洗面は来客用の手洗いも兼ねる（A-10）ので、掃除のしやすさと見た目の両方を求める場所になる。</p>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>ランドリールーム</h4>
+          <p>専用室は作らない。洗濯物を畳むための造作カウンターも絶対に要らない。</p>
+          <p>洗濯の運用は<b>「洗う → 乾かす → ハンガーに掛けてそのまま収納」</b>で完結する。<b>干す作業も畳む作業も発生しない</b>ので、物干しスペースも畳むための面積も要らない。</p>
+          <p>機種は<b>ドラム式一体型</b>。1台で完結するので置き場は最小限で済む。</p>
+          <p>例外として乾燥にかけられないものが稀に出る。それだけは浴室に干す（バーはマグネット式を施主側で用意 → A-8）。</p>
+          <div class="ask"><b>確認</b><span>この運用だと、必要なのは「洗濯機の前でハンガーに掛けられる空間」と「掛けたまま運んで掛け替えずに済む収納」の2つだけです。洗濯機の目の前に一時的にハンガーを掛けておくパイプを1本設けるかどうかを決めたい。設けるなら壁下地が要ります。</span></div>
+          <div class="ask"><b>確認</b><span>ドラム式一体型は間口 640mm 前後を要し、本体も重い。防水パンの要否、搬入経路（廊下・階段・ドア幅）が確保できるかを図面で確認したい。扉の開き勝手（左右）も洗面の動線に合わせて指定する。</span></div>
+          <div class="ask"><b>確認</b><span>浴室暖房乾燥機を入れないので、浴室干しは換気扇のみで乾かすことになる。頻度は低い想定だが、換気扇の風量で現実的に乾くのか、乾くまで浴室が使えないことをどう見るかは把握しておきたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>洗面台はボウル一体型カウンター</h4>
+          <p>継ぎ目がないので掃除が楽。水栓はカウンターの上から生えるタイプ。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>見た目は造作風にする</h4>
+          <p>いわゆる「洗面化粧台」に見えるものは避けたい。<b>造作で作ったように見える</b>デザインにする。ただし実際に造作にするかどうかは別問題で、掃除のしやすさ（上記）は落とさない。</p>
+          <p>見た目を決める要素は次のとおり。家全体のトーン（B-1 の白基調＋木のアクセント）に合わせる。</p>
+          <ul>
+            <li>キャビネットの面材 … 木目にするなら、床・建具と同じ木の色に揃える（B-1）</li>
+            <li>取手 … ライン取手（A-14）で面から出っ張らせない</li>
+            <li>水栓 … カウンター上から生えるタイプ（上記）のデザインを選ぶ</li>
+            <li>鏡 … 壁付け・枠なしの全身鏡（下記）と、洗面まわりの見え方を一緒に考える</li>
+            <li>壁 … 鏡の裏にタイルを貼る案（B-3）が効いてくるのはここ</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>実現手段が2通りあるので、費用と手入れの両面で比較したい。① <b>造作風に見える既製品シリーズ</b>を選ぶ（メーカー各社にカウンターと面材を選べるシリーズがある）② <b>本当に造作</b>で作る。②は自由度が高い反面、天板とボウルの継ぎ目が出やすく「掃除が楽」という要件と衝突します。また造作はテレビ周りだけに絞る方針（B-2）とも外れます。まず①で要望を満たせるかを見たいので、ボウル一体型のまま面材とカウンターを選べるシリーズを提案してほしい。</span></div>
+          <div class="ask"><b>確認</b><span>洗面まわりは照明で見え方がかなり変わります。鏡の上や横に照明を仕込むかを、ダウンライトを減らす方針（B-6）とあわせて決めたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>洗面台の下は引き出し</h4>
+          <p>開き扉だと奥の物が死ぬ。引き出しにするか、それができないなら別の場所に保管スペースを確保する。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>壁付け・枠なしの全身鏡</h4>
+          <p>枠がないほうが壁と一体に見えて、面としてのノイズが減る。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-10">
+      <div class="sub-head"><span class="code mono">A-10</span><h3>トイレ</h3><span class="sub-n mono">7</span></div>
+      <p class="sub-note">手洗いを付けない代わりに、出てすぐ洗面に行ける配置が条件になる。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>トイレは Panasonic アラウーノ（泡洗浄）</h4>
+          <p>泡で流す方式で掃除の頻度が下がる。</p>
+          <div class="ask"><b>確認</b><span>アラウーノは専用洗剤の運用が前提。普段使っているスクラビングバブル系の置き型洗浄剤と併用できるか（競合しないか）を先に確認する。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>タンクレストイレ</h4>
+          <p>便座のセンサーが壊れると本体ごと交換になり 30数万円かかる。タンク付き（またはタンク別体で交換できるもの）にする。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>便座の自動開閉</h4>
+          <p>壊れる部品を増やしたくない。手で開ける。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>トイレ内の手洗い場</h4>
+          <p>タオルを掛ける場所が要る／水はねで掃除が増える、と手間が積み上がる。トイレを出てすぐ洗面に行ける動線にすることで代替する。</p>
+          <p><b>洗面が来客用の手洗いを兼ねる</b>前提でよい。来客が洗面を使うことは問題にしない。したがって「トイレの出口から洗面がすぐ」が間取りの条件になる。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>トイレ奥に、壁で隠れる棚</h4>
+          <p>座ったときに視界に入らない位置に、扉なしのオープン棚。扉を作らないことで出し入れが楽になり、それでいて生活感は壁が隠してくれる。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>ペーパーホルダーは1連＋天板付き</h4>
+          <p>2連は要らない。<b>1連で十分</b>。ただし<b>スマホが置ける天板</b>は欲しいので、天板付きのタイプにする。</p>
+          <div class="ask"><b>確認</b><span>天板は「物が置ける」ではなく「<b>スマホが安定して置ける</b>」ことが条件です。① 奥行きが足りるか（製品によってはかなり浅い）② 座ったまま手が届く高さ・左右位置か ③ 滑って落ちたときに便器の中に入らない配置か。予備のペーパーは壁で隠れる棚（下記）に置く前提でよいか、ホルダー側にも1本置きたいかも決めたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>コンセントは入口から死角になる奥側に付ける</h4>
+          <p>温水洗浄便座のコンセントは、位置によってかなり目立つ。ドアを開けたときに<b>視界に入らない、入口から見て奥側</b>に付ける。</p>
+          <p><b>便器の真裏は避ける。</b>真裏に付けると「便器が隠してくれるかどうか」が便器の寸法次第になり、機種を変えたときや将来入れ替えたときに露出してしまう。便器に頼らず、壁の位置そのもので死角になる場所を選ぶ。</p>
+          <div class="ask"><b>確認</b><span>① 選ぶ便器（アラウーノ想定 → 上記）の<b>電源コードの長さと出る向き</b>で、奥側の壁まで届くかを確認したい ② メーカーが推奨する電源位置と、この方針が両立するか ③ <b>給水管の位置</b>も同じ考え方で決めたい（こちらは便器の給水位置に縛られるので、どこまで動かせるかを聞きたい）。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-11">
+      <div class="sub-head"><span class="code mono">A-11</span><h3>ホームジム</h3><span class="sub-n mono">2</span></div>
+      <p class="sub-note">パワーラックを置く前提。外寸（実測）2,000 × 2,080 × 1,500mm。高さは2階の天井高（A-1）にも収まるので、設置階は面積で決められる。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>パワーラックの寸法</h4>
+          <p>置くパワーラックの外寸は次のとおり。この寸法が入る場所を最初から確保する。</p>
+          <div class="spec mono"><span>幅 2,000mm</span><span>高さ 2,080mm（実測）</span><span>奥行 1,500mm</span></div>
+          <p>設置面積だけで 3.0m²（約 1.8畳）。実際にはこれに加えて、バーベルの抜き差し、プレートの置き場、前後左右の動作スペースが要るので、部屋としては<b>3畳前後</b>が目安になる。</p>
+          <p>荷重への対策は<b>床補強</b>か<b>荷重分散マット</b>のどちらかで行う。1階なら分散マットで足りる可能性があり、2階なら床補強が要る見込み。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="todo">
+        <span class="tag todo">要決定</span>
+        <div class="item-body">
+          <h4>天井高の余裕 ─ 置くだけなら足りる、懸垂すると足りない</h4>
+          <p>実測 2,080mm なので、<b>2階の天井高 2,250mm（A-1）にも収まる</b>。物理的に置けないという制約はなくなった。残る論点は頭上の余裕。</p>
+          <ul>
+            <li>2階（天井 2,250mm）… 余裕 <b>170mm</b></li>
+            <li>1階を標準の 2,400mm にした場合 … 余裕 <b>320mm</b></li>
+            <li>1階を 2,600mm まで上げた場合 … 余裕 <b>520mm</b></li>
+          </ul>
+          <div class="ask"><b>確認</b><span><b>懸垂バーを使うかどうか</b>で必要な高さが変わります。懸垂ではバーより頭が上に出るので、バーの上に 300mm 前後は欲しいところです。まずラックの<b>バーの正確な高さ</b>（床からの寸法）を実測してから、天井高との差を見て判断したい。使わないなら、2階の 2,250mm でも問題ありません。</span></div>
+          <div class="ask"><b>確認</b><span>設置階は、高さではなく<b>面積で決まる</b>ことになりました。1階に置くと LDK・水回り・寝室（A-1）・犬のサークル（A-2）に加えて 3畳前後が必要になります。2階に置く場合は床補強が要る見込みなので、その費用と1階の面積を天秤にかけたい。</span></div>
+          <div class="ask"><b>確認</b><span>搬入経路も確認したい。組み立て前のパーツで最も長いものが、玄関・廊下・（2階なら）階段を通せるか。ドアの有効幅と階段の踊り場（A-13）で引っかかりやすいところです。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-12">
+      <div class="sub-head"><span class="code mono">A-12</span><h3>個室 ─ 寝室と仕事部屋</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">寝室も仕事部屋も、機能を絞って小さく取る。寝室 4.5畳・仕事部屋 3畳ずつ、いずれも収納を持たせない。そのぶん電源と回線は厚めにする。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>寝室は 4.5畳、シングルベッド2台</h4>
+          <p>寝るための部屋と割り切って 4.5畳。シングルベッドを2台並べる。</p>
+          <p>ベッドは<b>ローベッド式</b>。市販のフレームではなく、<b>すのこなどの低いベースにマットレスを直接置く</b>形にする。</p>
+          <p>理由は<b>犬が飛び降りても関節に負担がかからないようにするため</b>。中型犬（A-1）がベッドに上がる前提の高さにする。副次的に、目線が下がるぶん 4.5畳でも広く感じる効果もある。</p>
+          <div class="spec mono"><span>4.5畳</span><span>シングル × 2</span><span>ローベッド（すのこ＋マットレス）</span></div>
+          <div class="ask"><b>確認</b><span>シングル2台を並べると幅 2m 前後を占めるので、4.5畳だと残りは 60cm 程度。① ドアの開き勝手がベッドに当たらないか（引き戸なら A-16 の方針どおり）② 枕元にコンセントとスイッチを置く位置と<b>高さ</b>。衣類は<b>全部1階のファミリークローク（A-15）に集約する</b>ので、寝室にクローゼットは不要。4.5畳はこの前提で成立させる。</span></div>
+          <div class="ask"><b>確認</b><span>ローベッドにすると、枕元のコンセントの高さが標準では合いません。マットレスの上面が低い（床から 30〜40cm 程度）ので、コンセントは<b>マットレス上面より少し上</b>＝床から 45〜50cm 程度が使いやすいはずです。実際に使うベースとマットレスの厚みを決めてから、高さを指定したい（A-19）。</span></div>
+          <p>犬は<b>寝室では寝ない</b>（夜はサークル → A-2）。ただし<b>昼間は入ることがある</b>ので、ベッドに上がって飛び降りるのは日中の話になる。</p>
+          <div class="ask"><b>確認</b><span>夜は犬が入らないので、寝室のドアは<b>夜は閉められる</b>前提でよい。犬用の通り道は不要です。昼間だけ開けておければよいので、引き戸（A-16）で開けっぱなしにできる形が素直です。ドアを閉めれば、洗濯機やドライヤーの音（A-16）も遮れます。</span></div>
+          <div class="ask"><b>確認</b><span>ローベッドは床との隙間がないか極小なので、<b>ルンバがベッド下に入れません</b>。家具の高さを上げてルンバの動線を確保する方針（B-1）と、この寝室だけは方針が変わります。ベッド下は手で掃除する前提でよいか、それとも脚付きのすのこベースにして隙間を確保するかを決めたい。すのこの通気（マットレス下の湿気対策）とも関わります。<br>ただし脚を付けると<b>その分ベッドが高くなり、犬の負担を減らすという本来の目的と逆に働きます</b>。どちらを優先するかの判断が要ります。</span></div>
+          <div class="ask"><b>確認</b><span>犬がベッドに上がる前提なので、次の2点も決めておきたい。① <b>マットレス上面の高さ</b>を何cmに収めるか（すのこベースとマットレスの厚みの合計で決まる）② <b>飛び降りた先の床</b>をどうするか。ペットコーティングのフローリング（B-4）は滑りにくさは考慮されていますが、着地の衝撃は別問題です。ベッド脇に緩衝マットを敷くなら、その分の面積も見ておきたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>仕事部屋は 3畳ずつ・収納なし</h4>
+          <p>2室とも <b>3畳程度</b>。<b>収納は作らない</b>ので、部屋の中は机と椅子だけになる。</p>
+          <div class="spec mono"><span>3畳 × 2室</span><span>収納なし</span></div>
+          <div class="ask"><b>確認</b><span>3畳は約 2.7m × 1.8m。机（幅140cm前後）と椅子を置くと、椅子を引くぶんでほぼ埋まる寸法です。① 実際に机・モニター・椅子を置いた状態の家具配置図を描いてほしい ② ドアを引き戸（A-16）にして、開閉スペースを椅子と干渉させないようにしたい ③ Web会議で背後に映る面をどこにするか。</span></div>
+          <div class="ask"><b>確認</b><span>収納を作らない代わりに、書類・書籍・PC 周辺機器・配線の予備などをどこに置くかが決まっていません。衣類は1階のファミリークローク（A-15）に集約する方針ですが、仕事関係の物はそこに含まれていない想定です。別途どこかに確保するのか、机まわりで完結させるのかを決めたいです。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>仕事部屋は2室とも コンセント10口 ＋ 有線LAN 1口</h4>
+          <p>2室それぞれに同じ仕様で用意する。</p>
+          <ul>
+            <li>コンセント <b>10口</b>／室</li>
+            <li>有線 LAN <b>1口</b>／室（Cat6A・10GbE 対応 → A-20）</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>10口をどう割り付けるか（机の左右・足元・壁の高い位置など）は、机の置き場所が決まらないと決められない。プランに机の位置を入れたうえで口数の配分を決めたい。あわせて、10口を何回路に分けるか（PC・モニター・暖房器具の同時使用を想定）も確認したい。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-13">
+      <div class="sub-head"><span class="code mono">A-13</span><h3>階段</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">人も犬も安心して上り下りできることが条件。寸法は最初に指定してプランに反映してもらう。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>踏面・蹴上の寸法</h4>
+          <p>理想は蹴上 150 / 踏面 300 だが、35坪で階段面積を取り切るのは難しいと思われる。現実解として踏面 300 / 蹴上 200 前後を確保したい。この寸法なら人は完全に安心して上れる。</p>
+          <div class="spec mono"><span>理想 R150 × T300</span><span>現実解 R200 × T300</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>蹴込板を付ける</h4>
+          <p>オープン階段（スケルトン）にはしない。踏板の間が抜けていると犬が怖がる。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>斜め上がりにしない</h4>
+          <p>回り階段の三角形の段は踏み外しやすく危険。踊り場を挟んで四角く折れる形にする。</p>
+          <div class="ask"><b>確認</b><span>踊り場付きは階段の必要面積が増える。A-1「廊下は削る」との面積の綱引きになるので、階段のためにどこまで面積を使うかを先に合意したい。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-14">
+      <div class="sub-head"><span class="code mono">A-14</span><h3>収納 ─ 必要量</h3><span class="sub-n mono">2</span></div>
+      <p class="sub-note">「何を、どれだけ」を先に確定させる。場所の割り付けは A-15。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>確保したい収納量（実測ベース）</h4>
+          <ul>
+            <li>ペットカート … 1台</li>
+            <li>靴 … 15足</li>
+            <li>ダウン・コート類 … ポール 1m 分</li>
+            <li>普段の服 … ポール 2m 分</li>
+            <li>衣替えの服（箱収納） … 1畳 × 高さ 60cm 程度</li>
+            <li>犬のご飯・シーツ予備・おもちゃ … 0.5畳（サークル置き場 1畳ちょいは別枠 → A-2）</li>
+            <li>スキー用品・ボール系アウトドア用品 … 1畳</li>
+            <li>ボードゲーム … 1畳</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>合計すると 3.5畳 + ポール 3m + 玄関土間のカート分。これが1階のファミリークローク／コートクローク／シューズクロークにどう割り振られるか、面積の裏付けを取りたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>収納の奥行きはすべて指定する</h4>
+          <p>「とりあえず標準」で作られると、入れたい物が入らない。場所ごとに、入れる物を基準に奥行きを指定する。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-15">
+      <div class="sub-head"><span class="code mono">A-15</span><h3>収納 ─ 場所とつくり</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">A-14 で出した量を、どこに、どんな建具で収めるか。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>1階にファミリークローク／コートクローク</h4>
+          <p>2階に上がらずに着替えと上着の出し入れが完結する。玄関からの動線上に置きたい。</p>
+          <p><b>衣類はすべてここに集約する。</b>寝室（A-12）や個室にクローゼットは作らない。朝の支度が1階で完結する代わりに、この一か所に全量が集中するので、収納量（A-13）の割り付けはここが最重要になる。</p>
+          <p>畳む作業をしない運用（A-9）なので、<b>収納はハンガー掛けが主体</b>になる。畳んで棚に置く前提の収納は最小限でよい。</p>
+          <div class="ask"><b>確認</b><span>ポール 3m 分＋衣替えの箱 1畳＋高さ60cm を1か所に収める場合の必要面積を出してほしい。ハンガーパイプを上下2段にできるか、可動棚をどう組むかも含めて図面化したい。</span></div>
+          <div class="ask"><b>確認</b><span>収納量リスト（A-13）のポール 3m は、畳む前提で数えた量である可能性があります。畳まずに全部ハンガーに掛けるなら、必要なパイプ長は増えるはずです。実際の衣類を数えて、パイプ長を見直しておきたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>収納の建具 ─ 3枚連動引戸か、壁面収納か</h4>
+          <p>2案を比較して決める。どちらも「手前に張り出さない」点は共通で、分かれるのは見た目と中身の見え方。</p>
+          <ul>
+            <li><b>3枚連動の引戸</b> … 1枚引くと3枚が連動して開き、開口が広く取れる。既製品があるのでコストは読みやすい。ただし常に開口の 1/3 は塞がる</li>
+            <li><b>壁面収納</b> … 壁と一体に見せる。面材を壁に合わせれば「線を消す」方針（B-5）と最も相性が良い。ただし造作寄りになるのでコストが上がる</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>壁面収納にする場合、<b>扉を付けるかどうか</b>が分かれ目です。扉なしはオープン棚と同じで出し入れが最速ですが、中身が見えるので「生活感を消す」方針（B-1）と衝突します。扉ありは見た目が最もすっきりする代わりに、造作費用が乗ります。どこまで造作にするかはテレビ周りだけに絞る方針（B-2）とも関わるので、両案の見積もりを並べて判断したい。</span></div>
+          <div class="ask"><b>確認</b><span>1階のファミリークローク（A-15）は衣類を全部集約する場所なので、ここだけは開口の広さが効きます。3枚連動引戸で 1/3 が常に塞がることが不便にならないか、実際の使い方で確かめたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>収納の取手はライン取手</h4>
+          <p>面から出っ張らないので、掃除でも見た目でもノイズが少ない。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-16">
+      <div class="sub-head"><span class="code mono">A-16</span><h3>ドアと引き戸</h3><span class="sub-n mono">4</span></div>
+      <p class="sub-note">「開けっぱなしでも成立するか」で選ぶ。廊下を削る方針（A-1）の裏返しで、音の問題はドアで受けることになる。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>建具は引き戸を基本にする</h4>
+          <p>開けっぱなしにしても違和感がない。開き戸のように前面のクリアランスも要らない。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>上吊りの引き戸にする</h4>
+          <p>床にレールが出ないので、お掃除ロボットが素通りできる。溝に埃も溜まらない。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="todo">
+        <span class="tag todo">要決定</span>
+        <div class="item-body">
+          <h4>どこにドアを付け、どこを開けたままにするか</h4>
+          <p>部屋ごとに「普段閉めるか」「音が問題になるか」で判断する。寝室にドライヤーや洗濯機の音が届くかどうかが基準のひとつ。</p>
+          <div class="ask"><b>確認</b><span>廊下を削る方針（A-1）と直結する。プラン確定時に、部屋ごとにドアの有無・種類・遮音の要否を一覧にして潰したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>勝手口</h4>
+          <p>基本は不要。ただし駐車場が横にある等、生活動線によっては有効なので土地が決まってから最終判断する。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-17">
+      <div class="sub-head"><span class="code mono">A-17</span><h3>窓</h3><span class="sub-n mono">5</span></div>
+      <p class="sub-note">家全体に適用する窓のルール。リビング固有の窓は A-4。窓を減らすことは断熱性能（C-1）にも効く。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>基本はカーテンレスで暮らす</h4>
+          <p>カーテンもブラインドも掛けない前提で計画する。レールが見えないぶん窓まわりがすっきりし、犬の毛やホコリが溜まる場所も減る。</p>
+          <p>ただし<b>予備としてカーテンレールを1本だけ</b>用意しておく（下地込み）。使う場所は後から決める。</p>
+          <div class="ask"><b>確認</b><span>カーテンレスは断熱にも効く。夜間の熱損失をカーテンで補えないので、その分をガラス性能（C-2）で見ておく必要がある。トリプルガラスであれば問題ないか、担当者に確認したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>視線対策は「フェンス」と「窓の位置・種類」で担保する</h4>
+          <p>カーテンレス（上記）を成立させるには、外から中が見えない状態を建物と外構で作る必要がある。役割分担は次のとおり。</p>
+          <ul>
+            <li><b>リビング</b> … 前面に<b>目隠しのフェンスまたは塀</b>を立てて隠す。「人がいるかどうかも分からない」高さを狙う。庭ごと囲って内庭風にする案もある（外構 → C-9）</li>
+            <li><b>それ以外</b> … 窓の<b>位置と種類</b>で逃げる。高窓・地窓・すりガラス・FIX を使い分ける</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>これは土地選びの条件でもある。候補地ごとに、隣家の窓と向かい合う面はどこか、道路から室内が見通せる角度があるかを図面上で確認したい。カーテンレスが成立しない土地は、その時点で条件が1つ欠けることになる。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>窓を付けない場所</h4>
+          <p>採光も通風も他で足りる場所には窓を付けない。掃除箇所と熱損失が減り、減額にもなる。</p>
+          <ul>
+            <li>浴室 … 窓なし</li>
+            <li>トイレ … 窓なし</li>
+            <li>脱衣室 … 窓なし</li>
+            <li>洗面 … 無しでよい（明るさはリビングで足りる）。付けるとしても FIX 窓にすれば減額できる</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>窓枠の上部を天井の中に隠す</h4>
+          <p>枠の見付けが減り、開口が天井まで抜けて見える。カーテンボックスの納まりと一緒に考える。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>よく見える FIX 窓は水垢対策を考える</h4>
+          <p>開けられない窓は雨だれの跡が目立ちやすく、掃除もしづらい。位置によってはすりガラスにするなどで逃がす。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-18">
+      <div class="sub-head"><span class="code mono">A-18</span><h3>内と外のつなぎ</h3><span class="sub-n mono">5</span></div>
+      <p class="sub-note">狭い床面積で広さを感じさせるための中心的な仕掛け。構造にも効くので初期に共有したい。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>軒と床を、家の中から外へつながるように設計する</h4>
+          <p>床（内）→ 掃き出し窓 → デッキ・土間（外）と、天井（内）→ 軒天（外）がそれぞれ連続すると、視線が外まで抜けて実面積より広く感じる。</p>
+          <ul>
+            <li>掃き出し窓は天井までの大型窓にする（A-4）</li>
+            <li>リビングの天井を高くする（<b>下がり床は採用しない</b> → 下記）</li>
+            <li>その部分だけ天井の色や素材を変えて、内外を同じ面として見せる</li>
+            <li>外側の床をウッドデッキにするか土間にするかは未決（下記）</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>ウッドデッキを作るか</h4>
+          <p><b>必須ではない。</b>ただし、リビングの床とデッキの天端を揃えて<b>床がそのまま外まで続いて見える</b>デザインは非常に魅力的で、上の「内と外をつなぐ」狙いが最も強く出る形になる。</p>
+          <p>それでも決め切れないのは、犬（A-1）まわりで次の3つが引っかかるため。</p>
+          <ul>
+            <li><b>庭が狭くなる</b> … デッキの面積だけ、犬が走れる人工芝の庭（C-9）が減る。元々の庭が広くないので、これが一番大きい</li>
+            <li><b>犬の昇降</b> … デッキと地面の間に段差ができる。中型犬が毎日飛び降りることになり、ローベッド（A-12）を選んだ理由と同じ問題が出る</li>
+            <li><b>デッキ下</b> … 犬が潜り込まないように塞ぐ必要がある。塞ぐと今度は掃除ができず、落ち葉と汚れが溜まる</li>
+          </ul>
+          <p>ただし庭の面積については、<b>内庭が成立するなら庭は小さくなって構わない</b>という判断が出ている（C-9）。1つめの引っかかりはその分だけ弱まる。<b>犬が走れる場所は要る</b>ことは変わらないので、デッキと庭を足した使い方で見たい。</p>
+          <div class="ask"><b>確認</b><span>作る場合、上の3点への対処を具体化したい。① 犬用の<b>ステップまたはスロープ</b>を組み込めるか ② <b>デッキ下の塞ぎ方</b>（幕板で囲うのか、地面まで詰めるのか）と、塞いだあとの通気・清掃をどうするか ③ デッキ材は人工木か天然木か。人工木は<b>夏場に表面温度が上がる</b>ので、裸足と犬の肉球で問題にならないか。</span></div>
+          <div class="ask"><b>確認</b><span>作らない場合でも<b>床の連続感は諦めたくない</b>ので、代替案を出してほしい。① 掃き出し窓の外を<b>土間コンクリートやタイルのテラス</b>にして、室内の床材（B-4）と色・目地を揃える ② デッキを<b>地面に近い高さ</b>に抑えて、犬の昇降と下の隙間の問題そのものを消す ③ 床は諦めて、<b>天井と軒天の連続だけ</b>で抜けを出す。それぞれ、庭として残る面積と費用を並べたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>下がり床（ダウンフロア）</h4>
+          <p>リビングの床を一段下げる案は採用しない。高さの変化は<b>天井を上げる側だけ</b>でつくる。</p>
+          <p>犬（中型犬1匹）の動線に段差ができること、掃除ロボットが越えられないこと、家具の配置が固定されることを避ける。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>車まで濡れずに行けるようにしたい</h4>
+          <p>玄関から駐車スペース（1台）まで、雨に濡れずに移動できる状態にしたい。手段は2つあり、まだ決めていない。</p>
+          <ul>
+            <li><b>建物の軒を伸ばす</b> ─ 玄関側の庇 1.5m（下記）をさらに駐車位置まで延長する。外観が一体になるが、屋根形状と構造の制約を受ける</li>
+            <li><b>カーポートを建てる</b> ─ 外構工事（C-9）で対応。安く確実だが、建物とは別物として見えるので外観との調和が課題になる</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>どちらで実現するかは、建物と駐車スペースの位置関係が決まらないと判断できない。プランで玄関と駐車位置が決まった時点で、軒を伸ばす場合の追加費用とカーポートの費用を並べて比較したい。軒で伸ばす場合、それが可能な屋根形状である必要がある。屋根の形は決め打ちせず条件から決める方針（B-7）なので、この「車まで濡れずに行ける」も条件の1つとして渡す。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>玄関側の屋根を 1.5m 伸ばす</h4>
+          <p>玄関前に深い庇が欲しい。これをやろうとすると屋根形状が寄棟になる（B-7 と連動）。</p>
+          <p>置き配を基本運用にする（A-3）ので、<b>荷物を置いても濡れない深さ</b>が要る点でも意味がある。ポストも独立型にして庇の下に入れたい（A-3）。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-19">
+      <div class="sub-head"><span class="code mono">A-19</span><h3>電気 ─ コンセントとスイッチ</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">「あとで電気打合せで」と言われがちだが、標準任せにされると使えない位置に来る。場所ごとに指定する。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>コンセント・スイッチの高さを場所ごとに指定する</h4>
+          <p>すべて標準高さで揃えられると、家具に隠れたり中途半端な位置に来たりする。使う物を基準に個別指定する。</p>
+          <p>口数・高さが決まっている場所: 仕事部屋 各室10口（A-12）、カップボード上6〜8口（A-6）、サークル脇にペットカメラ用の高い位置1口（A-2）、寝室の枕元（ローベッドに合わせた高さ → A-12）、キッチンのシンク側（A-6）。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>照明スイッチの並び順を指定する</h4>
+          <p>同じ場所の照明を点けるスイッチなのに、部屋によって左右の順番が違うと毎回迷う。家全体で並び順のルールを決めて統一する。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>スイッチの高さをドアハンドルと揃える</h4>
+          <p>横に並ぶ2つの水平線が揃うと、壁面がすっきり見える。</p>
+          <ul>
+            <li>ドアのメーカーによってハンドルの高さが変わるので、建具が決まってから個別に指定する必要があるかもしれない</li>
+            <li>ハンドルの「高さ」がハンドル中央基準か下端基準かも確認しておく</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-20">
+      <div class="sub-head"><span class="code mono">A-20</span><h3>通信・インターホン</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">高気密高断熱の家は壁を閉じたあとに配線を通せない。必要な場所を先に確定させる。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>有線 LAN を3か所に配線する</h4>
+          <p>高気密高断熱の家は壁を閉じたあとに配線を通せないので、必要な場所を先に確定させる。</p>
+          <ul>
+            <li>リビングのテレビ裏 … 1口</li>
+            <li>仕事部屋 A … 1口</li>
+            <li>仕事部屋 B … 1口</li>
+          </ul>
+          <p>ケーブルは<b>カテゴリ 6A</b>（10GBASE-T 対応）で通す。</p>
+          <div class="spec mono"><span>Cat6A</span><span>10GbE 対応</span><span>3か所</span></div>
+          <div class="ask"><b>確認</b><span>3か所を集約するルーター／スイッチングハブをどこに置くか（情報分電盤にするか、収納の一角にするか）。10GbE 対応機器は発熱するので、放熱できる場所と電源が要る。テレビ裏はケーブルを隠す造作（A-4）との取り合いも確認したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>モニター付きインターホン ─ NASTA の製品にする</h4>
+          <p>玄関の来客を室内のモニターで確認できるようにする。メーカーは <b>NASTA（ナスタ）</b>で決まっており、下記の製品ラインを前提に進める。</p>
+          <div class="links"><a href="https://www.nasta.co.jp/product/electrical/interphone-home/" target="_blank" rel="noopener">NASTA インターホン（戸建住宅用）</a></div>
+          <p>価格は<b>定価で 8万円前後</b>と聞いている。ハウスメーカーの標準品ではないので、選定と発注の段取りを早めに固める。</p>
+          <div class="spec mono"><span>NASTA</span><span>定価 約8万円</span><span>型番は要確定</span></div>
+          <div class="ask"><b>確認</b><span>まず<b>型番を確定</b>させたうえで、その機種の<b>電源方式と配線</b>（電源直結か／専用線か／Wi-Fi を使うか）を仕様書で押さえたい。壁を閉じる前に決める必要があるのは、この章の他の項目と同じです。屋外子機の取り付けには<b>下地</b>も要ります。</span></div>
+          <div class="ask"><b>確認</b><span>標準インターホンからの<b>差額</b>と、<b>本体工事に含めるか施主支給（C-7）にするか</b>を決めたい。定価 8万円クラスの製品はネットの実売が定価を下回ることが多く、一方でハウスメーカー経由だと定価ベースで乗ることがあります。<b>①</b> 標準品との差額 <b>②</b> ハウスメーカー経由の見積額 <b>③</b> 施主支給にした場合の実売価格、の3つを並べたい。施主支給にする場合は取り付けの責任範囲と保証も同時に確認する。</span></div>
+          <div class="ask"><b>確認</b><span>この機種のカメラで<b>玄関前がどこまで映るか</b>によって、防犯カメラ（下記）の必要台数が変わります。画角が置き配のスペース（A-3）まで届くなら、防犯カメラは駐車スペースと自転車置き場に集中させられる。<b>両方の画角を1枚の配置図に重ねて</b>確認したい。</span></div>
+          <div class="ask"><b>確認</b><span>玄関子機・表札・独立ポスト（A-3）の配置をまとめて決めたい。ポストも独立型（ダイヤル錠付き → A-3）なので、子機・表札・ポストの3つが玄関前に並びます。同じメーカーで揃えられるなら見た目の統一が取りやすい。室内モニターの設置場所と高さも指定する。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>防犯カメラを付ける</h4>
+          <p>モニター付きインターホン（上記、NASTA）とは別に、屋外を映すカメラを設置する。映したいのは次の2か所。</p>
+          <ul>
+            <li><b>玄関前</b> … 置き配を基本運用にする（A-3）ので、荷物が置かれた状態を見たい</li>
+            <li><b>駐車スペースと自転車置き場</b> … 車と自転車2台（C-9）。自転車はチェーン用アンカーで留めるが、カメラも併せて効かせたい</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>上の2か所を<b>何台でカバーできるか</b>を、画角を踏まえて提案してほしい。玄関と駐車スペースが近ければ1台で兼ねられるかもしれません。カメラの取付高さと向きも、配置が決まった時点で指定したい。</span></div>
+          <div class="ask"><b>確認</b><span><b>電源と配線は壁を閉じる前</b>に決める必要があります（この章の方針と同じ）。① PoE で有線 LAN から給電するか ② 電源だけ屋外に取って通信は Wi-Fi にするか、で必要な配線が変わります。有線にする場合、上の3か所（上記）に足す形になるので、本数と経路を電気図面に入れてほしい。</span></div>
+          <div class="ask"><b>確認</b><span>録画方式（本体の SD カード／クラウド／レコーダー）も決めたい。レコーダーを置くならルーターやハブと同じ場所（E-4）にまとめたい。あわせて、<b>隣家の窓や道路が必要以上に画角に入らない</b>ように向きを調整したい。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-21">
+      <div class="sub-head"><span class="code mono">A-21</span><h3>空調・換気</h3><span class="sub-n mono">5</span></div>
+      <p class="sub-note">エアコンの位置は空き壁ではなく、風が届くべき方向から逆算する。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>エアコンは1階・2階に各1台、計2台</h4>
+          <p>高断熱高気密（C-1）を前提に、少ない台数で家全体を賄う。間取りが決まってから空き壁に付けるのではなく、風が届くべき方向から逆算して位置を決める。</p>
+          <p>脱衣室もこのエアコンで賄う（A-8）ので、空気が届く経路が要る。</p>
+          <div class="ask"><b>確認</b><span>2台で家全体を賄えるかは、間取りと断熱仕様が固まった段階で負荷計算をして裏付けたい。特に、寝室と仕事部屋2室が個室として閉じられたときに、そこまで温度が届くのかを確認する。届かない場合に何台必要になるかも先に聞いておきたい。</span></div>
+          <ul>
+            <li>隠蔽配管はメンテナンスが大変すぎるので原則採用しない</li>
+            <li>エアコン本体の横は 5cm 程度の隙間を空けるのが推奨。壁との納まりを確認する</li>
+            <li>将来の後付け分も、配管スリーブと専用回路を先に用意しておく（C-7 の施主支給と連動）</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>サークル周辺の換気を強める</h4>
+          <p>犬のにおい対策の主軸はこれにする。サークルの置き場所（A-2）の近くに排気を寄せる、またはその周辺の換気量を上げる。工事が要るので着工前に決める。</p>
+          <div class="ask"><b>確認</b><span>24時間換気の方式（下記）が決まらないと具体化できない。方式ごとに「特定の場所の換気量を上げる」ことがどこまでできるのか、追加費用はいくらかを整理してほしい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>天井付けの消臭機</h4>
+          <p>換気で足りない場合の上積みとして、天井付け（据え付け型）の消臭機を検討する。据え付けなら電源と設置下地が要るので、採用するなら着工前の判断になる。</p>
+          <p>調湿・消臭機能のある壁材（エコカラット等）で壁に吸わせる案もあるが、こちらは B-3 の壁の仕上げで判断する。</p>
+          <div class="ask"><b>確認</b><span>据え付け型の消臭機について、機種・費用・効果・フィルター交換の手間を確認したい。置き型の脱臭家電で足りるなら工事は不要なので、その比較も含めて判断したい。</span></div>
+        </div>
+      </article>
+
+
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>バルコニーは室外機置き場として最小限だけ</h4>
+          <p>洗濯は乾燥機で完結する（A-9）ので、干すためのバルコニーは要らない。2階エアコンの室外機を置くための台として、必要最小限の広さだけ設ける。</p>
+          <div class="ask"><b>確認</b><span>人が出ない前提なら防水と手すりの仕様を落とせるのか、それとも法規上フルスペックが要るのかを確認したい。あわせて、2階に居室がある場合の避難経路として何か求められるかも見ておきたい。室外機を1階の地上に置いて配管を延ばす案と、費用を比較したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="todo">
+        <span class="tag todo">要決定</span>
+        <div class="item-body">
+          <h4>24時間換気の方式</h4>
+          <p>第1種（熱交換）は高気密高断熱と相性が良いが、犬がいると毛によるフィルターやダクトの詰まりが心配。</p>
+          <p>判断は<b>メンテナンスの実例を見てから</b>行う。カタログの性能ではなく、実際にペットのいる家でどれくらいの頻度で何をすることになるのかで決める。</p>
+          <div class="ask"><b>確認</b><span>ペットのいる家でのフィルター交換頻度・清掃のしやすさ・ダクトレス式の可否について、実例ベースで説明してほしい。可能なら実際に住んでいる家を見せてもらいたい。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-22">
+      <div class="sub-head"><span class="code mono">A-22</span><h3>給湯・屋外の水まわり</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">配管の長さと、外で使う水栓の形。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>給湯は長期優良住宅の要件に合うもの／実質オール電化</h4>
+          <p>キッチンは IH（A-5）、給湯も電気で賄う想定なので、ガスは引かない方向。停電時は家全体が止まるが、その対策は取らない（A-23）と割り切る。</p>
+          <div class="ask"><b>確認</b><span>長期優良住宅の一次エネルギー消費量の基準を満たす給湯機として、具体的にどの機種・効率のものが必要かを提示してほしい。エコキュートならタンクの寸法と外部の置き場所（1台分の駐車スペース以外に余白があるか）も同時に確認する。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>給湯器は浴室の近くに置く</h4>
+          <p>配管が短いほどお湯が出るまでが早く、捨てる水も減る。外壁側の設置位置は浴室からの距離で決める。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>屋外の水栓は立水栓を1つだけ</h4>
+          <p>地面に埋まっている散水栓ではなく、四角柱が立つタイプ。しゃがまずに使えて、犬の足洗いやホースの取り回しが楽。</p>
+          <p>数は<b>1つ</b>にする。屋外の水まわりは放っておくと汚れて藻が付くので、増やすほど掃除する対象が増えるだけ。<b>足りない距離はホースで埋める</b>という割り切り。</p>
+          <div class="spec mono"><span>立水栓</span><span>1つ</span><span>水受けパンは要検討</span></div>
+          <p>水受けパンも掃除が面倒なので、ついでに無くすかどうかを検討する。</p>
+          <div class="ask"><b>確認</b><span>1つで足りるかを<b>使う場面から逆算</b>したい。① 犬（A-1）の足洗い ② 人工芝（C-9）の洗い流し ③ 洗車と駐車土間の掃除 ④ 庭の水やり。この4つが1か所から<b>ホースの届く範囲</b>に収まる位置を、建物の配置が決まった時点で図面上で決めてほしい。家の裏側に回り込む必要があるかどうかが分かれ目になります。</span></div>
+          <div class="ask"><b>確認</b><span>水受けパンを無くす場合、<b>流れた水の行き先</b>を決めておく必要があります。人工芝（C-9）の下に流し込むと下地が傷むので、足元を土間か砕石にして排水につなぐ形になるはず。それで本当に掃除の手間が減るのかを、パン無しの実例で見せてほしい。あわせて<b>凍結対策</b>（水抜き栓の要否）が要る地域かも確認したい。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="a-23">
+      <div class="sub-head"><span class="code mono">A-23</span><h3>点検口と将来の備え</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">今は使わないが、あとから足すと高くつくもの。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>床下点検口・天井点検口は生活動線から少し外す</h4>
+          <p>毎日踏む場所・目に入る場所に置かない。ただし点検できなくなるほど奥に追いやらない。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>EV 車用のコンセントを付ける</h4>
+          <p>将来 EV に乗り換える想定で、駐車スペースに充電用コンセントを設ける。あとから引き直すと外構をやり直すことになるので、最初に入れておく。</p>
+          <div class="ask"><b>確認</b><span>200V の専用回路と分電盤の空き、駐車位置までの配管ルートを図面に入れてほしい。コンセント本体を付けるのか、空配管と回路だけ先行して本体は後付けにするのかで費用が変わるので、両方の見積もりがほしい。外構の駐車土間（C-9）を打つ前に決めておく必要があります。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>停電対策</h4>
+          <p>実質オール電化（A-22）なので停電時は家全体が止まるが、蓄電池や発電機による対策は取らない。コストは他に回す。</p>
+          <p>必要になったらポータブル電源を家電として買い足せば済む、という判断。</p>
+        </div>
+      </article>
+
+
+    </div>
+  </section>
+
+  <section class="section" id="b">
+    <div class="section-head">
+      <p class="kicker mono"><span>Section B</span><span data-count="b"></span></p>
+      <h2>雰囲気に影響する要望</h2>
+      <p class="desc">狙いは二つだけ。ひとつは「抜け感」、視線が止まらずに奥や外まで抜けること。もうひとつは「生活感を消す」、物と機器と継ぎ目を視界から外すこと。個別の好みもほぼこの二つに紐づいている。章は<b>部位ごと</b>に分けている。</p>
+    </div>
+
+    <div class="sub" id="b-1">
+      <div class="sub-head"><span class="code mono">B-1</span><h3>全体の方向性</h3><span class="sub-n mono">4</span></div>
+      <p class="sub-note">この二つが判断基準。迷ったときはここに戻る。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>基調は白、アクセントに黒と木</h4>
+          <p>壁と天井は白で通し、黒と木で差し込む。色数を絞ることで、面としての連続感が出る。</p>
+          <ul>
+            <li>白 … 壁・天井・巾木（巾木は壁と同色で消す → B-5）</li>
+            <li>黒 … アクセントに使う。金物・建具の取手・照明器具・アクセントクロスの候補</li>
+            <li>木 … 床と建具、造作（テレビ周り → B-2）</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>木の色は家中で揃えたい。床材（B-4）を決めたら、建具と造作の面材をその色に寄せる形で品番を揃えてほしい。黒をどこにどれだけ入れるかは、量が過ぎると重くなるので、展開図で位置と面積を見てから決めたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>抜け感をつくる</h4>
+          <p>視線を止める要素を減らす。具体的には次の積み重ねで実現する。</p>
+          <ul>
+            <li>リビングの扉を高くして垂れ壁をなくす（A-4）</li>
+            <li>掃き出し窓を天井まで上げる／窓枠上部を天井に隠す（A-4 / A-17）</li>
+            <li>内外の天井・床・壁を連続させる（A-18）</li>
+            <li>引き違い窓の召し合わせを片寄せして FIX 面を広く取る（A-4）</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>生活感を消す</h4>
+          <p>「片付ける」ではなく「そもそも見えない」状態を設計でつくる。</p>
+          <ul>
+            <li>冷蔵庫はパントリーに隠す（A-7）</li>
+            <li>ゲーム機とケーブルは壁付棚・テレビ裏に収める（A-4）</li>
+            <li>トイレの棚は扉を付けず、壁で視線を切る（A-10）</li>
+            <li>巾木・框・目地といった「線」を消す（B-5）</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>家具の高さを上げて、ルンバの動線を確保する</h4>
+          <p>脚のある家具で下を通せるようにすると、床に物がない状態を維持しやすい。造作家具の場合は下の空きを何mm取るか指定する。</p>
+          <p>例外は寝室。ローベッド（A-12）にするので、ベッド下はルンバが入れない。そこだけは手で掃除する前提になる。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="b-2">
+      <div class="sub-head"><span class="code mono">B-2</span><h3>壁 ─ クロス</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">色を散らかさない。クロスは家全体で白を基調にする（B-1）。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>造作家具はテレビ周りだけ</h4>
+          <p>造作は金額が大きいので、効果の高いところに絞る。</p>
+          <ul>
+            <li><b>作る</b> … テレビ周り（背面収納・壁付棚）。ゲーム機と配線を隠すため（A-4）。有線 LAN（A-20）の取り合いもここ</li>
+            <li><b>作らない</b> … 玄関ベンチ、仕事部屋のデスク・棚。市販家具で対応する</li>
+            <li><b>メーカー品で入れる</b> … カップボードはキッチンと一緒に購入する（造作にはしない → C-5）</li>
+          </ul>
+          <p>洗面のボウル一体型カウンター（A-9）とトイレ奥の棚（A-10）は、造作ではなく設備・建具側の話として別に決める。</p>
+          <div class="ask"><b>確認</b><span>カップボードをキッチンと同時購入する場合、2台つないで継ぎ目を研磨で消す案（A-6）が成立するかを確認したい。メーカー既製品だと現場での研磨ができないことがある。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>アクセントクロスをあちこちに使わない</h4>
+          <p>使うのはメインの居住空間のアクセント一面だけ。部屋ごとに色を変えると、家全体としてはただ散らかって見える。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>スーパー耐久クロス</h4>
+          <p>犬がいるので、引っかき・汚れに強いグレードにする。</p>
+          <div class="ask"><b>確認</b><span>耐久クロスは種類によって質感（表面のツヤ・エンボス）が普通のクロスと違う。採用範囲を全室にするのか、犬が触る高さ・部屋に限定するのかを決めたい。</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="sub" id="b-3">
+      <div class="sub-head"><span class="code mono">B-3</span><h3>壁 ─ タイルとパネル</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">クロス以外の仕上げ。採用箇所を先に決めないと下地が間に合わない。目地の通し方はタイルを採用する場合の話。</p>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>壁の一部をタイル張りに</h4>
+          <p>60cm 角のような大判タイルをアクセントで使うと、クロスとは別格の見え方になる。洗面台の鏡の裏あたりが候補。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>タイルの目地の通し方</h4>
+          <p><b>タイルを採用した場合の話。</b>継ぎ目の位置は意図的に指定し、施工者任せにしない。ずらし幅は次の2案。</p>
+          <ul>
+            <li><b>馬目地・真ん中揃え</b>（1/2 ずらし） … 現在の第一候補。整って見える</li>
+            <li><b>20cm ずらし</b> … 1/2 ずらしは規則的すぎて安く見えることがあるので、不等分割にすると品よく見えるかもしれない</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>タイルの<b>定尺と割付</b>で、ずらせる幅と端部の納まりが変わります。60cm 角を想定（下記）しているので、その寸法で 20cm ずらしにしたときに端部がどうなるかを割付図で見たい。貼る面の寸法が決まらないと判断できないので、採用箇所（下記）の確定とセットで進めたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>マグネット対応パネルを各所の壁面に</h4>
+          <p>掲示や小物の一時置きを、壁に穴を開けずに済ませる。どの壁面に仕込むかを事前に指定する必要がある。</p>
+          <div class="ask"><b>確認</b><span>下地に鋼板を仕込む方式か、マグネット塗料／マグネットクロス仕上げかで、施工時期もコストも変わる。採用箇所を先に確定させたい。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="b-4">
+      <div class="sub-head"><span class="code mono">B-4</span><h3>床</h3><span class="sub-n mono">2</span></div>
+      <p class="sub-note">犬がいることが最大の条件。滑らない・傷に強い・掃除できる、を満たしたうえで見た目を選ぶ。</p>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>挽板・突板は論外</h4>
+          <p>表層の薄い天然木は傷と水に弱く、犬がいる家では持たない。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>床材の候補は3つ</h4>
+          <ul>
+            <li>クッションフロア</li>
+            <li>ペットコーティングを施したフローリング</li>
+            <li>タイル</li>
+          </ul>
+          <p>調べた範囲では「タイルに見えるフローリング＋ペットコーティング」が良さそうだった。タイルの見た目と、フローリングの足触り・コストの両取りになる。</p>
+          <p>ただし<b>最終判断はサンプルの実物を見てから</b>行う。中型犬1匹（A-1）が毎日歩く床なので、滑りにくさと傷の付き方は現物で確認したい。</p>
+          <div class="ask"><b>確認</b><span>候補の実物サンプルを、できれば A4 以上の大きさで用意してほしい。爪で引っかいたときの跡の残り方も試させてもらえると助かる。あわせてペットコーティングの耐用年数と再施工の費用・タイミング、施主支給できるのかハウスメーカー施工なのかも確認したい。木の色は建具・造作と揃える（B-1）ので、決定後に他の面材を合わせる。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="b-5">
+      <div class="sub-head"><span class="code mono">B-5</span><h3>巾木・框</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">面を面のまま見せるための細部。伝えていないと標準品で作られてしまう領域。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>巾木は薄いものにする</h4>
+          <p>出っ張りが少ないほど掃除が楽で、家具も壁に寄せられる。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>巾木の色は壁に合わせて存在を消す</h4>
+          <p>家全体で「白の巾木」と決め打ちしない。リビングの壁が白なら巾木も白、寝室が黒やグレーのクロスならそこの巾木もその色にする。壁の色を変えた部屋だけ白い線が走ると、かえって目立つ。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>付け框をなくす</h4>
+          <p>掃除が楽になり、見た目の邪魔な線も消える。玄関の納まりを框なしで成立させる方法を確認する。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="b-6">
+      <div class="sub-head"><span class="code mono">B-6</span><h3>照明</h3><span class="sub-n mono">4</span></div>
+      <p class="sub-note">基本方針は「減らす」。そのぶん、残した照明は明るさと色を変えられるようにする。リビングだけは器具の種類そのものを検討中。</p>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>ダウンライトを減らす</h4>
+          <p>提案されるままの数を付けない。天井に穴が並ぶほど雰囲気が壊れるので、本来必要な量から減らせるところは減らす。</p>
+          <ul>
+            <li>判断の拠り所は「照明設計の教科書」（D-5）</li>
+            <li>減らしたうえで、あとから増やせるように配線だけ通しておくのもあり</li>
+            <li>ダウンライトには天井埋め込み型（本体一体）と電球交換型がある</li>
+            <li>埋め込み型は寿命が来たときの交換に第二種電気工事士の資格が必要になる ─ 交換型を選べる場所は交換型にしておきたい</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>リビングはライン照明という手もある</h4>
+          <p>ダウンライトを点在させる代わりに、リビングだけ<b>ライン照明</b>にする案。天井に穴が並ばないぶんスッキリして、<b>ただの家ではない感</b>が出せる。「ダウンライトを減らす」方針（上記）の延長線上にある。</p>
+          <p>ダウンライトの利点は<b>1個ずつ交換できる</b>ことだが、どうせ<b>だいたい同じタイミングでまとめて交換する</b>のなら、その利点は実質なくなる。ライン照明でも条件は変わらない。</p>
+          <div class="ask"><b>確認</b><span>判断材料として<b>交換まで含めたコスパ</b>を出したい。ダウンライト側は、電球交換型なら自分で電球を替えられるが、天井埋め込み型は交換に第二種電気工事士が要る（D-1）。ライン照明は器具ごとの交換になる想定です。<b>①</b> 初期費用（器具代＋施工費）<b>②</b> 寿命が来たときの1回あたりの費用と、自分でできるかどうか、を両案で並べてほしい。</span></div>
+          <div class="ask"><b>確認</b><span>逆に<b>眩しすぎる可能性</b>が気がかりなので、<b>実物を点灯した状態で見たい</b>。光源が線で露出するタイプは直視するとつらいはずです。ルーバーや拡散カバー付きのもの、あるいは天井や壁に反射させる納まり（コーブ照明）で和らげられるかも含めて、ショールームで確認したい。リビングは調光・調色が必須（下記）なので、絞ったときにどう見えるかも一緒に見る。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>調光・調色に対応させる部屋</h4>
+          <p>ダウンライトの数を減らすぶん、明るさと色を変えられることの価値が上がる。次の3室は<b>調光・調色の両方</b>を必須とする。</p>
+          <ul>
+            <li>リビング</li>
+            <li>寝室</li>
+            <li>仕事部屋（2室とも）</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>調光・調色は器具・スイッチ・電源の3点が揃って初めて機能する。Panasonic アドバンスシリーズ（下記）で調光調色に対応する品番の組み合わせを提示してほしい。また、この3室以外は固定色になるので、そちらの色温度（2700K / 3000K など）を家全体でどう揃えるかも決めたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>スイッチ・プレートは Panasonic アドバンスシリーズ</h4>
+          <p>フラットで主張が少なく、B-5 の「線を消す」方針と揃う。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="b-7">
+      <div class="sub-head"><span class="code mono">B-7</span><h3>外観</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">屋根の形は見た目だけでなく、庇の出・太陽光の載り方・維持費の選択でもある。</p>
+
+      <article class="item" data-tag="todo">
+        <span class="tag todo">要決定</span>
+        <div class="item-body">
+          <h4>屋根形状は決め打ちしない</h4>
+          <p>寄棟に傾いてはいるが、<b>形を先に決めてしまうのは勿体ない</b>。寄棟かキューブかの2択に絞るのも早すぎる。切妻・片流れ・招き屋根など、やりようは他にもあるはずなので、選択肢を開けたまま進める。</p>
+          <p>代わりに、<b>屋根が満たすべき条件</b>を先に固める。形はその条件を満たす案の中から、外観と見積もりを見て選ぶ。</p>
+          <ul>
+            <li>玄関側に <b>1.5m の庇</b>が出せること（A-18）</li>
+            <li><b>車まで濡れずに</b>行けること。軒を伸ばして解決するなら、その形が取れること（A-18）</li>
+            <li>軒の出が<b>外壁の持ち</b>に効く。メンテナンスフリーの外壁（下記）と合わせて 30年の維持費で見る</li>
+            <li>内と外の天井をつなげる納まり（A-18）と両立すること</li>
+            <li>太陽光は載せない方向（C-4）なので、<b>パネルの枚数による制約はない</b></li>
+          </ul>
+          <div class="ask"><b>確認</b><span>上の条件を満たす屋根形状の案を、<b>2〜3案まとめて</b>出してほしい。各案について、外観パースと、屋根まわりの追加費用、軒の出による外壁メンテ周期の違いを並べたい。「寄棟かキューブか」という聞き方ではなく、条件から逆算した提案をもらえると助かります。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>メンテナンスフリーの外壁</h4>
+          <p>10年ごとの足場込みの再塗装を避けたい。</p>
+          <p>判断基準は<b>30年間の維持費</b>とする。初期費用の安さでは選ばない。</p>
+          <div class="ask"><b>確認</b><span>「メンテナンスフリー」は各社で定義が違う。タイル外壁／光触媒・無機系サイディング／塗り壁のそれぞれについて、初期費用＋足場代を含む再塗装・シーリング打ち替えの費用と周期を並べた、30年間の総額比較表を出してほしい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>塀を建てるなら、天端を斜めにする</h4>
+          <p>水平だと雨水が溜まり、汚れと劣化の起点になる。水を落とす勾配を付ける。</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="c">
+    <div class="section-head">
+      <p class="kicker mono"><span>Section C</span><span data-count="c"></span></p>
+      <h2>その他要望</h2>
+      <p class="desc">間取りにも雰囲気にも直接は出ないが、金額と住み心地を大きく左右するもの。<b>分野ごと</b>に分けている。</p>
+    </div>
+
+    <div class="sub" id="c-1">
+      <div class="sub-head"><span class="code mono">C-1</span><h3>断熱・気密の目標値</h3><span class="sub-n mono">4</span></div>
+      <p class="sub-note">ここは数値で握る。曖昧な「高断熱です」では受け取らない。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>耐震等級3</h4>
+          <p>長期優良住宅（C-3）の要件は等級2以上だが、<b>等級3</b>まで上げる。地震保険が半額になり、売却時の評価にも効く。制震ダンパーまでは入れない。</p>
+          <p>吹き抜けを作らない（A-2）ので、等級3と間取りの衝突は比較的少ないはず。ただし大型の掃き出し窓（A-4）とは耐力壁の取り合いが出る。</p>
+          <div class="spec mono"><span>耐震等級 3</span><span>制震ダンパーなし</span></div>
+          <div class="ask"><b>確認</b><span>等級3を「許容応力度計算」で取るのか、簡易な「性能表示計算」で取るのかを確認したい。同じ等級3でも根拠が違う。あわせて、リビングの大型窓をどこまで大きくできるかを構造から示してほしい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>工法にはこだわらない</h4>
+          <p>在来軸組・2×4・SE構法など、工法そのものに希望はない。目標性能（UA値・C値・耐震等級3）と間取りが成立するなら、各社の得意な工法でよい。</p>
+          <div class="ask"><b>確認</b><span>工法を問わない代わりに、その工法で「寝室も1階」案（A-1）や大型窓が成立するかは各社に確認したい。面で支える工法（2×4系）は壁を抜けないので、間取りの自由度に差が出ます。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>UA値 0.4 以下 / C値 1.0 以下</h4>
+          <p>HEAT20 G2 グレード以上を水準とする。高気密・高断熱住宅にすることは前提条件。</p>
+          <div class="spec mono"><span>UA ≦ 0.40</span><span>C ≦ 1.0</span><span>HEAT20 G2 以上</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>東京の基準値は参考にしない</h4>
+          <p>東京（6地域）の規定値は緩すぎて指標にならない。北海道の規定値を参考にして目標を立てる。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="c-2">
+      <div class="sub-head"><span class="code mono">C-2</span><h3>性能を担保する仕様と検査</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">目標値は仕様の結果でしかない。何を積んで届かせるのか、達成をどう確かめるのかまで決める。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>サッシはアルミ樹脂複合＋トリプルガラス</h4>
+          <p>現時点の想定仕様。Low-E の有無は未確認。</p>
+          <div class="spec mono"><span>アルミ樹脂複合サッシ</span><span>トリプルガラス</span><span>Low-E 未確認</span></div>
+          <div class="ask"><b>確認</b><span>この組み合わせは<b>枠が弱点になる</b>点を確認したい。ガラスをトリプルにしても、アルミ樹脂複合の枠は樹脂サッシより熱を通すので、窓全体の性能（熱貫流率）は思ったほど上がらないことがあります。① この仕様での窓全体の熱貫流率はいくつか ② 同じ予算で「樹脂サッシ＋Low-Eペア」にした場合と比べて、UA値はどちらが有利か ③ 枠の結露リスクはどうか、の3点を数字で出してほしい。あわせて Low-E とガス層（アルゴン／クリプトン）の仕様も明記してもらう。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="todo">
+        <span class="tag todo">要決定</span>
+        <div class="item-body">
+          <h4>UA値 0.4 を達成するための仕様</h4>
+          <p>数値は仕様の結果なので、何をどう積んで 0.4 に届かせるのかを具体で見たい。</p>
+          <div class="ask"><b>確認</b><span>サッシ（樹脂か、アルミ樹脂複合か）、ガラス（Low-E ペアかトリプルか、ガス種）、断熱材の種類と厚み、付加断熱の有無、玄関ドアの断熱等級。窓を減らす方針（A-17）がどれだけ数値に効くのかも含めて説明してほしい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="todo">
+        <span class="tag todo">要決定</span>
+        <div class="item-body">
+          <h4>C値をどう保証するか</h4>
+          <p>C値は設計では出せず、実際に測らないと分からない。</p>
+          <div class="ask"><b>確認</b><span>気密測定を実施するか、費用は誰が持つか、中間と完成の2回測るか、目標未達だった場合にどうするかを契約前に確認したい。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="c-3">
+      <div class="sub-head"><span class="code mono">C-3</span><h3>認定と補助金</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">着工前の申請が条件になるものが多い。時期を逃さない。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>長期優良住宅を取得する</h4>
+          <p>税制優遇と住宅ローンの条件、将来の売却時の評価に効く。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>GX 志向型住宅の認定</h4>
+          <p>認定要件が家電まで指定してくるので、現実的に無理。長期優良住宅で行く。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="todo">
+        <span class="tag todo">要決定</span>
+        <div class="item-body">
+          <h4>使える補助金を洗い出す</h4>
+          <p>国・都道府県・市区町村の三層で、それぞれ使えるものを調べる。着工前の申請が条件になるものが多いので、時期を逃さないようにする。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="c-4">
+      <div class="sub-head"><span class="code mono">C-4</span><h3>太陽光</h3><span class="sub-n mono">1</span></div>
+      <p class="sub-note">パネル代と売電額だけで判断しない。</p>
+
+      <article class="item" data-tag="todo">
+        <span class="tag todo">要決定</span>
+        <div class="item-body">
+          <h4>太陽光パネルを載せるかどうか</h4>
+          <p>載せる場合、パネル代と売電額だけで判断しない。次をすべて込みでコスパ計算する。</p>
+          <ul>
+            <li>パワーコンディショナーの交換費用（寿命は概ね 10〜15年）</li>
+            <li>固定資産税への影響</li>
+            <li>火災保険料への影響</li>
+            <li>住宅ローン金利への影響（優遇が付く場合がある）</li>
+            <li>最終的な撤去・処分費用</li>
+          </ul>
+          <p>現時点では<b>載せない方向</b>。トータルコストで見ると大きくは変わらない気がしている。ただし感覚での判断は避けたいので、上の項目をすべて含めた収支を実際に計算してから確定させる。</p>
+          <div class="ask"><b>確認</b><span>30年間の収支表を出してほしい。パネル代・パワコン交換（10〜15年で1回）・固定資産税・火災保険の増額・処分費用を支出側に、自家消費分の削減額と売電収入を収入側に置いた形で。載せない前提なら屋根形状（B-7）は見た目とコストだけで選べます。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="c-5">
+      <div class="sub-head"><span class="code mono">C-5</span><h3>キッチンメーカーの選定</h3><span class="sub-n mono">2</span></div>
+      <p class="sub-note">A-5・A-6 の要件を満たせるかで機械的に絞る。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>キッチンの候補は3社</h4>
+          <p>現在、次の3つで検討中。LIXIL は A-5・A-6 の必須要件（天板勝ち・シンク下オープン）を満たせないため候補から外れている。</p>
+          <ul>
+            <li><b>Panasonic L-Class</b> ─ IH の薄さが決め手。トリプルワイドコンロ（調理メニュー設定が揃っていて保温やハンバーグモードがある／スイッチをしまえるので汚れにくい）、熱を感知して自動で風量が上がるレンジフード、スゴピカ素材</li>
+            <li><b>クリナップ ステディア</b></li>
+            <li><b>グラフテクト</b></li>
+          </ul>
+          <p>それぞれの詳細は下の調査結果を参照。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>各社の調査結果</h4>
+          <ul>
+            <li><b>クリナップ</b> ─ ステディア / セントロ。人大（フォルテックス）またはセラミック天板。流れーるシンク、自動お掃除レンジフード。価格帯 100〜200万円</li>
+            <li><b>グラフテクト</b> ─ どのレイアウトでも値段が変わらないのが強み。価格帯 140〜200万円。高機能素材エバルト天板は、メラミン樹脂なので剥がれたら終わりという弱さもある。全体の統一感は良い</li>
+            <li><b>LIXIL</b>（候補外）─ ノクトだと天板勝ちにできず、シンク下を開けることもできない（A-5・A-6 の要件と衝突）。それ以外は大体同じ。カウンターの長さを変えたり、一部だけカウンターにしたりできるのは良い</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>残る3社について、A-5・A-6 の必須要件（二型／壁側コンロ／シンク下オープン／カウンター 170cm 級／60cm フロントオープン食洗機／天板勝ち）をすべて満たした構成で相見積もりを出してほしい。同じ条件で並べないと価格が比較できない。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="c-6">
+      <div class="sub-head"><span class="code mono">C-6</span><h3>その他の設備・機器</h3><span class="sub-n mono">2</span></div>
+      <p class="sub-note">キッチン以外で機種の方針が決まっているもの。</p>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>水道直結型のウォーターサーバー</h4>
+          <p>ボトル交換が不要なので結構良さそう。Rico by aqua style が候補。</p>
+          <div class="ask"><b>確認</b><span>直結型は設置場所に分岐水栓と排水、専用コンセントが要る。キッチンかパントリーのどちらに置くかを決めて、給排水と電気の位置を図面に入れておきたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="no">
+        <span class="tag no">不要</span>
+        <div class="item-body">
+          <h4>備え付けのスマートロック</h4>
+          <p>罠が多い。スリープモードの挙動、センサーキーを常に持ち歩かないといけない、など。ドアに最初から組み込まれていると、不満があっても交換しづらい。</p>
+          <p>スマートキーは後付けで十分。あとから自分で選べる方が良い。</p>
+          <div class="ask"><b>確認</b><span>後付けを前提にするなら、玄関ドアのサムターン形状と扉厚が主要な後付けスマートロックに対応しているかを、ドア選定時に確認しておきたい。</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="c-7">
+      <div class="sub-head"><span class="code mono">C-7</span><h3>施主支給と値引き</h3><span class="sub-n mono">2</span></div>
+      <p class="sub-note">ハウスメーカー経由は割高になる。ただし段取りが要る。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>今すぐ必要ないものは施主支給にする</h4>
+          <p>ハウスメーカー経由は割高になる。ただし段取りが要る。</p>
+          <ul>
+            <li>施主側で付けたいものがある場合は、先に「施主支給する」と提案しておく</li>
+            <li>エアコンを後付けするなら、配管スリーブ・電源・室外機置き場の整備を忘れずに（A-21）</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>施主支給品の保管場所・取付の責任範囲・不具合時の保証がどうなるかを、支給リストと一緒に確認したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>グレードを下げた「備品」として買うと割引率が上がることがある</h4>
+          <p>同じ商品でも、仕入れの区分によって値引き率が変わるケースがある。担当者に相談してみる価値がある。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="c-8">
+      <div class="sub-head"><span class="code mono">C-8</span><h3>資金計画</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">建てるまでの費用だけでなく、住んでからの費用まで含めて設計する。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>総予算 6,000〜7,000万円／進行状況</h4>
+          <p>土地・建物・外構・諸費用をすべて含めた総額のレンジ。この枠の中で配分する。</p>
+          <ul>
+            <li>依頼先 … <b>数社と面談・比較中</b>。UA値 0.4・C値 1.0・耐震等級3 を数値で約束できるかが足切り条件</li>
+            <li>土地 … <b>候補がいくつかある</b>段階</li>
+            <li>入居時期 … <b>1年以内</b>、または<b>2〜3年後</b>。良い土地が見つかるかで変わる</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>入居時期が2択で開いているので、補助金（C-3）の年度をまたぐ可能性がある。1年以内に着工した場合と2年後の場合で、使える制度がどう変わるかを整理しておきたい。比較中の各社には、同じ要件で見積もりを揃えて出してもらう。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>土地代は +6% して計算する</h4>
+          <p>仲介手数料・登記費用・不動産取得税などの諸費用を、最初から土地価格に上乗せして資金計画を組む。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>FP にはランニングコスト込みでプランを設計してもらう</h4>
+          <p>建てるまでの資金計画だけでなく、各設備の耐用年数と交換費用まで限界まで織り込んだうえでプランを作ってもらう。太陽光のパワコン交換、外壁のシーリング打ち替え、給湯器、食洗機など。</p>
+          <p>自分でも FP 資格を取っておいた方が、提案の妥当性を判断できる。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="c-9">
+      <div class="sub-head"><span class="code mono">C-9</span><h3>外構の進め方</h3><span class="sub-n mono">8</span></div>
+      <p class="sub-note">家本体より後回しにされがちだが、金額は大きい。</p>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>外構でやること</h4>
+          <p>範囲を絞って、必要なものだけ作る。</p>
+          <ul>
+            <li><b>駐車スペースの土間</b> … 1台分（A-1）。<b>土間コンクリート</b>で打つ。仕上げを刷毛引きにするかは要検討（下記）。EV 充電用コンセント（A-23）の配管を土間を打つ前に通しておく</li>
+            <li><b>自転車置き場</b> … 2台分（下記）。駐車スペースとは別枠で確保する</li>
+            <li><b>リビング前の目隠し</b> … カーテンレス（A-17）を成立させるための必須項目。<b>確実に見えない高さ</b>にする。フェンスにするか塀にするかも含めて検討（下記）。天端は斜めにして水を溜めない（B-7）</li>
+            <li><b>庭は全面人工芝</b> … 土の部分を残さない。手入れの手間をかけず、犬が出ても土が付かない。グレードは要検討（下記）</li>
+            <li><b>立水栓</b> … <b>1つだけ</b>（A-22）。増やさない</li>
+            <li><b>ウッドデッキ</b> … 作るかは未決。床の連続感と犬の庭のトレードオフで決める（A-18）</li>
+            <li><b>独立ポスト</b> … 壁貫通をやめた（A-3）ぶん、外構側で立てる。<b>ダイヤル錠付き</b>。門柱と一体にするかは要検討</li>
+          </ul>
+          <p>屋外のゴミ置き場と物置、宅配ボックスは作らない。</p>
+          <div class="ask"><b>確認</b><span>このうち<b>ウッドデッキの有無</b>（A-18）と<b>庭を内庭風に囲うか</b>（下記）が決まらないと、庭として残る面積も外構の見積もりも固まりません。プランで建物の配置が決まった時点で、庭に残る面積を図面で示してほしい。ただし<b>内庭が成立するなら庭は小さくなって構わない</b>という優先順位なので、面積を最大化する方向ではなく「囲えるかどうか」を先に判断したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>駐車土間の仕上げ ─ 刷毛引きにするか</h4>
+          <p>駐車スペースは<b>土間コンクリート</b>で打つ（上記）。決まっていないのは<b>表面の仕上げ方</b>。</p>
+          <p>気にしているのは<b>タイヤ痕</b>。据え切り（止まったままハンドルを回す）でゴムが擦れて黒い跡が残り、平滑に仕上げるほど目立つ。</p>
+          <ul>
+            <li><b>金鏝（かなごて）押さえ</b> … 平滑で光沢が出る。掃き掃除は楽だが、<b>タイヤ痕が目立ちやすく</b>、濡れると滑る</li>
+            <li><b>刷毛引き</b> … 表面に細かい筋を付ける。<b>滑りにくく、跡も視覚的に散る</b>ので目立ちにくい。ただし筋に汚れが入り込む</li>
+            <li>洗い出し・骨材露出・スタンプなどもあるが、費用が上がるので今は候補外</li>
+          </ul>
+          <p>玄関アプローチを全てスロープにする案（A-3）を採ると、この土間が<b>そのまま人と犬が歩く面</b>になる。その場合は見た目より滑りにくさが決め手になる。</p>
+          <div class="ask"><b>確認</b><span>刷毛引きと金鏝の<b>実物か施工例</b>を見せてほしい。できれば数年経ったものを見たい。判断したいのは ① <b>タイヤ痕の付き方と落ちやすさ</b>（高圧洗浄で落ちるか、刷毛引きだと筋に残らないか）② 汚れの溜まり方 ③ 費用差、の3点です。</span></div>
+          <div class="ask"><b>確認</b><span>仕上げとは別に、土間そのものの仕様も決めておきたい。① <b>厚みと配筋</b>（ワイヤーメッシュか鉄筋か）② <b>目地の割り方</b> ─ 伸縮目地を入れないとひび割れるが、割り付けで見え方が変わるので位置を図で示してほしい ③ <b>水勾配の向き</b> ─ 人工芝の庭（下記）側に水を流し込まないこと ④ 犬が歩く前提での<b>夏場の表面温度</b>。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>自転車を2台置ける場所</h4>
+          <p>屋外に自転車を<b>2台</b>置ける場所を確保する。駐車スペース（1台 → A-1）とは別枠として見ておきたい。</p>
+          <p>必要な広さは、出し入れの余地を含めて次を目安にする。</p>
+          <div class="spec mono"><span>幅 1.4m 程度</span><span>奥行 2.0m 程度</span><span>約1.5畳</span></div>
+          <p>40坪に建物35坪（A-1）なので、庭・駐車土間と面積を取り合うことになる。<b>庭を内庭風に囲う案（下記）を採る場合は、自転車置き場は囲いの外側</b>に置く前提で考えたい。毎回門扉を開けて庭を横切る動線にはしたくない。</p>
+          <div class="ask"><b>確認</b><span><b>屋根の下に置けるか</b>を配置と一緒に検討したい。雨ざらしだと錆びるので、カーポートを建てる案（A-18）ならその下に寄せられないか、軒を伸ばす案なら軒下に入らないかを見たい。あわせて、車のドアの開閉と干渉しない位置であることも条件になります。</span></div>
+          <p>盗難対策として、<b>チェーンを掛けられるアンカー</b>を設ける。地面に埋め込むタイプでも、柱や壁に取り付けるタイプでもよい。あわせて<b>道路から見えにくい位置</b>に置きたい。防犯カメラ（A-20）の画角にもこの場所を入れる。</p>
+          <p>電動アシスト自転車を使う場合も<b>充電は室内で行う</b>ので、<b>置き場に屋外コンセントは不要</b>。</p>
+          <div class="ask"><b>確認</b><span>アンカーは<b>地面に固定するタイプ</b>と<b>柱や壁に取り付けるタイプ</b>があり、必要な段取りが違います。地面式なら<b>土間を打つ前</b>に位置を決める必要があり、柱・壁式なら<b>下地</b>が要ります（タープ用フック → 下記 と同じ考え方）。置き場の位置が決まった時点でどちらにするかを決めたい。<b>2台ぶんを同時に掛けられる</b>位置関係にしてほしい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>目隠しは「人がいるかどうか分からない」高さにする</h4>
+          <p>カーテンレス（A-17）が成立するかどうかは、この一枚にかかっている。「なんとなく隠れる」では足りない。</p>
+          <p>満たすべき条件は次の順で厳しくなる。<b>最上位を狙う</b>。</p>
+          <ul>
+            <li>リビングで<b>座っている</b>ときに見えない … 最低ライン</li>
+            <li>リビングで<b>立っている</b>ときに見えない</li>
+            <li>リビングに<b>人がいるかどうかも分からない</b> … これがベスト</li>
+          </ul>
+          <p>隙間から覗けるタイプは避け、目透かしのない板またはパネルで通す。</p>
+          <p><b>フェンスに限定していない。</b>塀（ブロック・コンクリート・塗り壁）でも構わない。とくに庭を内庭風に囲う案（下記）を採るなら、囲いは<b>フェンスより塀の方が形になりやすい</b>と思っている。</p>
+          <ul>
+            <li><b>フェンス</b>（支柱＋パネル） … 軽く基礎が小さく済むので<b>安い</b>。製品を選べば 2m 超も可能で、ルーバー等にすれば通風も残せる。素材によっては軽く見える</li>
+            <li><b>塀</b>（組積造・鉄筋コンクリート・塗り壁） … 完全に遮蔽でき、<b>建物と素材を揃えれば外壁の延長として見せられる</b>。重いぶん基礎が要り<b>費用は上がる</b>。風は抜けない</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>必要な高さは<b>断面図で逆算したい</b>。リビングの床は GL より上がっている（基礎と床組で 400〜500mm 程度）ので、室内からは見下ろす形になり、外から中を見る視線は思ったより入りにくいはずです。① リビング床の GL からの高さ ② 立位・座位それぞれの目線高さ ③ 道路と隣家の想定視点位置、の3つを断面に描いたうえで天端高さを決めてほしい。</span></div>
+          <div class="ask"><b>確認</b><span>高くするほど別の制約が出るので、あわせて確認したい。① <b>法規上の上限</b> ─ 補強コンクリートブロック造の塀は 2.2m まで。<b>鉄筋コンクリート造にすれば枠が変わる</b>と理解しているが、構造計算と基礎がどれだけ重くなるかを含めて説明してほしい。地区計画や条例で別の制限がないかも② 隙間のない面は<b>風圧をまともに受ける</b>ので、基礎の大きさ・柱のピッチ・控え壁の要否 ③ 圧迫感と、庭の<b>採光と通風</b>への影響 ④ 高さごとの費用。</span></div>
+          <div class="ask"><b>確認</b><span>フェンスで防げるのは<b>道路と隣家1階からの視線</b>までです。<b>隣家2階からの見下ろし</b>は高さでは防げないので、その方向だけは窓の位置と種類（A-17）で対処することになります。候補地ごとに、隣家の2階窓がリビングを見下ろす位置にあるかを確認したい。</span></div>
+          <div class="ask"><b>確認</b><span><b>フェンスの場合と塀の場合</b>で、目標の高さを満たす構成と費用を並べて出してほしい。長さが決まらないと比べられないので、<b>リビング前だけ</b>の場合と<b>庭ごと囲う</b>場合（下記）の2パターンでお願いしたい。下半分を塀にして上に目隠しフェンスを載せる<b>組み合わせ</b>が成立するなら、それも候補に入れたい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>庭を完全に囲って内庭風にする</h4>
+          <p>リビング前だけでなく<b>庭の周囲を囲って、内庭（コートヤード）のように仕立てる</b>案。目隠しを高くする方針（上記）を突き詰めると、自然にこの形に行き着く。囲いは<b>フェンスでも塀でもよい</b>が、内庭らしくなるのは塀の方だと思っている。</p>
+          <ul>
+            <li>視線がどこからも入らないので、<b>カーテンレス（A-17）が完全に成立する</b></li>
+            <li>犬を放しても外に出ないので、庭が<b>そのままドッグランになる</b></li>
+            <li>囲われた庭に向かって開くぶん、内と外の連続（A-18）が効きやすい</li>
+          </ul>
+          <p>ドッグランとして使うなら、出入口の門扉に犬が鼻先で開けられない<b>掛かりのある錠</b>と、足元に<b>隙間を作らない</b>納まりが要る。</p>
+          <p>一方で、40坪の土地に建物 35坪（A-1）を置いた残りが庭になるので、<b>元々の庭は広くない</b>。囲うと閉塞感が出る可能性がある。</p>
+          <p>そのうえで優先順位ははっきりしている。<b>内庭が成立するなら、庭は小さくなって構わない。</b>広いが丸見えの庭より、狭くても囲われた庭を取る。</p>
+          <div class="ask"><b>確認</b><span>成立するかは<b>庭に残る面積次第</b>なので、プランで建物の配置が決まってから判断したい。そのうえで ① 囲った場合の<b>通風</b>（風が抜けないと夏に熱がこもる）② <b>採光</b>（囲いの影が庭に落ちる）③ 圧迫感を <b>2〜3面だけ囲う</b>形で緩められないか、を検討したい。囲いを塀ではなく建物や駐車スペースで兼ねられると、コストも圧迫感も下げられます。</span></div>
+          <div class="ask"><b>確認</b><span>「面積より囲われていること」を優先するので、<b>建物の形で庭を抱き込む配置</b>も提案に含めてほしい。四角い建物の前に庭を置くのではなく <b>L 字や コの字</b>に振れば、囲いの何面かを外壁が兼ねます。塀を作る長さが減るぶん<b>費用も圧迫感も下がる</b>はずです。1階の床面積の取り方が変わるので、寝室も1階に置きたい（A-1）という希望と両立するかを合わせて見たい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="maybe">
+        <span class="tag maybe">検討</span>
+        <div class="item-body">
+          <h4>人工芝のグレード</h4>
+          <p>庭を<b>全面人工芝</b>にすることは確定。ただし製品のグレードはまだ決めていない。安いものは数年で毛が寝てしまい、色も抜ける。</p>
+          <p>中型犬（A-1）が毎日出る場所なので、見た目より耐久と衛生を優先して選ぶ。</p>
+          <ul>
+            <li><b>芝丈と密度</b> … 短いほど掃除が楽で毛が絡みにくい。長いほど見た目は良いが寝やすい</li>
+            <li><b>耐摩耗</b> … 犬は同じ場所を走るので、その部分だけ潰れないか</li>
+            <li><b>夏場の表面温度</b> … 遮熱タイプがあるか。犬の肉球に直接効く</li>
+            <li><b>抗菌・防臭</b> … 排泄があり得る前提。水で流せるか</li>
+            <li><b>水はけ</b> … 芝の透水性と、下地（砕石・防草シート・不陸調整）の作り方</li>
+          </ul>
+          <div class="ask"><b>確認</b><span>グレード別に<b>単価・耐用年数・張り替え費用</b>を並べて出してほしい。安い製品との差額が何年で回収できるかで判断したい。あわせて<b>下地の仕様</b>（砕石の厚み・防草シート・水勾配）を仕様書に明記してほしい。人工芝は下地で寿命が決まります。夏場の表面温度は実測値があれば見たい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>庭にタープ用のフックを付ける</h4>
+          <p>人工芝の庭でタープを張れるようにしたい。外壁または柱にフック（アンカー）を仕込む。</p>
+          <div class="ask"><b>確認</b><span>タープの引っ張り力がかかるので、外壁に後付けするのではなく<b>下地を入れた位置に仕込む</b>必要がある。取付位置と高さ、想定するタープのサイズを決めて、壁を閉じる前に下地を入れてほしい。外壁の防水を貫通するので、雨仕舞いの納まりも確認したい。</span></div>
+        </div>
+      </article>
+
+      <article class="item" data-tag="keep">
+        <span class="tag keep">採用</span>
+        <div class="item-body">
+          <h4>外構は必ず相見積もりを取る ─ しかも早めに</h4>
+          <p>外構は金額がとにかく高く、業者の質もピンキリ。家づくりで疲れきった終盤に選ぶと判断力が落ちて大変なことになるので、意識的に早く動く。</p>
+          <p>town life エクステリアのようなサイトで、優良業者からまとめて相見積もりを取れる。</p>
+          <div class="ask"><b>確認</b><span>ハウスメーカーの外構と分離発注の場合で、どこまでが本体工事に含まれるか（給排水の引き込み、駐車土間、立水栓、独立ポスト、EV充電の配管）の境界を明確にしておきたい。</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="d">
+    <div class="section-head">
+      <p class="kicker mono"><span>Section D</span><span data-count="d"></span></p>
+      <h2>覚えておきたいこと・メモ</h2>
+      <p class="desc">要望そのものではなく、判断の根拠になる知識。打合せ中に「なぜそうしたいのか」を説明するときの材料になる。</p>
+    </div>
+
+    <div class="sub" id="d-1">
+      <div class="sub-head"><span class="code mono">D-1</span><h3>壊れると高くつくもの</h3><span class="sub-n mono">5</span></div>
+      <p class="sub-note">初期費用ではなく、壊れたときの金額で判断すべきもの。</p>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>タンクレストイレは故障時に本体ごと交換</h4>
+          <p>便座のセンサーが壊れると、タンク（本体）もまとめて交換になり 30数万円かかる。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>浴室暖房乾燥機は「設置・修理・ランニング」の三重苦</h4>
+          <p>導入費だけを見て判断すると後で効いてくる。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>ダウンライトの埋め込み型は自分で交換できない</h4>
+          <p>天井埋め込み型（器具一体）の交換には第二種電気工事士の資格が必要。電球交換型なら自分で替えられる。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>隠蔽配管はメンテナンスが大変すぎる</h4>
+          <p>見た目のために配管を壁内に隠すと、エアコンの入れ替えや故障対応で詰む。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>グラフテクトのエバルト天板はメラミン樹脂</h4>
+          <p>高機能で見た目も良いが、剥がれたらそこで終わりという弱さがある。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="d-2">
+      <div class="sub-head"><span class="code mono">D-2</span><h3>コストを下げる打ち手</h3><span class="sub-n mono">3</span></div>
+      <p class="sub-note">減額を相談するときに出せるカード。</p>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>グレードが下の備品として購入すると割引率が上がることがある</h4>
+          <p>C-7 参照。値引き交渉の切り口になる。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>FIX 窓は減額になる</h4>
+          <p>開閉機構がないぶん安い。採光だけが目的の窓は FIX にすると効く。ただし雨だれの水垢は目立ちやすい（A-17）。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>2階の天井高を下げると数十万円下がる</h4>
+          <p>2階に高さは必要ないので、コストダウンの候補として現実的。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="d-3">
+      <div class="sub-head"><span class="code mono">D-3</span><h3>寸法・製品の注意点</h3><span class="sub-n mono">4</span></div>
+      <p class="sub-note">図面や機種選定でつまずきやすいポイント。</p>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>エアコンの横は 5cm 空けるのが推奨</h4>
+          <p>壁や梁との納まりで、5cm が取れないと設置できない機種がある。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>ドアハンドルの高さはメーカーで違う</h4>
+          <p>しかも「高さ」がハンドル中央基準か下端基準かも製品によって違う。スイッチと高さを揃えたい場合（A-19）は、建具が確定してから個別に指定する。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>浴室の折れ戸は掃除が大変</h4>
+          <p>折れ目とレールに汚れが溜まる。開き戸ならタオル掛けも付けられる。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>「10年お掃除不要」レンジフードは音が大きい傾向</h4>
+          <p>カタログの静音値ではなく、ショールームの実機で聞く。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="d-4">
+      <div class="sub-head"><span class="code mono">D-4</span><h3>トレードオフと進め方</h3><span class="sub-n mono">5</span></div>
+      <p class="sub-note">片方を取ると片方が犠牲になる関係、および段取りの教訓。</p>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>庭の方角は日照と日陰のトレードオフ</h4>
+          <p>日陰になるという意味では北庭も悪くない。土地の形によっては開けている側を庭にしたくなるので、その場合はシェード等で調整する。</p>
+          <p>接道方向そのものは土地選びの条件から外した。庭は人工芝（C-9）にするので、日照へのこだわりは小さい。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>廊下を削ると、その分だけ音の問題は増える</h4>
+          <p>面積効率と遮音のトレードオフ。A-1 と A-16 はセットで判断する。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>東京と北海道で断熱の規定値がまったく違う</h4>
+          <p>地域区分ごとの基準値なので当然だが、東京の基準は目標として低すぎる。北海道の値を目安にすると、G2 以上の水準に自然と寄る。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>外構業者はピンキリで、しかも疲れた終盤に選ばされる</h4>
+          <p>家本体の打合せが終わるころには判断力が落ちている。早い段階で相見積もりを取り始める（C-9）。</p>
+        </div>
+      </article>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>FP 資格を自分で取る</h4>
+          <p>提案されたライフプランの妥当性を自分で検証できるようになる（C-8）。</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="sub" id="d-5">
+      <div class="sub-head"><span class="code mono">D-5</span><h3>参考情報源</h3><span class="sub-n mono">1</span></div>
+      <p class="sub-note">判断の元にしている情報。</p>
+
+      <article class="item" data-tag="memo">
+        <span class="tag memo">メモ</span>
+        <div class="item-body">
+          <h4>参考リンク・書籍</h4>
+          <ul>
+            <li><b>照明設計の教科書</b> ─ ダウンライトを減らす判断の拠り所（B-6）</li>
+            <li><b>town life エクステリア</b> ─ 外構の一括相見積もり（C-9）</li>
+            <li><b>Rico by aqua style</b> ─ 水道直結型ウォーターサーバーの候補（C-6）</li>
+          </ul>
+          <div class="links">
+            <a href="https://youtu.be/HHcbk3q2XYI?si=fGCBEp3egaJQrpk0" target="_blank" rel="noopener">設備を「グレード下の備品」として購入すると割引率が上がる話（YouTube）</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ E ============ -->
+  <section class="section" id="e">
+    <div class="section-head">
+      <p class="kicker mono"><span>Section E</span><span data-count="e"></span></p>
+      <h2>これから決める必要がある項目</h2>
+      <p class="desc">メモに答えが書かれていない、あるいは前提が抜けている項目を洗い出したもの。順番は好みではなく「決めないと次に進めない順」に並べてある。あとで決めようとすると手戻りするものほど上に来る。</p>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="step mono">1</span><h3>土地・予算・依頼先</h3><span class="when mono">契約前</span></div>
+      <ul class="checks">
+        <li><span class="who">依頼先</span><div class="q"><b>数社のうちどこに決めるか</b><span>UA値0.4・C値1.0・耐震等級3 を数値で約束でき、気密測定を実施できることが足切り条件（C-1 / C-2）。同じ要件で見積もりを揃えて比較する。</span></div></li>
+        <li><span class="who">土地</span><div class="q"><b>候補地のどれにするか</b><span>接道方向は条件にしない。絞り込みの軸は<b>カーテンレス（A-17）が成立するか</b>＝高い目隠し（フェンスまたは塀 → C-9）を立てられるか、隣家の2階窓がリビングを見下ろさないか。加えて 40坪に建物35坪＋駐車1台＋自転車2台（C-9）が収まるか、庭がどれだけ残るかを見る。</span></div></li>
+        <li><span class="who">お金</span><div class="q"><b>FP への依頼をいつ、誰にするか</b><span>ハウスメーカー紹介の FP か、独立系か。ランニングコスト込みの設計を依頼する（C-8）。</span></div></li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="step mono">2</span><h3>基本設計</h3><span class="when mono">間取り確定まで</span></div>
+      <ul class="checks">
+        <li><span class="who">プラン</span><div class="q"><b>延床 35坪 に部屋構成が収まるか</b><span>リビング／寝室／仕事部屋2室／ホームジム／パントリー／各クローク（A-2）。仕事部屋が2室ある前提でのボリューム検討を先に出してもらう。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>寝室を1階に置けるか</b><span>1階に LDK・水回り・寝室・サークルを収められるか（A-1）。無理な場合、寝室とホームジムのどちらを2階へ回すかを決める。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>階段の位置と形状</b><span>リビング階段かホール階段か。踊り場付きで四角く折れる形（A-13）に必要な面積をどこから捻出するか。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>車まで濡れずに行く手段</b><span>建物の軒を伸ばすか、カーポートを建てるか（A-18）。玄関と駐車位置の関係が決まってから、費用を並べて判断する。</span></div></li>
+        <li><span class="who">犬</span><div class="q"><b>犬のサークルをどの部屋に置くか</b><span>必要な広さは1畳ちょいで確定、夜もここで寝る（A-2 / A-12）。リビングの一角が第一候補。一晩過ごす場所なので、寝室と階が離れる場合の温度の保ち方も含めて決める。決まり次第、ペットカメラ用コンセントの高さ・エアコンの風向き・消臭の排気位置（A-21）をまとめて指定する。</span></div></li>
+        <li><span class="who">庭</span><div class="q"><b>ウッドデッキを作るか</b><span>床がそのまま外まで続いて見えるデザインは魅力的だが、犬が走れる庭が狭くなる・犬の昇降の段差・デッキ下を塞ぐ手間がトレードオフ（A-18）。作らない場合の代替（土間テラス、地面に近い高さのテラス）も含めて、庭に残る面積と一緒に判断する。</span></div></li>
+        <li><span class="who">外構</span><div class="q"><b>玄関アプローチを階段にするかスロープにするか</b><span>階段でも可だが、犬・ペットカート・自転車の出入りを考えると全スロープも魅力的（A-3）。GL から玄関ポーチまでの段差が決まらないと必要な長さが出ないので、基礎高が固まった時点で敷地に収まるかを判断する。駐車土間と兼ねられるかが鍵。</span></div></li>
+        <li><span class="who">外構</span><div class="q"><b>自転車2台をどこに置くか</b><span>幅1.4m×奥行2.0m 程度が要る（C-9）。屋根の下に入れられるか（カーポートか軒 → A-18）、車のドアと干渉しないか、道路から見えにくいかで位置が決まる。内庭風に囲う場合は囲いの外側に置く前提。</span></div></li>
+        <li><span class="who">庭</span><div class="q"><b>庭を内庭風に囲うか</b><span>囲えばカーテンレス（A-17）が完全に成立し、犬を放せる庭になる（C-9）。ただし 40坪に建物35坪なので庭は広くなく、囲うと閉塞感と通風の問題が出る。建物の配置が決まってから、庭に残る面積を見て判断する。<b>内庭が成立するなら庭は小さくてよい</b>という優先順位なので、建物を L 字・コの字に振って庭を抱き込む配置も提案に含めてもらう。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>ホームジムの設置階</b><span>実測 2,080mm なので2階の天井高（A-1）にも収まる（A-11）。判断は面積とコストで、1階なら3畳前後の面積、2階なら床補強が犠牲になる。寝室を何階に置くか（同上）と一体で決める。懸垂バーを使うなら頭上の余裕が別途要る。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>寝室 4.5畳にシングル2台が納まるか</b><span>衣類は全部1階に集約するのでクローゼットは不要、ベッドはローベッド（A-12 / A-15）。ローベッドは分割搬入できるので搬入経路の心配は小さい。残る論点はドアの開き勝手と、枕元のコンセントの位置・高さ。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>仕事部屋2室をどう隔てるか</b><span>広さ3畳・収納なし・電源と回線の仕様は確定済み（A-12）。残る論点は遮音だけ。2人ともほぼ毎日在宅で同時に会議をする（A-1）ため必須条件。隣接させない、間に収納やクローゼットを挟むなどの案を、廊下を削る方針（A-1）とのトレードオフで検討する。</span></div></li>
+        <li><span class="who">収納</span><div class="q"><b>仕事関係の物をどこに置くか</b><span>仕事部屋に収納を作らない（A-12）ため、書類・書籍・PC周辺機器の置き場が未定。ファミリークローク（A-15）は衣類前提なので、別枠で確保するか机まわりで完結させるかを決める。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>パントリーの広さと冷蔵庫の納まり</b><span>1.3畳想定（A-7）。扉の開き勝手・放熱・専用コンセント・通路幅まで図面に落とす。</span></div></li>
+        <li><span class="who">収納</span><div class="q"><b>1階のファミリークロークに全衣類が入るか</b><span>畳まずに全部ハンガーに掛ける運用（A-9）なので、必要なパイプ長は A-13 の「ポール3m」より増える可能性が高い。実際の衣類を数えて長さを確定させてから、上下2段のパイプや可動棚を含めて必要面積を出す。</span></div></li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="step mono">3</span><h3>仕様決定</h3><span class="when mono">実施設計</span></div>
+      <ul class="checks">
+        <li><span class="who">性能</span><div class="q"><b>断熱材の種類・厚み・付加断熱の有無</b><span>同上。屋根／壁／基礎それぞれの仕様を数値で押さえる。</span></div></li>
+        <li><span class="who">性能</span><div class="q"><b>アルミ樹脂複合＋トリプルで UA0.4 に届くか</b><span>枠が弱点になる（C-2）。窓全体の熱貫流率と、樹脂サッシ＋ペアにした場合との比較を数字で確認してから確定する。</span></div></li>
+        <li><span class="who">設備</span><div class="q"><b>24時間換気の方式（第1種か第3種か）</b><span>犬の毛による詰まりの懸念（A-21）。ペットのいる家での実例で判断する。</span></div></li>
+        <li><span class="who">設備</span><div class="q"><b>サークル周辺の換気をどう強めるか</b><span>消臭の主軸（A-21）。換気方式が決まらないと具体化できないので、方式ごとに可否と追加費用を整理する。</span></div></li>
+        <li><span class="who">設備</span><div class="q"><b>天井付けの消臭機を入れるか</b><span>据え付けなら電源と下地が要るので着工前の判断（A-21）。置き型の脱臭家電で足りるかも含めて比較する。</span></div></li>
+        <li><span class="who">外観</span><div class="q"><b>屋根形状</b><span>形は決め打ちせず、条件（玄関の1.5m庇／車まで濡れずに／軒の出と外壁の持ち／内外の天井の連続）を満たす案を2〜3案出してもらってから選ぶ（B-7）。太陽光を載せない方向（C-4）なので枚数の制約はない。</span></div></li>
+        <li><span class="who">外観</span><div class="q"><b>外壁材と色</b><span>30年間の総額比較表を出してもらってから決める（B-7）。</span></div></li>
+        <li><span class="who">内装</span><div class="q"><b>床材の最終決定</b><span>タイル調フローリング＋ペットコーティングが有力だが、実物サンプルを見てから決める（B-4）。決定後、建具と造作の木の色をこれに揃える（B-1）。</span></div></li>
+        <li><span class="who">内装</span><div class="q"><b>アクセントクロスを入れる面と色</b><span>使うのはメイン居住空間の一面のみ（B-2）。決まり次第、その部屋の巾木の色も合わせる（B-5）。</span></div></li>
+        <li><span class="who">内装</span><div class="q"><b>タイルを貼る場所の確定</b><span>洗面台の鏡裏が候補（B-3）。玄関やキッチン背面にも広げるか。60cm 角の割付を先に見る。</span></div></li>
+        <li><span class="who">内装</span><div class="q"><b>タイルの目地を 1/2 ずらしにするか 20cm ずらしにするか</b><span>タイルを採用する場合の話（B-3）。60cm 角での割付図を見て、端部の納まりを確認してから決める。貼る面が決まらないと判断できないので、採用箇所の確定とセットで進める。</span></div></li>
+        <li><span class="who">内装</span><div class="q"><b>巾木の高さ・形状</b><span>薄い巾木（B-5）の具体寸法。入巾木（壁と面一）まで踏み込むかどうか。</span></div></li>
+        <li><span class="who">建具</span><div class="q"><b>建具の色・面材・ハンドル形状</b><span>上吊り引き戸（A-16）の製品を決めると、ハンドル高さが確定してスイッチ高さも決められる（A-19）。</span></div></li>
+        <li><span class="who">収納</span><div class="q"><b>収納の建具を3枚連動引戸にするか壁面収納にするか</b><span>見た目と中身の見え方で分かれる（A-14）。壁面収納にするなら扉の有無も含めて、両案の見積もりを比較する。造作をテレビ周りに絞る方針（B-2）との兼ね合いも見る。</span></div></li>
+        <li><span class="who">内装</span><div class="q"><b>天井の色・素材を変える範囲</b><span>内外を連続させる部分（A-18）だけ変えるのか、リビング全体にかけるのか。軒天の材との取り合いを確認する。</span></div></li>
+        <li><span class="who">キッチン</span><div class="q"><b>キッチンメーカーの最終決定</b><span>Panasonic L-Class / クリナップ ステディア / グラフテクトの3社（C-5）。A-5・A-6 の必須要件を満たした同一条件で相見積もりを取る。カップボード同時購入と食洗機（Panasonic か BOSCH）も込みで。</span></div></li>
+        <li><span class="who">設備</span><div class="q"><b>浴槽の材質を人大にするか FRP にするか</b><span>掃除のしやすさで人大が候補だが、差額・保温性能・経年変化を並べてから決める（A-8）。浴室サイズ 1616 とあわせてメーカーの価格表で確認する。</span></div></li>
+        <li><span class="who">設備</span><div class="q"><b>浴室ドアを透明パネルにするか</b><span>広く見える・犬の様子が見えるのが狙い（A-8）。脱衣室からの見え方と、水垢の目立ち方がトレードオフ。ショールームで実物を見て決める。</span></div></li>
+        <li><span class="who">内装</span><div class="q"><b>洗面台を造作風の既製品にするか、造作にするか</b><span>見た目は造作風、掃除のしやすさは既製品のボウル一体型を維持したい（A-9）。まず既製品シリーズで要望を満たせるかを見て、無理なら造作を検討する。面材の木の色は床・建具と揃える（B-1）。</span></div></li>
+        <li><span class="who">壁</span><div class="q"><b>マグネット対応パネルの採用箇所と工法</b><span>鋼板下地かマグネット塗料か。下地なら壁を閉じる前に決めておく必要がある（B-3）。</span></div></li>
+        <li><span class="who">内装</span><div class="q"><b>1階の天井高をどうするか</b><span>下がり床は不採用（A-18）なので、高さは天井を上げる側だけでつくる。リビングだけ上げるか、1階全体を上げるかの2択。ホームジムを1階に置き、かつ懸垂バーを使うなら、その部屋は天井を上げたくなる（A-11）ので判断軸が1つ増える。外観と斜線制限、コストへの影響も見て決める。</span></div></li>
+        <li><span class="who">外装</span><div class="q"><b>タープ用フックの位置と下地</b><span>外壁を貫通するので、壁を閉じる前に下地を入れる必要がある（C-9）。取付位置・高さ・雨仕舞いを確定させる。</span></div></li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="step mono">4</span><h3>電気・設備打合せ</h3><span class="when mono">着工前</span></div>
+      <ul class="checks">
+        <li><span class="who">照明</span><div class="q"><b>ダウンライトの目標数と配置</b><span>提案数から何割減らすか。減らした場所に将来用の配線を先行させるか（B-6）。</span></div></li>
+        <li><span class="who">照明</span><div class="q"><b>リビングをライン照明にするかダウンライトにするか</b><span>見た目はライン照明が有利だが、眩しさが未知数（B-6）。実物を点灯状態で確認し、初期費用と交換時の費用・自分でできるかを両案で並べてから決める。器具が決まらないと配線と下地が決まらないので、電気打合せの前半で片付けたい。</span></div></li>
+        <li><span class="who">照明</span><div class="q"><b>調光・調色対応の器具とスイッチの品番</b><span>リビング・寝室・仕事部屋2室が対象（B-6）。Panasonic アドバンスシリーズで組める構成を出してもらう。</span></div></li>
+        <li><span class="who">照明</span><div class="q"><b>調光・調色をしない部屋の色温度</b><span>3室以外は固定色になるので、2700K か 3000K かを家全体で揃えるかを決める（B-6）。</span></div></li>
+        <li><span class="who">照明</span><div class="q"><b>間接照明を入れる場所</b><span>入れるなら壁を閉じる前に下地と配線が要る。</span></div></li>
+        <li><span class="who">電気</span><div class="q"><b>コンセント・スイッチの位置と高さの一覧</b><span>場所ごとに個別指定する（A-19）。スイッチの並び順ルールもここで確定させる。</span></div></li>
+        <li><span class="who">電気</span><div class="q"><b>仕事部屋10口の割り付けと回路数</b><span>口数は確定済み（A-12）。机の位置が決まらないと配置を決められないので、プランに机を入れてから割り付ける。</span></div></li>
+        <li><span class="who">電気</span><div class="q"><b>カップボード上6〜8口の回路割りと隠し方</b><span>調理家電を同時に使うと1回路では足りない（A-6）。専用回路の要否とアース付きの口を分けて指定する。カップボード本体に何口組み込めるかを確認したうえで、足りない分の壁コンセントをどう目立たせずに付けるかも決める。</span></div></li>
+        <li><span class="who">電気</span><div class="q"><b>ペットカメラ用コンセントの高さ</b><span>サークル脇に1口（A-2）。カメラの画角とサークルの位置関係から高さを決める（床から 1.8〜2.0m 程度が目安）。</span></div></li>
+        <li><span class="who">電気</span><div class="q"><b>EV 充電を本体まで付けるか配管だけか</b><span>付けることは確定（A-23）。本体設置か、空配管＋200V回路の先行かで費用が変わる。外構の土間を打つ前に決める。</span></div></li>
+        <li><span class="who">窓</span><div class="q"><b>予備のカーテンレールをどこに付けるか</b><span>基本カーテンレス（A-17）だが1本だけ用意する。下地が要るので場所を先に決める。</span></div></li>
+        <li><span class="who">電気</span><div class="q"><b>ルーター／スイッチングハブの設置場所</b><span>有線 LAN 3か所（A-20）を集約する場所。10GbE 機器の発熱を逃がせて、電源が取れることが条件。</span></div></li>
+        <li><span class="who">電気</span><div class="q"><b>TV アンテナ・光回線の引込位置</b><span>LAN の集約場所と近いほど取り回しが楽になる。</span></div></li>
+        <li><span class="who">空調</span><div class="q"><b>エアコンの設置位置・台数・先行配管</b><span>空気の流れから位置を決め、隠蔽配管は避ける。脱衣室まで空気が届く経路も確認する（A-8 / A-21）。後付け分のスリーブと電源も同時に。</span></div></li>
+        <li><span class="who">設備</span><div class="q"><b>床下・天井点検口の位置</b><span>生活動線から少し外す（A-23）。ダクト経路（A-6）で生じる下がり天井の位置と一緒に確認する。</span></div></li>
+        <li><span class="who">防犯</span><div class="q"><b>防犯カメラの台数・画角・配線方式</b><span>付けることは確定（A-20）。玄関前の置き配と、駐車スペース＋自転車置き場を何台でカバーするか。PoE の有線にするか電源＋Wi-Fi にするかで配線が変わるので、壁を閉じる前に決める。録画方式とレコーダーの置き場も同時に。</span></div></li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <div class="phase-head"><span class="step mono">5</span><h3>施主支給・外構・引渡し</h3><span class="when mono">着工〜引渡し</span></div>
+      <ul class="checks">
+        <li><span class="who">支給</span><div class="q"><b>施主支給リストの確定</b><span>エアコン、照明器具、ウォーターサーバー、スマートロック、浴室のマグネット式物干しバーなど。「支給する」と先に宣言しておく（C-7）。保管場所と取付責任の範囲も確認する。</span></div></li>
+        <li><span class="who">外構</span><div class="q"><b>外構の範囲と予算、相見積もりの手配</b><span>疲れる前に動く（C-9）。駐車土間・自転車置き場・目隠し（フェンスまたは塀）・全面人工芝・立水栓1つ・独立ポスト・タープ用フックが対象。ウッドデッキ（A-18）と内庭風の囲いを採用するならここに乗る。</span></div></li>
+        <li><span class="who">外構</span><div class="q"><b>目隠しの高さと仕様 ─ フェンスか塀か</b><span>「リビングに人がいるかどうかも分からない」を目標に、断面図で高さを逆算する（C-9）。<b>フェンスにするか塀にするか</b>は、囲う長さが決まってから費用と圧迫感で決める。法規上の上限・風圧に対する基礎と柱ピッチ・通風のトレードオフもここで詰める。カーテンレスの成否がかかるので後回しにしない。</span></div></li>
+        <li><span class="who">外構</span><div class="q"><b>駐車土間の仕上げと目地の割り付け</b><span>土間コンクリートは確定、仕上げが未定（C-9）。タイヤ痕の目立ちにくさと滑りにくさで刷毛引きにするかを決める。厚み・配筋・伸縮目地の位置・水勾配の向きまで図で押さえる。EV 充電の配管（A-23）を通してから打つこと。</span></div></li>
+        <li><span class="who">外構</span><div class="q"><b>立水栓の位置と水受けの納まり</b><span>1つだけ置く（A-22）。犬の足洗い・人工芝の洗い流し・洗車・庭の水やりの4つが1か所からホースで届く位置にする。水受けパンを無くす場合は、流れた水の行き先（人工芝の下に入れない）も決める。</span></div></li>
+        <li><span class="who">外構</span><div class="q"><b>人工芝のグレードと下地</b><span>全面人工芝は確定、製品グレードが未定（C-9）。芝丈・耐摩耗・夏場の表面温度・抗菌防臭で絞り、下地（砕石の厚み・防草シート・水勾配）まで仕様書に落とす。</span></div></li>
+        <li><span class="who">外構</span><div class="q"><b>本体工事と外構工事の境界</b><span>給排水の引き込み、立水栓、独立ポスト、EV充電の配管がどちらに含まれるか。抜けると追加費用になる。宅配ボックスは設置しない（A-3）。</span></div></li>
+        <li><span class="who">設備</span><div class="q"><b>後付けスマートロックの機種選定</b><span>玄関ドアのサムターン形状と扉厚が対応しているか、ドア決定時に確認済みであること（C-6）。</span></div></li>
+        <li><span class="who">制度</span><div class="q"><b>長期優良住宅の申請時期と申請費用</b><span>着工前の申請が前提。補助金も申請時期を逃さない（C-3）。</span></div></li>
+        <li><span class="who">保険</span><div class="q"><b>火災保険・地震保険の内容</b><span>太陽光を載せる場合は保険料への影響も込みで比較する（C-4）。</span></div></li>
+        <li><span class="who">段取り</span><div class="q"><b>引渡し時期と仮住まいの手配</b><span>入居希望は1年以内または2〜3年後（C-8）。年度をまたぐと補助金の条件が変わるので、着工時期を決める段階で制度を確認し直す。</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<footer>
+  <span class="mono">35坪の家 要望整理</span>
+  <span>なぐり書きメモを整理・補強したもの。打合せでは章番号（A-8 など）で指せます。</span>
+  <span>不足や解釈違いがあれば、その項目の番号を教えてください。</span>
+</footer>
+
+<script>
+(function () {
+  var body = document.body;
+  var items = Array.prototype.slice.call(document.querySelectorAll('.item'))
+    .filter(function (it) { return it.getAttribute('data-tag') !== 'memo'; });
+  var subs = Array.prototype.slice.call(document.querySelectorAll('.sub'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('.section'));
+  var navGroups = Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  var navSubs = Array.prototype.slice.call(document.querySelectorAll('.nav-sub'));
+  var fcount = document.getElementById('fcount');
+
+  // --- per-section counts in the kicker -------------------------------
+  sections.forEach(function (sec) {
+    var slot = sec.querySelector('[data-count]');
+    if (!slot) return;
+    var n = sec.querySelectorAll('.item').length || sec.querySelectorAll('.checks li').length;
+    var chapters = sec.querySelectorAll('.sub').length;
+    var unit = sec.id === 'e' ? '件の未決事項' : '項目';
+    slot.textContent = chapters ? chapters + '章 · ' + n + unit : n + unit;
+  });
+
+  // --- per-chapter item counts ----------------------------------------
+  // Computed from the DOM so the badge can never drift out of sync with
+  // the items actually present.
+  function refreshChapterCounts() {
+    subs.forEach(function (sub) {
+      var badge = sub.querySelector('.sub-n');
+      if (!badge) return;
+      var n = Array.prototype.filter.call(sub.querySelectorAll('.item'), function (it) {
+        return !it.classList.contains('hidden') && it.offsetParent !== null;
+      }).length;
+      badge.textContent = n || sub.querySelectorAll('.item').length;
+    });
+  }
+
+  // --- tag filter -----------------------------------------------------
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.fbtn'));
+
+  function apply(filter) {
+    if (filter === 'all') { body.removeAttribute('data-filter'); }
+    else { body.setAttribute('data-filter', filter); }
+
+    subs.forEach(function (sub) {
+      var visible = sub.querySelectorAll('.item').length &&
+        Array.prototype.some.call(sub.querySelectorAll('.item'), function (it) {
+          return filter === 'all' || it.getAttribute('data-tag') === filter;
+        });
+      sub.classList.toggle('hidden', !visible);
+      var link = document.querySelector('.nav-sub[href="#' + sub.id + '"]');
+      if (link) link.classList.toggle('hidden', !visible);
+    });
+
+    sections.forEach(function (sec) {
+      if (sec.id === 'e') {
+        // The decision list is itself the "要決定" content; hide it only for other filters.
+        sec.classList.toggle('hidden', filter !== 'all' && filter !== 'todo');
+        return;
+      }
+      if (sec.id === 'd') {
+        // Section D holds background knowledge, not requirements — outside the tag filter.
+        sec.classList.toggle('hidden', filter !== 'all');
+        return;
+      }
+      var anyVisible = Array.prototype.some.call(sec.querySelectorAll('.sub'), function (s) {
+        return !s.classList.contains('hidden');
+      });
+      sec.classList.toggle('hidden', !anyVisible);
+    });
+
+    var shown = filter === 'all'
+      ? items.length
+      : items.filter(function (it) { return it.getAttribute('data-tag') === filter; }).length;
+    fcount.textContent = filter === 'all'
+      ? items.length + ' 項目を表示中'
+      : shown + ' / ' + items.length + ' 項目を表示中';
+
+    buttons.forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-f') === filter));
+    });
+
+    refreshChapterCounts();
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.getAttribute('data-f')); });
+  });
+  apply('all');
+
+  // --- scroll spy -----------------------------------------------------
+  // Track which sections currently cross the reading band and always mark the
+  // topmost one; relying on callback order alone leaves the wrong link lit.
+  if ('IntersectionObserver' in window) {
+    var live = [];
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var i = live.indexOf(e.target);
+        if (e.isIntersecting && i === -1) live.push(e.target);
+        else if (!e.isIntersecting && i !== -1) live.splice(i, 1);
+      });
+      // Of the sections crossing the band, the one that started last is the
+      // one being read — the previous section's tail can still clip the band.
+      var current = live.length
+        ? live.slice().sort(function (a, b) {
+            return b.getBoundingClientRect().top - a.getBoundingClientRect().top;
+          })[0]
+        : null;
+      navGroups.forEach(function (g) {
+        g.classList.toggle('open', !!current && g.getAttribute('data-sec') === current.id);
+      });
+    }, { rootMargin: '0px 0px -70% 0px' });
+    sections.forEach(function (s) { spy.observe(s); });
+
+    // A second, tighter band tracks which chapter is being read.
+    var liveSub = [];
+    var subSpy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var i = liveSub.indexOf(e.target);
+        if (e.isIntersecting && i === -1) liveSub.push(e.target);
+        else if (!e.isIntersecting && i !== -1) liveSub.splice(i, 1);
+      });
+      var cur = liveSub.length
+        ? liveSub.slice().sort(function (a, b) {
+            return b.getBoundingClientRect().top - a.getBoundingClientRect().top;
+          })[0]
+        : null;
+      navSubs.forEach(function (a) {
+        a.classList.toggle('on', !!cur && a.getAttribute('href') === '#' + cur.id);
+      });
+    }, { rootMargin: '0px 0px -80% 0px' });
+    subs.forEach(function (sub) { if (sub.id) subSpy.observe(sub); });
+  }
+})();
+</script>
