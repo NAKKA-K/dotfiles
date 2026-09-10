@@ -186,6 +186,77 @@
     min-width: 4.2em;
   }
 
+  /* ---------- 価値観 ---------- */
+  .values {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 34px 28px 30px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .values-h {
+    font-size: .66rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    padding-bottom: 8px;
+  }
+  .values-note {
+    font-size: .82rem;
+    color: var(--ink-3);
+    max-width: 46em;
+    padding-bottom: 18px;
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    align-items: start;
+  }
+  @media (max-width: 800px) { .values-grid { grid-template-columns: 1fr; } }
+  .person {
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 3px 3px 0;
+    background: var(--surface);
+    padding: 16px 20px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+  }
+  .person-h {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: .95rem;
+    font-weight: 700;
+  }
+  .person-h .who {
+    font-size: .68rem;
+    letter-spacing: .16em;
+    color: var(--accent);
+  }
+  .person ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .person li { display: flex; flex-direction: column; gap: 4px; }
+  .person li b { font-size: .89rem; font-weight: 700; line-height: 1.7; }
+  .person li span { font-size: .85rem; color: var(--ink-2); }
+  .person li .hit { font-size: .82rem; color: var(--ink-3); }
+  .person li .hit::before { content: "→ "; color: var(--accent); }
+  .person.blank {
+    border-left-style: dashed;
+    border-left-color: var(--rule-strong);
+    background: transparent;
+  }
+  .person.blank .who { color: var(--ink-3); }
+  .person .tbd {
+    font-size: .84rem;
+    color: var(--ink-3);
+    padding: 26px 0 30px;
+    text-align: center;
+    border: 1px dashed var(--rule-strong);
+    border-radius: 2px;
+  }
+
   /* ---------- 目次 ---------- */
   .toc {
     max-width: 1180px;
@@ -589,6 +660,9 @@
     <div class="update">
       <p class="update-h mono">2026-09-10 更新 &nbsp;/&nbsp; ヒアリングで決まったこと</p>
       <ul>
+        <li><span class="ref mono">価値観</span><span>冒頭に夫・妻それぞれの価値観の欄を新設（妻側は未記入）</span></li>
+        <li><span class="ref mono">価値観</span><span>犬と遊ぶのに7mの直線が要る。屋内か屋外かで1階の形が変わる</span></li>
+        <li><span class="ref mono">価値観</span><span>仕事中も同じ空間にいたい。仕事部屋にこもる前提と衝突している</span></li>
         <li><span class="ref mono">A-3</span><span>玄関ドアは開き戸で確定。U値は1.7前後より下を条件にする</span></li>
         <li><span class="ref mono">A-3</span><span>外からの解錠もタッチ式を検討（屋外に出る操作面が増える）</span></li>
         <li><span class="ref mono">A-4</span><span>テレビは必須ではない。2階に回すかプロジェクターも検討</span></li>
@@ -667,6 +741,45 @@
     </div>
   </div>
 </header>
+
+<section class="values" id="values">
+  <p class="values-h mono">どんな暮らしがしたいか &nbsp;/&nbsp; 二人それぞれの価値観</p>
+  <p class="values-note">A章以降の個別の要望は、ここから出てきている。判断に迷ったとき、減額でどれを削るかを決めるときの拠り所として最初に置く。まだ言葉になっていない部分も多いので、随時足していく。</p>
+  <div class="values-grid">
+
+    <div class="person">
+      <p class="person-h"><span class="who mono">夫</span></p>
+      <ul>
+        <li>
+          <b>仕事やゲームをしていても、同じ空間を共有している感じにしたい</b>
+          <span>もともと PC の前に座っている時間が長い。隔離された部屋にこもると交流が減る。かといって「一緒にいるためにリビングにいるだけ」で、やりたいことができない状態にもなりたくない。</span>
+          <span class="hit">仕事部屋2室は3畳・収納なしで完全に閉じる計画（A-12）で、遮音も必須条件（A-1）。この価値観とは正面からぶつかる。「仕事中は籠る／それ以外は同じ空間」と時間で分けるのか、リビング側にも PC を置ける居場所を作るのかを決める必要がある。2階のオープンスペース案（A-2）もその候補になる。</span>
+        </li>
+        <li>
+          <b>賃貸のようなありふれた感じにはしたくない</b>
+          <span>注文住宅らしい、「只者じゃない」と思われるおしゃれさが欲しい。</span>
+          <span class="hit">B-1 の「抜け感」と「生活感を消す」は、この価値観の手段。具体的にはハイドアと天井までの大型窓（A-4）、内外の連続（A-18）、木目の天井と軒天（A-18）、線を消す（B-5）、ライン照明（B-6）。減額を検討するとき（D-2）に、どれを削るとこの感じが壊れるかの判断基準になる。</span>
+        </li>
+        <li>
+          <b>犬とボールやフリスビーで遊べる場所が欲しい</b>
+          <span>幅は要らないが<b>長さ</b>が要る。今は廊下＋リビングを合わせた <b>7m</b> の直線で遊んでいるので、最低それくらい。屋内・屋外どちらでもよい。</span>
+          <span class="hit">35坪の2階建てで7mの直線を取るのは、1階の長辺を使い切る話になる。しかも「廊下は限界まで削る」方針（A-1）とぶつかる。屋外で取るなら、内庭風に囲って庭が小さくなる案（C-9）と両立するかを見る必要がある。</span>
+        </li>
+        <li>
+          <b>デスクは今より一回り以上大きくしたい</b>
+          <span>現在 <b>120 × 60cm</b>。これより一回り以上大きいものを想定している。</span>
+          <span class="hit">仕事部屋は3畳（約 2.7m × 1.8m）なので、机を大きくすると椅子を引くぶんが厳しくなる（A-12）。上の「同じ空間」をリビング側で受けるなら、そのデスクの置き場も別に要る。</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="person blank">
+      <p class="person-h"><span class="who mono">妻</span></p>
+      <p class="tbd">これから記入</p>
+    </div>
+
+  </div>
+</section>
 
 <section class="toc" id="toc">
   <p class="toc-h mono">目次 &nbsp;/&nbsp; 44章</p>
@@ -1637,7 +1750,8 @@
           <h4>仕事部屋は 3畳ずつ・収納なし</h4>
           <p>2室とも <b>3畳程度</b>。<b>収納は作らない</b>ので、部屋の中は机と椅子だけになる。</p>
           <div class="spec mono"><span>3畳 × 2室</span><span>収納なし</span></div>
-          <div class="ask"><b>確認</b><span>3畳は約 2.7m × 1.8m。机（幅140cm前後）と椅子を置くと、椅子を引くぶんでほぼ埋まる寸法です。① 実際に机・モニター・椅子を置いた状態の家具配置図を描いてほしい ② ドアを引き戸（A-16）にして、開閉スペースを椅子と干渉させないようにしたい ③ Web会議で背後に映る面をどこにするか。</span></div>
+          <div class="ask"><b>確認</b><span>3畳は約 2.7m × 1.8m。机は<b>現在 120×60cm で、これより一回り以上大きいものを想定</b>しています（価値観の欄）。椅子を引くぶんを足すと3畳ではかなり厳しくなるので、① 実際の机・モニター・椅子を置いた状態の家具配置図を描いてほしい ② <b>3畳のままで成立するか、広げるならどこから面積を持ってくるか</b> ③ ドアを引き戸（A-16）にして開閉スペースを椅子と干渉させない ④ Web会議で背後に映る面をどこにするか。</span></div>
+          <div class="ask"><b>確認</b><span>そもそも<b>この部屋にこもる前提でよいか</b>が、価値観の欄と衝突しています。「仕事やゲームをしていても同じ空間にいたい」という希望があるので、① 仕事中だけ籠って、それ以外はリビングで過ごす形にするのか ② <b>リビング側にも PC を置ける居場所</b>を用意するのか、で必要な面積の配分が変わります。②なら仕事部屋は小さいままでよく、①なら仕事部屋を広げたい、という逆の結論になるので、プランを描く前に決めたい（E-2）。</span></div>
           <div class="ask"><b>確認</b><span>収納を作らない代わりに、書類・書籍・PC 周辺機器・配線の予備などをどこに置くかが決まっていません。衣類は1階のファミリークローク（A-15）に集約する方針ですが、仕事関係の物はそこに含まれていない想定です。別途どこかに確保するのか、机まわりで完結させるのかを決めたいです。</span></div>
         </div>
       </article>
@@ -3267,6 +3381,8 @@
         <li><span class="who">外構</span><div class="q"><b>玄関アプローチを階段にするかスロープにするか</b><span>階段でも可だが、犬・ペットカート・自転車の出入りを考えると全スロープも魅力的（A-3）。GL から玄関ポーチまでの段差が決まらないと必要な長さが出ないので、基礎高が固まった時点で敷地に収まるかを判断する。駐車土間と兼ねられるかが鍵。</span></div></li>
         <li><span class="who">外構</span><div class="q"><b>自転車2台をどこに置くか</b><span>幅1.4m×奥行2.0m 程度が要る（C-9）。屋根の下に入れられるか（カーポートか軒 → A-18）、車のドアと干渉しないか、道路から見えにくいかで位置が決まる。内庭風に囲う場合は囲いの外側に置く前提。</span></div></li>
         <li><span class="who">庭</span><div class="q"><b>庭を内庭風に囲うか</b><span>囲えばカーテンレス（A-17）が完全に成立し、犬を放せる庭になる（C-9）。ただし 40坪に建物35坪なので庭は広くなく、囲うと閉塞感と通風の問題が出る。建物の配置が決まってから、庭に残る面積を見て判断する。<b>内庭が成立するなら庭は小さくてよい</b>という優先順位なので、建物を L 字・コの字に振って庭を抱き込む配置も提案に含めてもらう。</span></div></li>
+        <li><span class="who">犬</span><div class="q"><b>犬と遊ぶ 7m の直線をどこで取るか</b><span>ボールやフリスビーで遊ぶのに、幅は要らないが長さが7m欲しい（価値観の欄）。現在は廊下＋リビングで確保している。① 1階の長辺で屋内に取れるか ② 屋外（庭）で取るか。屋内で取ると「廊下は限界まで削る」方針（A-1）とぶつかり、屋外で取ると内庭風に囲って庭が小さくなる案（C-9）とぶつかる。<b>どちらで取るかが決まらないと1階の形が決まらない</b>ので、ボリューム検討の条件に入れてほしい。</span></div></li>
+        <li><span class="who">プラン</span><div class="q"><b>仕事部屋にこもる前提でよいか</b><span>「仕事やゲームをしていても同じ空間にいたい」という希望（価値観の欄）と、仕事部屋2室を3畳で閉じる計画（A-12）が衝突している。リビング側にも PC を置ける居場所を作るなら仕事部屋は小さいままでよく、作らないなら仕事部屋を広げたい。机は現在 120×60cm より一回り以上大きくする想定なので、どちらに面積を寄せるかで1階の使い方が変わる。</span></div></li>
         <li><span class="who">プラン</span><div class="q"><b>2階に余る面積をどう使うか</b><span>階段を上がったところを、囲わないボードゲームのスペースとして取るか（A-2）。取るなら<b>2階の天井高を 2,250mm に下げる案（A-1）と衝突</b>するので、そこだけ下げないか、案自体を見直すかを決める。取らない場合はキッチンカウンター（A-5）で代用する。両側を空ければ向かい合って座れるので代用は成立するが、膝下の逃げを両側に取るぶんカウンターのつくりが変わる。ホームジムを2階に置く案（下記）とは面積を取り合う。</span></div></li>
         <li><span class="who">収納</span><div class="q"><b>ボードゲームの棚をどの壁に付けるか</b><span>幅1.8m × 高1.8m × 奥行0.35m 程度・250kg 前後を1面に集中させる（A-15）。住宅の居室の積載荷重の 2倍強にあたるので、<b>壁の位置が決まらないと梁の配置を合わせられない</b>。2階に置くならパワーラック（A-11）と同じ階になってよいかも同時に見る。造作にするか市販の棚にするか（B-2）は、壁が決まってから。</span></div></li>
         <li><span class="who">プラン</span><div class="q"><b>ホームジムの設置階</b><span>実測 2,080mm なので2階の天井高（A-1）にも収まる（A-11）。判断は面積とコストで、1階なら3畳前後の面積、2階なら床補強が犠牲になる。寝室を何階に置くか（同上）と一体で決める。懸垂バーを使うなら頭上の余裕が別途要る。</span></div></li>
